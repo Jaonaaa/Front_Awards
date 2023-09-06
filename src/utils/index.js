@@ -8,10 +8,11 @@ export const props = {
  * @param {props} props
  * @param {HTMLElement} target
  */
-export function initProps(target = undefined, props) {
+export function initProps(target = undefined, props, addChildren = false) {
   if (props != undefined && target != undefined) {
     addAttributs(target, props.attributs);
     addClasses(target, props.class);
+    if (addChildren) addChildren(target, props.children);
   }
 }
 
@@ -36,6 +37,15 @@ export function addAttributs(target, attributes) {
     attributes.map((attributes) =>
       target.setAttribute(attributes[0], attributes[1])
     );
+}
+/**
+ *
+ * @param {HTMLElement} target
+ * @param {Array} attributes
+ */
+export function addChildren(target, children) {
+  if (children != undefined && target != undefined)
+    children.map((child) => target.appendChild(child));
 }
 /**
  *

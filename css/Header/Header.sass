@@ -1,2 +1,37 @@
+
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+@mixin flex_center_all()
+    display: flex
+    justify-content: center
+    align-items: center
+
 #header_proto_mid
-    height: 3rem
+    height: 4.5rem
+    display: flex
+    align-items: center
+    padding: 1.2rem 4.5vw 1rem 3.5vw
+    .logo_container
+        height: 100%
+        max-width: 8rem
+        @include flex_center_all()
+        img
+            width: 100%
+            height: 100%
+    .navigation
+        margin: 0 auto
+        display: inline-flex
+        max-width: 40vw
+
+.container_login
+    overflow: hidden
+    box-sizing: border-box
+    @include flex_center_all()
+    @include media($breakpoint: $breakpoint-md)
+        width: 75vw
