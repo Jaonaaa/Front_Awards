@@ -15,11 +15,12 @@ $breakpoint-xl: 1500px
 #header_proto_mid
     height: 4.5rem
     display: flex
-    align-items: center
-    padding: 1.2rem 4.5vw 1rem 3.5vw
+    align-items: flex-end
+    padding: 1.2rem 2.5vw 1rem 3.5vw
     .logo_container
         height: 100%
         max-width: 8rem
+        cursor: pointer
         @include flex_center_all()
         img
             width: 100%
@@ -29,6 +30,42 @@ $breakpoint-xl: 1500px
         margin: 0 auto
         display: inline-flex
         max-width: 40vw
+        flex-wrap: nowrap
+        .tag_box
+            padding: 0 0.2rem
+            margin: 0.1rem 0.4rem
+            overflow: hidden
+            max-width: 8rem
+            white-space: nowrap
+            text-overflow: ellipsis
+            a
+                color: var(--inactive-link-color)
+                text-decoration: none
+                font-weight: 500
+                width: fit-content
+
+            .link_tag
+                transition: all 0.2s ease-in-out
+                &::before
+                    content: ""
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    transition: all 0.2s ease-in-out
+                    width: 0%
+                    height: 2px
+                    border-radius: 0.3rem
+                    background-color: var(--active-link-color)
+                &:hover
+                    color: var(--active-link-color)
+            .active_tag
+                position: relative
+                color: var(--active-link-color)
+
+                &::before
+                    content: ""
+                    position: absolute
+                    width: 60%
 
 .container_login
     overflow: hidden

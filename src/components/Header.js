@@ -7,6 +7,7 @@ import { initProps, props, getStyle } from "../utils/index.js";
 export function Header(props) {
   const header = document.createElement("div");
 
+  header.setAttribute("singleton", true);
   initProps(header, props);
   Header.rootStyleName = "Header";
   getStyle(Header);
@@ -14,7 +15,8 @@ export function Header(props) {
 
   let logo = Logo(
     { class: ["logo_container"], attributs: [["id", "logo_header"]] },
-    "./assets/img/sakafo.png"
+    "./assets/img/sakafo.png",
+    "/"
   );
 
   let navigation_menu = NavigationMenu(
@@ -97,8 +99,9 @@ function Logo(props, picture = "", linkTo = undefined) {
   let img = document.createElement("img");
   img.setAttribute("src", picture);
   if (linkTo != undefined)
-    img.addEventListener("click", () => {
-      window.location = linkTo;
+    img.addEventListener("click", (event) => {
+      img.href = linkTo;
+      route(event);
     });
 
   logo.appendChild(img);

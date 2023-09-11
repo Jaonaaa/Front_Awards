@@ -13,13 +13,10 @@ const header = Header({
       linkTo: "/",
       label: "Home",
     },
-    {
-      linkTo: "/hello",
-      label: "Hello",
-    },
+
     {
       linkTo: "/about",
-      label: "A propos",
+      label: "Our works",
     },
   ],
 });
@@ -28,7 +25,7 @@ const header = Header({
 /////
 const routes = {
   "/": [header],
-  "/about": [],
+  "/about": [header],
   404: [],
 };
 export const route = (event) => {
@@ -41,6 +38,7 @@ export const route = (event) => {
 const handleLocation = async () => {
   const path = window.location.pathname;
   const route = routes[path] || routes[404];
+
   renderRoot(route);
 };
 
