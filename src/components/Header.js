@@ -1,3 +1,4 @@
+import { route } from "../App.js";
 import { initProps, props, getStyle } from "../utils/index.js";
 
 /**
@@ -20,16 +21,7 @@ export function Header(props) {
     {
       class: ["navigation"],
     },
-    [
-      {
-        linkTo: "/",
-        label: "Home",
-      },
-      {
-        linkTo: "/about",
-        label: "A propos",
-      },
-    ]
+    props.linksTag
   );
 
   header.appendChild(logo);
@@ -37,7 +29,6 @@ export function Header(props) {
 
   return header;
 }
-
 /**
  *
  * @param {props} props
@@ -50,12 +41,9 @@ function NavigationMenu(props, tags = []) {
   let tags_ = tags.map((tag) => {
     return TagsMenu(tag.label, tag.linkTo);
   });
-  console.log(navigation_menu);
   tags_.map((tag) => navigation_menu.appendChild(tag));
-
   return navigation_menu;
 }
-
 /**
  *
  * @param {String} label
@@ -81,17 +69,9 @@ function TagsMenu(label, linkTo) {
   Tag.appendChild(link);
   return Tag;
 }
-
 function setUpRouterLink(event) {
-  event.preventDefault();
-  const route = (event) => {
-    event = event || window.event;
-    event.preventDefault();
-    window.history.pushState({}, "", event.target.href);
-  };
-  route();
-  // window.history.pushState({}, "", event.target.href);
-  // checkActiveTag();
+  route(event);
+  checkActiveTag();
 }
 function checkActiveTag() {
   let tagsLink = document.querySelectorAll(".link_tag");
@@ -103,7 +83,6 @@ function checkActiveTag() {
     }
   });
 }
-
 /**
  *
  * @param {props} props

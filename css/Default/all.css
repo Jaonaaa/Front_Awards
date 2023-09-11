@@ -1,3 +1,19 @@
+@font-face {
+  font-family: Poppins_L;
+  src: url(../../assets/fonts/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: Poppins_B;
+  src: url(../../assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: Sora_L;
+  src: url(../../assets/fonts/Sora-Light.ttf);
+}
+@font-face {
+  font-family: Sora_R;
+  src: url(../../assets/fonts/Sora-Regular.ttf);
+}
 body {
   margin: 0;
   padding: 0;
@@ -5,4 +21,5 @@ body {
 
 * {
   box-sizing: border-box;
+  font-family: Poppins_L;
 }/*# sourceMappingURL=all.css.map */

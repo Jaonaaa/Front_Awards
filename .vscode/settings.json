@@ -1,0 +1,13 @@
+{
+    "liveServer.settings.root": "./",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.wait": 200,
+    "liveServer.settings.ignoreFiles": [
+      ".vscode",
+      ".git",
+      ".DS_Store",
+      "node_modules"
+    ],
+    "liveServer.settings.file": "./index.html"
+  }
+  
