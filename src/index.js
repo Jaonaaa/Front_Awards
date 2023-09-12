@@ -4,17 +4,17 @@
  */
 export function renderRoot(children) {
   const root = createRoot();
-  root.innerHTML = "";
+  // root.innerHTML = "";
   if (children != undefined) children.map((child) => insertChild(child, root));
 }
 
 function createRoot() {
   let root = document.getElementById("root");
-  console.log("Root is ", root);
-  root = root == undefined ? document.createElement("div") : root;
-  root.setAttribute("id", "root");
-
-  document.body.prepend(root);
+  if (root == undefined) {
+    root = document.createElement("div");
+    root.setAttribute("id", "root");
+    document.body.prepend(root);
+  }
   return root;
 }
 
@@ -37,7 +37,6 @@ function insertChild(child, parent) {
  */
 function isMyChild(child, parent) {
   let is = false;
-
   for (let i = 0; i < parent.children.length; i++) {
     console.log(parent.children[i]);
     if (parent.children[i] == child) is = true;
