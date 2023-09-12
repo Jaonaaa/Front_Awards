@@ -12,7 +12,7 @@ export function initProps(target = undefined, props, addChildren = false) {
   if (props != undefined && target != undefined) {
     addAttributs(target, props.attributs);
     addClasses(target, props.class);
-    if (addChildren) addChildren(target, props.children);
+    if (addChildren) addTheChildren(target, props.children);
   }
 }
 
@@ -43,7 +43,7 @@ export function addAttributs(target, attributes) {
  * @param {HTMLElement} target
  * @param {Array} attributes
  */
-export function addChildren(target, children) {
+export function addTheChildren(target, children) {
   if (children != undefined && target != undefined)
     children.map((child) => target.appendChild(child));
 }

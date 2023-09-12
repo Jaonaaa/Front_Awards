@@ -1,5 +1,6 @@
-import { route } from "../App.js";
-import { initProps, props, getStyle } from "../utils/index.js";
+import { route } from "../../App.js";
+import { initProps, props, getStyle } from "../../utils/index.js";
+import { ParamsBox } from "./Params.js";
 
 /**
  * @param {props} props
@@ -11,7 +12,6 @@ export function Header(props) {
   initProps(header, props);
   Header.rootStyleName = "Header";
   getStyle(Header);
-  header.setAttribute("id", "header_proto_mid");
 
   let logo = Logo(
     { class: ["logo_container"], attributs: [["id", "logo_header"]] },
@@ -26,11 +26,19 @@ export function Header(props) {
     props.linksTag
   );
 
+  let paramsBox = ParamsBox({
+    children: props.paramsContent,
+    attributs: [["id", "params_box"]],
+  });
+
   header.appendChild(logo);
   header.appendChild(navigation_menu);
+  console.log(paramsBox);
+  header.appendChild(paramsBox);
 
   return header;
 }
+
 /**
  *
  * @param {props} props
