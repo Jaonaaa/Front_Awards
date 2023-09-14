@@ -37,6 +37,7 @@
   font-weight: 500;
   width: -moz-fit-content;
   width: fit-content;
+  outline: none;
 }
 #header_proto_mid .navigation .tag_box .link_tag {
   transition: all 0.2s ease-in-out;

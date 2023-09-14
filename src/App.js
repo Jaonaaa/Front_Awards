@@ -1,5 +1,6 @@
 import { renderRoot } from "./index.js";
 import { Header } from "./components/Header/Header.js";
+import { Section_Horiz } from "./components/Section/Section.js";
 // Here you will structure your elements
 //
 let button = document.createElement("button");
@@ -24,11 +25,12 @@ const header = Header({
   paramsContent: paramsContent,
 });
 
+let section = [Section_Horiz(), Section_Horiz(), Section_Horiz()];
 ///
 /////
 const routes = {
-  "/": [header],
-  "/about": [header],
+  "/": [header, ...section],
+  "/about": [header, ...section],
   404: [],
 };
 export const route = (event) => {

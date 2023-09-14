@@ -33,7 +33,6 @@ export function Header(props) {
 
   header.appendChild(logo);
   header.appendChild(navigation_menu);
-  console.log(paramsBox);
   header.appendChild(paramsBox);
 
   return header;

@@ -25,7 +25,16 @@ export function getStyle(fonction) {
   let link_tag = document.createElement("link");
   link_tag.rel = "stylesheet";
   link_tag.href = `./css/${fonction.rootStyleName}/${function_name}.css`;
-  document.head.appendChild(link_tag);
+  if (!checkIfStyleAlreadyCalled(link_tag.href))
+    document.head.appendChild(link_tag);
+}
+function checkIfStyleAlreadyCalled(href) {
+  let alreadySet = false;
+  let linksTag = document.querySelectorAll("link");
+  linksTag.forEach((link) => {
+    if (link.href == href) alreadySet = true;
+  });
+  return alreadySet;
 }
 /**
  *

@@ -1,15 +1,10 @@
 html {
   box-sizing: border-box;
 }
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  padding: 0;
-}
+
 body {
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .buttons {
   position: absolute;

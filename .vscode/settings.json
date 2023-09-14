@@ -6,7 +6,6 @@
       ".vscode",
       ".git",
       ".DS_Store",
-      "node_modules"
     ],
     "liveServer.settings.file": "./index.html"
   }

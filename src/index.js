@@ -38,7 +38,6 @@ function insertChild(child, parent) {
 function isMyChild(child, parent) {
   let is = false;
   for (let i = 0; i < parent.children.length; i++) {
-    console.log(parent.children[i]);
     if (parent.children[i] == child) is = true;
   }
 
