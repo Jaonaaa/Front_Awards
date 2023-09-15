@@ -1,4 +1,4 @@
-import { route } from "../../App.js";
+import { route } from "../../utils/route.js";
 import { initProps, props, getStyle } from "../../utils/index.js";
 import { ParamsBox } from "./Params.js";
 
