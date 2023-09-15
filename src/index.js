@@ -24,7 +24,6 @@ function createRoot() {
  * @param {HTMLElement} parent
  */
 function insertChild(child, parent) {
-  console.log(child, parent);
   if (child.getAttribute("singleton") && isMyChild(child, parent)) {
     return undefined;
   } else {

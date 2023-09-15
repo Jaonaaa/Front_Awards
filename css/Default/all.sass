@@ -15,11 +15,15 @@
 
 :root
     --text-basic-color: rgb(38, 38, 38)
-    --primary-color: rgb(236, 184, 41)
+    --primary-color: rgb(250, 93, 93)
+    --primary-color-hovered: rgb(234, 75, 75)
     --secondary-color: rgb(205, 205, 205)
     --inactive-link-color: rgba(97, 97, 97, 0.803)
     --active-link-color: rgb(0, 213, 145)
     --scroll-bars-animation: 2%
+html
+    scroll-behavior: smooth
+    transition: all 0.2s ease-in-out
 body
     margin: 0
     padding: 0
@@ -42,3 +46,17 @@ body
 ::-webkit-scrollbar-thumb
     background-color: var(--secondary-color)
     border-radius: 1rem
+
+button
+
+    padding: 0.5rem 0.9rem
+    border-radius: 0.3rem
+    border: none
+    cursor: pointer
+    background: var(--primary-color)
+    font-size: 0.92rem
+    color: #ffff
+    transition: all 0.2s ease-in-out
+    // font-weight: bolder
+    &:hover
+        background: var(--primary-color-hovered)
