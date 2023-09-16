@@ -25,8 +25,12 @@ function createRoot() {
  */
 function insertChild(child, parent) {
   if (child.getAttribute("singleton") && isMyChild(child, parent)) {
+    console.log("undefineddd");
     return undefined;
   } else {
+    console.log("Ajouter");
+    console.log(child);
+
     parent.appendChild(child);
   }
 }
