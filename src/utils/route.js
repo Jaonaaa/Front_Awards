@@ -1,4 +1,5 @@
 import { renderRoot } from "../index.js";
+import { base_url } from "./index.js";
 
 let routes = {};
 let setUpAll = () => {};
@@ -10,7 +11,9 @@ export const route = (event) => {
 };
 
 const handleLocation = async () => {
-  const path = window.location.pathname;
+  let path = window.location.pathname;
+  path = path.split(base_url)[1];
+  console.log("path: " + path);
   const route = routes[path] || routes[404];
   console.log("Render Root");
   renderRoot(route);

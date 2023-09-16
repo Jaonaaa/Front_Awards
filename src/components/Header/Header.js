@@ -1,5 +1,5 @@
 import { route } from "../../utils/route.js";
-import { initProps, props, getStyle } from "../../utils/index.js";
+import { initProps, props, getStyle, base_url } from "../../utils/index.js";
 import { ParamsBox } from "./Params.js";
 
 /**
@@ -82,9 +82,8 @@ function TagsMenu(label, linkTo) {
   link.setAttribute("href", linkTo);
   link.classList.add("link_tag");
   link.innerText = label;
-  window.location.pathname == linkTo
-    ? link.classList.add("active_tag")
-    : undefined;
+  let pathName = window.location.pathname.split(base_url)[1];
+  pathName == linkTo ? link.classList.add("active_tag") : undefined;
 
   link.addEventListener("click", (e) => {
     setUpRouterLink(e);
@@ -100,7 +99,8 @@ function setUpRouterLink(event) {
 function checkActiveTag() {
   let tagsLink = document.querySelectorAll(".link_tag");
   tagsLink.forEach((tag) => {
-    if (window.location.href == tag.href) {
+    let pathName = window.location.href.split(base_url)[1];
+    if (pathName == tag.href) {
       tag.classList.add("active_tag");
     } else {
       tag.classList.remove("active_tag");
