@@ -6,13 +6,14 @@ import { handleRoutes } from "./utils/route.js";
 //
 let button = document.createElement("button");
 button.innerHTML = "Se Connecter";
-const paramsContent = [button];
+const paramsContent = [];
 
 const header = Header({
   attributs: [
     ["id", "header_proto_mid"],
     ["observation", "navbar"],
   ],
+  logoPath: "./assets/img/Tempest_logo.png",
   linksTag: [
     {
       linkTo: "/",
@@ -25,10 +26,13 @@ const header = Header({
     },
   ],
   paramsContent: paramsContent,
+  btnSideBarOn: {
+    icon: "./assets/img/hamburger_icon.png",
+  },
 });
 
 //Entrance
-let entranceScreen = Screen_01({ text: "TempesT" });
+let entranceScreen = Screen_01({ text: "Frontend <br> Awards  " });
 let enntranceSection = [
   entranceScreen,
   Section_Horiz(),

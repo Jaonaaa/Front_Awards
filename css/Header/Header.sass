@@ -74,9 +74,31 @@ $breakpoint-xl: 1500px
                     position: absolute
                     width: 60%
 
+#btn-show-sidebar
+    width: 1.8rem
+    height: 1.8rem
+    cursor: pointer
+    margin-right: 2vw
+    display: flex
+    align-items: center
+    transition: all 0.2s ease-in-out
+    justify-content: center
+    img
+        width: 100%
+        height: 100%
+    &:hover
+        animation: scale-up-btn 0.4s ease-in-out
 .container_login
     overflow: hidden
     box-sizing: border-box
     @include flex_center_all()
     @include media($breakpoint: $breakpoint-md)
         width: 75vw
+
+@keyframes scale-up-btn
+    0%
+        transform: scale(1)
+    60%
+        transform: scale(1.04)
+    100%
+        transform: scale(1)

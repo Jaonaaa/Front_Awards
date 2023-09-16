@@ -15,7 +15,9 @@ export function Screen_01(props) {
 
   screen.innerHTML = `
   <div class="screen-box">
-      <span class="text-screen"> ${props.text} </span>
+      <div class="container-text">
+        <span class="text-screen"> ${props.text} </span>
+      </div>
   </div>
   <div class="img_left">
       <img src=".//assets/img/girl_left.jpg" alt="" />
@@ -35,17 +37,23 @@ export function ButtonScreen_01({ pathPic }) {
   const button = document.createElement("div");
   button.classList.add("button_screen");
   button.innerHTML = `
-  <img src="${pathPic}" alt="icon" />`;
+  <div class="button_screen_paper"> 
+    <img src="${pathPic}" alt="icon" />
+    </img> `;
   button.addEventListener("click", () => {
-    let sec = document.getElementById("ancrage_Screen_01");
-    if (sec != undefined) sec.scrollIntoView({ behavior: "smooth" });
+    scrollToSection(document.getElementById("ancrage_Screen_01"));
   });
   return button;
+}
+
+export function scrollToSection(section) {
+  if (section != undefined) section.scrollIntoView({ behavior: "smooth" });
 }
 
 export function setUpScreen_01() {
   let sec2 = document.querySelectorAll(".section_part")[1];
   sec2.style.height = "45vh";
+  let scrolledView = 0;
   ////
   const handleScroll = () => {
     let sections = document.querySelectorAll(".section_part");
@@ -60,8 +68,10 @@ export function setUpScreen_01() {
           "--scroll-bars-animation",
           Math.max(percentScroll, 2)
         );
+        scrolledView = Math.max(percentScroll, 2);
+        handleReachFull(scrolledView);
       } else {
-        let percentScroll = scrolledInMe(sec, 10, 2);
+        let percentScroll = scrolledInMe(sec, 20, 2);
         sec.style.setProperty("--scroll", percentScroll + "%");
       }
     });
@@ -70,4 +80,15 @@ export function setUpScreen_01() {
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("resize", handleScroll);
   handleScroll();
+}
+
+function handleReachFull(reach) {
+  let screenText = document.querySelector(".text-screen");
+  if (screenText) {
+    if (reach == 100) {
+      screenText.classList.add("text-screen-full");
+    } else {
+      screenText.classList.remove("text-screen-full");
+    }
+  }
 }

@@ -18,7 +18,7 @@
   --text-basic-color: rgb(38, 38, 38);
   --primary-color: rgb(30, 96, 177);
   --primary-color-hovered: rgb(17, 76, 147);
-  --secondary-color: rgb(205, 205, 205);
+  --secondary-color: rgb(148, 146, 146);
   --inactive-link-color: rgba(97, 97, 97, 0.803);
   --active-link-color: rgb(0, 213, 145);
   --scroll-bars-animation: 2%;
@@ -63,6 +63,16 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: var(--secondary-color);
   border-radius: 1rem;
+}
+
+::-moz-selection {
+  background-color: #005f73;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #005f73;
+  color: #ffffff;
 }
 
 button {

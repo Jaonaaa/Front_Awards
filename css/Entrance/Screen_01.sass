@@ -1,5 +1,6 @@
 $bar-width: 0.4rem
 $bar-color: #6c757d
+$full-bar-color: #2a9d8f
 $breakpoint-sm: 576px
 $breakpoint-md: 768px
 $breakpoint-lg: 1012px
@@ -15,7 +16,7 @@ $breakpoint-xl: 1500px
 
 #screen
     position: fixed
-    transform: translateY(0)
+    transform: translateY(0) translateX(0)
     // opacity: 0.2
     width: 100vw
     background: white
@@ -31,18 +32,25 @@ $breakpoint-xl: 1500px
         height: 100vh
         justify-content: center
         align-items: center
+        .container-text
+            width: fit-content
+            height: fit-content
+            padding-top: 2rem
+            overflow: hidden
         .text-screen
             font-size: 6rem
             width: fit-content
-
+            display: flex
             height: fit-content
             z-index: 2
+            font-family: Poppins_B
+            letter-spacing: 0.2rem
             text-align: center
             animation: show-up 0.7s ease-in-out
             position: relative
             margin-top: -2.4rem
-            color: #3e5c76
-            transition: all 0.2s ease-in-out
+            color: #2a2929
+            transition: all 0.1s ease-in-out
             @include media($breakpoint: $breakpoint-lg)
                 font-size: 5rem
             @include media($breakpoint: $breakpoint-md)
@@ -63,6 +71,9 @@ $breakpoint-xl: 1500px
                 background: $bar-color
                 @include media($breakpoint: $breakpoint-md)
                     height: 0.3rem
+        .text-screen-full
+            &::before
+                background: $full-bar-color
     &::before
         content: ""
         left: 1%
@@ -94,12 +105,11 @@ $breakpoint-xl: 1500px
         transform: skew(0deg,25deg)
         position: absolute
         left: 8%
-        top: 20%
-        top: calc( 1% * ( max( calc( var(--scroll-bars-animation) / 3) ,20) ) )
+        top: calc( 1% * ( max( calc( var(--scroll-bars-animation) / 3) ,10) ) )
         display: flex
         justify-content: center
         align-items: center
-        transition: all 0.2s ease-in-out
+        transition: filter 0.2s ease-in-out
         overflow: hidden
         animation: show-up-late 1s ease-in-out
         @include media($breakpoint: $breakpoint-md)
@@ -122,7 +132,7 @@ $breakpoint-xl: 1500px
         transform: skew(0deg,-25deg)
         position: absolute
         right: 8%
-        transition: all 0.2s ease-in-out
+        transition: filter 0.2s ease-in-out
         overflow: hidden
         bottom: calc( 1% * ( max( calc( var(--scroll-bars-animation) / 3) ,10) ) )
         animation: show-down-late 1s ease-in-out
@@ -139,20 +149,40 @@ $breakpoint-xl: 1500px
     .button_screen
         left: 50%
         width: 3.5rem
+        height: 3.5rem
         cursor: pointer
         transform: translateX(-50%)
         bottom: 15%
         position: absolute
         opacity: 0
-        transition: all 0.5s ease-in-out
         animation: up-down 1s ease-in-out
         animation-iteration-count: infinite
-        animation-delay: 1.5s
+        animation-delay: 1.25s
         @include media($breakpoint: $breakpoint-md)
             width: 3rem
         @include media($breakpoint: $breakpoint-md)
             width: 2.5rem
+        &::before
+            content: ""
+            position: absolute
+            left: 50%
+            transition: all 0.2s cubic-bezier(.04,.32,.61,1.5)
+            top: -20%
+            height: 0.3rem
+            width: 0%
+            border-radius: 0.3rem
+            background: $full-bar-color
+            transform: translateX(-50%)
+        &:hover
+            &::before
+                width: 90%
 
+    .button_screen_paper
+        width: fit-content
+        overflow: hidden
+        height: fit-content
+        animation: scale-up 0.5s ease-in-out
+        animation-delay: 1.25s
         img
             width: 100%
             height: 100%
@@ -225,3 +255,10 @@ $breakpoint-xl: 1500px
         opacity: 0
     100%
         opacity: 1
+@keyframes scale-up
+    0%
+        transform: scale(0)
+    60%
+        transform: scale(1.2)
+    100%
+        transform: scale(1)

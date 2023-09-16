@@ -15,7 +15,7 @@ export function Header(props) {
 
   let logo = Logo(
     { class: ["logo_container"], attributs: [["id", "logo_header"]] },
-    "./assets/img/sakafo.png",
+    props.logoPath,
     "/"
   );
 
@@ -25,17 +25,33 @@ export function Header(props) {
     },
     props.linksTag
   );
+  if (props.paramsContent == undefined) props.paramsContent = [];
+  if (props.btnSideBarOn) {
+    console.log(props);
+    props.paramsContent.push(
+      buttonShowSideBar({ pathIcon: props.btnSideBarOn.icon })
+    );
+  }
 
   let paramsBox = ParamsBox({
     children: props.paramsContent,
+
     attributs: [["id", "params_box"]],
   });
 
   header.appendChild(logo);
   header.appendChild(navigation_menu);
+
   header.appendChild(paramsBox);
 
   return header;
+}
+
+function buttonShowSideBar({ pathIcon }) {
+  const btn = document.createElement("div");
+  btn.innerHTML = `<img src="${pathIcon}" alt="icon" />`;
+  btn.setAttribute("id", "btn-show-sidebar");
+  return btn;
 }
 
 /**
