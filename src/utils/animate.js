@@ -1,4 +1,4 @@
-// /////
+/////
 // const buttons = document.getElementsByTagName("button");
 
 // for (const button of buttons) {
@@ -12,6 +12,7 @@
 //     }
 //   });
 // }
+
 export const scrolledInMe = (element, percentView = 0, speedUp = 1) => {
   let elementTop = element.getBoundingClientRect().top;
   let elementHeight = element.getBoundingClientRect().height;

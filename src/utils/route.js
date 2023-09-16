@@ -12,10 +12,10 @@ export const route = (event) => {
 
 const handleLocation = async () => {
   let path = window.location.pathname;
-  path = path.split(base_url)[1];
-  console.log("path: " + path);
+  let pathArray = path.split(base_url);
+  path =
+    pathArray.length == 2 ? path.split(base_url)[1] : path.split(base_url)[0];
   const route = routes[path] || routes[404];
-  console.log("Render Root");
   renderRoot(route);
   setUpAll();
 };
@@ -25,6 +25,5 @@ export function handleRoutes(routesParams, setUp) {
   setUpAll = setUp;
   window.onpopstate = handleLocation;
   window.route = route;
-  console.log("HandleLocation");
   handleLocation();
 }

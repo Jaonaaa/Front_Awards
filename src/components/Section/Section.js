@@ -11,7 +11,6 @@ export function Section_Horiz(props) {
   section.classList.add("section_part");
   getStyle(Section_Horiz);
   section.addEventListener("click", () => {
-    console.log("Hello");
     section.style.setProperty("--po", "blue");
   });
   return section;

@@ -1,6 +1,7 @@
 import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
 import { Header } from "./components/Header/Header.js";
 import { Section_Horiz } from "./components/Section/Section.js";
+import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
 // Here you will structure your elements
 //
@@ -54,7 +55,6 @@ function setUpAll() {
 }
 
 window.addEventListener("load", () => {
-  console.log("Loaded");
   handleRoutes(routes, setUpAll);
   window.scrollTo(0, 0);
 });
