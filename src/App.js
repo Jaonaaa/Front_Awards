@@ -56,6 +56,7 @@ function setUpAll() {
 }
 
 window.addEventListener("load", () => {
+  console.log("Loaded");
   handleRoutes(routes, setUpAll);
   window.scrollTo(0, 0);
 });
