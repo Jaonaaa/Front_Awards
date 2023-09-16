@@ -15,6 +15,7 @@ const handleLocation = async () => {
   // let pathArray = path.split(base_url);
   // path =
   //   pathArray.length == 2 ? path.split(base_url)[1] : path.split(base_url)[0];
+  console.log(path);
   const route = routes[path] || routes[404];
   renderRoot(route);
   setUpAll();
