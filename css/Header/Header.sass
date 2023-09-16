@@ -36,6 +36,8 @@ $breakpoint-xl: 1500px
         display: inline-flex
         max-width: 40vw
         flex-wrap: nowrap
+        @include media($breakpoint: $breakpoint-md)
+            display: none
         .tag_box
             padding: 0 0.2rem
             margin: 0.1rem 0.4rem
@@ -73,7 +75,9 @@ $breakpoint-xl: 1500px
                     content: ""
                     position: absolute
                     width: 60%
-
+    #params_box
+        @include media($breakpoint: $breakpoint-md)
+            margin-left: auto
 #btn-show-sidebar
     width: 1.8rem
     height: 1.8rem

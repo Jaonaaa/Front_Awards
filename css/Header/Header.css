@@ -28,6 +28,11 @@
   max-width: 40vw;
   flex-wrap: nowrap;
 }
+@media (max-width: 768px) {
+  #header_proto_mid .navigation {
+    display: none;
+  }
+}
 #header_proto_mid .navigation .tag_box {
   padding: 0 0.2rem;
   margin: 0.1rem 0.4rem;
@@ -70,6 +75,11 @@
   content: "";
   position: absolute;
   width: 60%;
+}
+@media (max-width: 768px) {
+  #header_proto_mid #params_box {
+    margin-left: auto;
+  }
 }
 
 #btn-show-sidebar {

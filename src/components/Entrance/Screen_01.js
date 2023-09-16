@@ -1,5 +1,5 @@
 import { initProps, props, getStyle } from "../../utils/index.js";
-import { scrolledInMe } from "../../utils/Animate.js";
+import { scrolledInMe } from "../../utils/animate.js";
 
 /**
  * @param {props} props
