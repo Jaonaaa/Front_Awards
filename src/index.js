@@ -5,6 +5,8 @@
 export function renderRoot(children) {
   const root = createRoot();
   // root.innerHTML = "";
+  console.log("Root creer", root);
+  console.log(children);
   if (children != undefined) children.map((child) => insertChild(child, root));
 }
 
