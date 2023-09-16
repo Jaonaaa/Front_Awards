@@ -27,7 +27,6 @@ export function Header(props) {
   );
   if (props.paramsContent == undefined) props.paramsContent = [];
   if (props.btnSideBarOn) {
-    console.log(props);
     props.paramsContent.push(
       buttonShowSideBar({ pathIcon: props.btnSideBarOn.icon })
     );

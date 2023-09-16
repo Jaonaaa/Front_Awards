@@ -50,7 +50,9 @@ const routes = {
 };
 
 function setUpAll() {
-  setUpScreen_01();
+  setTimeout(() => {
+    setUpScreen_01();
+  }, 2000);
 }
 
 window.addEventListener("load", () => {
