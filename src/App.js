@@ -28,12 +28,12 @@ const header = Header({
 });
 
 //Entrance
-let entranceScreen = Screen_01({ text: "Tempest C" });
+let entranceScreen = Screen_01({ text: "TempesT" });
 let enntranceSection = [
   entranceScreen,
   Section_Horiz(),
   Section_Horiz(),
-  Section_Horiz(),
+  Section_Horiz({ attributs: [["id", "ancrage_Screen_01"]] }),
   Section_Horiz(),
   Section_Horiz(),
 ];
@@ -48,11 +48,12 @@ const routes = {
 function setUpAll() {
   setUpScreen_01();
 }
-handleRoutes(routes, setUpAll);
+
 window.addEventListener("load", () => {
+  handleRoutes(routes, setUpAll);
   window.scrollTo(0, 0);
-  console.log(window.scrollY);
 });
+
 // var element = document.querySelectorAll(".section_part")[2]; // Remplacez 'elementID' par l'ID de l'élément cible
 
 // setTimeout(() => {

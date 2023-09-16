@@ -16,12 +16,19 @@
 }
 :root {
   --text-basic-color: rgb(38, 38, 38);
-  --primary-color: rgb(250, 93, 93);
-  --primary-color-hovered: rgb(234, 75, 75);
+  --primary-color: rgb(30, 96, 177);
+  --primary-color-hovered: rgb(17, 76, 147);
   --secondary-color: rgb(205, 205, 205);
   --inactive-link-color: rgba(97, 97, 97, 0.803);
   --active-link-color: rgb(0, 213, 145);
   --scroll-bars-animation: 2%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  overflow: hidden;
 }
 
 html {

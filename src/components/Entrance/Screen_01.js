@@ -24,8 +24,23 @@ export function Screen_01(props) {
       <img src="./assets/img/girl.jpg" alt="" />
   </div>
   `;
+  screen.appendChild(
+    ButtonScreen_01({ pathPic: "./assets/img/arrow_down.png" })
+  );
 
   return screen;
+}
+
+export function ButtonScreen_01({ pathPic }) {
+  const button = document.createElement("div");
+  button.classList.add("button_screen");
+  button.innerHTML = `
+  <img src="${pathPic}" alt="icon" />`;
+  button.addEventListener("click", () => {
+    let sec = document.getElementById("ancrage_Screen_01");
+    if (sec != undefined) sec.scrollIntoView({ behavior: "smooth" });
+  });
+  return button;
 }
 
 export function setUpScreen_01() {
@@ -45,6 +60,9 @@ export function setUpScreen_01() {
           "--scroll-bars-animation",
           Math.max(percentScroll, 2)
         );
+      } else {
+        let percentScroll = scrolledInMe(sec, 10, 2);
+        sec.style.setProperty("--scroll", percentScroll + "%");
       }
     });
   };
