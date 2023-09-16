@@ -17,12 +17,12 @@ const header = Header({
   logoPath: "./assets/img/Tempest_logo.png",
   linksTag: [
     {
-      linkTo: "/",
+      linkTo: base_url + "/",
       label: "Home",
     },
 
     {
-      linkTo: "/about",
+      linkTo: base_url + "/about",
       label: "Our works",
     },
   ],

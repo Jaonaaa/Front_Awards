@@ -83,10 +83,11 @@ function TagsMenu(label, linkTo) {
   link.classList.add("link_tag");
   link.innerText = label;
 
-  let pathArray = window.location.pathname.split(base_url);
-  let pathName = pathArray.length == 2 ? pathArray[1] : pathArray[0];
+  let path = window.location.pathname;
+  // let pathArray = path.split(base_url);
+  // let pathName = pathArray.length == 2 ? pathArray[1] : pathArray[0];
 
-  pathName == linkTo ? link.classList.add("active_tag") : undefined;
+  path == linkTo ? link.classList.add("active_tag") : undefined;
 
   link.addEventListener("click", (e) => {
     setUpRouterLink(e);
@@ -102,9 +103,10 @@ function setUpRouterLink(event) {
 function checkActiveTag() {
   let tagsLink = document.querySelectorAll(".link_tag");
   tagsLink.forEach((tag) => {
-    let pathArray = window.location.href.split(base_url);
-    let pathName = pathArray.length == 2 ? pathArray[1] : pathArray[0];
-    if (pathName == tag.href) {
+    let path = window.location.href;
+    // let pathArray = path.split(base_url);
+    // path = pathArray.length == 2 ? pathArray[1] : pathArray[0];
+    if (path == tag.href) {
       tag.classList.add("active_tag");
     } else {
       tag.classList.remove("active_tag");

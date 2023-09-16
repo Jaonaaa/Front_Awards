@@ -12,9 +12,9 @@ export const route = (event) => {
 
 const handleLocation = async () => {
   let path = window.location.pathname;
-  let pathArray = path.split(base_url);
-  path =
-    pathArray.length == 2 ? path.split(base_url)[1] : path.split(base_url)[0];
+  // let pathArray = path.split(base_url);
+  // path =
+  //   pathArray.length == 2 ? path.split(base_url)[1] : path.split(base_url)[0];
   const route = routes[path] || routes[404];
   renderRoot(route);
   setUpAll();
