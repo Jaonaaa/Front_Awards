@@ -44,11 +44,11 @@ let enntranceSection = [
 ];
 
 ///////////////
-const routes = {
-  "/": [...enntranceSection, header],
-  "/about": [...enntranceSection, header],
-  404: [],
-};
+
+const routes = {};
+routes[base_url + "/"] = [...enntranceSection, header];
+routes[base_url + "/about"] = [...enntranceSection, header];
+routes[404] = [];
 
 function setUpAll() {
   setUpScreen_01();
