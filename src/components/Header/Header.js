@@ -37,6 +37,7 @@ export function Header(props) {
     props.paramsContent.push(
       buttonShowSideBar({
         pathIcon: props.btnSideBarOn.icon,
+        pathIconCross: props.btnSideBarOn.icon_cross,
         linksTag: props.linksTag,
       })
     );
@@ -92,8 +93,9 @@ export function showHeader() {
   }
 }
 
-function buttonShowSideBar({ pathIcon, linksTag }) {
+function buttonShowSideBar({ pathIcon, linksTag, pathIconCross }) {
   const btn = document.createElement("div");
+  btn.setAttribute("icon_swap", pathIconCross);
   btn.innerHTML = `<img src="${pathIcon}" alt="icon" />`;
   btn.setAttribute("id", "btn-show-sidebar");
   setUpButtonShowSideBar(btn, linksTag);
@@ -123,8 +125,14 @@ function createListNavigation(linksTag) {
   let rows = linksTag.map((link) => {
     return rowListNavigation(link);
   });
+  let timer = timerHide;
   rows.forEach((row) => {
     container.appendChild(row);
+    row.classList.add("hide-row");
+    wait(() => {
+      row.classList.remove("hide-row");
+    }, timer);
+    timer += 100;
   });
 
   wait(() => {
@@ -181,6 +189,7 @@ function switchNavigationParams() {
 function setUpButtonShowSideBar(btn, linksTag) {
   btn.addEventListener("click", (e) => {
     handleBtnEvent(btn);
+
     if (LayersActive()) {
       wait(removeLayers, timerHide);
     } else createLayers(linksTag);
@@ -213,7 +222,13 @@ function toggleOverflowBody() {
  */
 function handleBtnEvent(btn) {
   btn.classList.add("hide-btn-show-sidebar");
+  let header = document.getElementById("header_proto_mid");
+  if (header) header.classList.toggle("upperIndexHeader");
   wait(() => {
+    let icon_swap = btn.getAttribute("icon_swap");
+    let current_icon = btn.querySelector("img").getAttribute("src");
+    btn.querySelector("img").src = icon_swap;
+    btn.setAttribute("icon_swap", current_icon);
     btn.classList.remove("hide-btn-show-sidebar");
   }, timerHide);
 }
@@ -290,7 +305,7 @@ function Logo(props, picture = "", linkTo = undefined) {
   img.setAttribute("src", picture);
   if (linkTo != undefined)
     img.addEventListener("click", (event) => {
-      img.href = linkTo;
+      img.href = base_url + linkTo;
       route(event);
     });
 

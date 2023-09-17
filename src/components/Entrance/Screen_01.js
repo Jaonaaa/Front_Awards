@@ -1,4 +1,4 @@
-import { initProps, props, getStyle } from "../../utils/index.js";
+import { initProps, props, getStyle, wait } from "../../utils/index.js";
 import { scrolledInMe } from "../../utils/animate.js";
 import { showHeader } from "../Header/Header.js";
 
@@ -42,7 +42,7 @@ export function ButtonScreen_01({ pathPic }) {
     <img src="${pathPic}" alt="icon" />
     </img> `;
   button.addEventListener("click", () => {
-    showHeader();
+    wait(showHeader, 700);
     scrollToSection(document.getElementById("ancrage_Screen_01"));
   });
   return button;
@@ -54,6 +54,7 @@ export function scrollToSection(section) {
 
 export function setUpScreen_01() {
   let sec2 = document.querySelectorAll(".section_part")[1];
+  if (sec2 == undefined) return null;
   sec2.style.height = "45vh";
   let scrolledView = 0;
   ////
@@ -73,7 +74,7 @@ export function setUpScreen_01() {
         scrolledView = Math.max(percentScroll, 2);
         handleReachFull(scrolledView);
       } else {
-        let percentScroll = scrolledInMe(sec, 20, 2);
+        let percentScroll = scrolledInMe(sec, 0, 1);
         sec.style.setProperty("--scroll", percentScroll + "%");
       }
     });

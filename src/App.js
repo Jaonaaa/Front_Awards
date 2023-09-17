@@ -14,7 +14,7 @@ const header = Header({
     ["id", "header_proto_mid"],
     ["observation", "navbar"],
   ],
-  logoPath: "./assets/img/Tempest_logo.png",
+  logoPath: "./assets/svg/Tempest_logo.svg",
   linksTag: [
     {
       linkTo: base_url + "/",
@@ -29,6 +29,7 @@ const header = Header({
   paramsContent: paramsContent,
   btnSideBarOn: {
     icon: "./assets/img/hamburger_icon.png",
+    icon_cross: "./assets/img/cross_icon.png",
   },
 });
 
@@ -58,10 +59,3 @@ window.addEventListener("load", () => {
   handleRoutes(routes, setUpAll);
   window.scrollTo(0, 0);
 });
-
-// var element = document.querySelectorAll(".section_part")[2]; // Remplacez 'elementID' par l'ID de l'élément cible
-
-// setTimeout(() => {
-//   element.scrollIntoView({ behavior: "smooth" }); // Utilisez 'auto' pour un défilement instantané
-// }, 2200);
-// Faites défiler la fenêtre jusqu'à l'élément
