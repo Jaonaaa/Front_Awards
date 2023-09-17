@@ -4,6 +4,7 @@
   z-index: 3;
   display: flex;
   position: fixed;
+  transition: all 0.2s ease-in-out;
   top: 0;
   left: 0;
   align-items: flex-end;
@@ -85,6 +86,10 @@
   #header_proto_mid #params_box {
     margin-left: auto;
   }
+}
+
+.hidden_header {
+  transform: translateY(-100%);
 }
 
 #btn-show-sidebar {

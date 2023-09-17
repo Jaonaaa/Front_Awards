@@ -3,7 +3,7 @@ export const props = {
   class: [],
   attributs: [],
 };
-
+/// /Front_Awards
 export const base_url = "/Front_Awards";
 /**
  * @param {props} props

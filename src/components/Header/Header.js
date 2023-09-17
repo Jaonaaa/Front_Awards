@@ -50,8 +50,32 @@ export function Header(props) {
   header.appendChild(logo);
   header.appendChild(navigation_menu);
   header.appendChild(paramsBox);
+  visibleHeader(header);
 
   return header;
+}
+
+/**
+ *
+ * @param {HTMLElement} header
+ */
+function visibleHeader(header) {
+  window.addEventListener("wheel", (event) => {
+    if (document.body.classList.contains("unmoved")) return null;
+    if (event.deltaY > 0) {
+      // L'utilisateur fait défiler vers le bas
+      header.classList.add("hidden_header");
+    } else if (event.deltaY < 0) {
+      // L'utilisateur fait défiler vers le haut
+      header.classList.remove("hidden_header");
+    }
+  });
+}
+export function showHeader() {
+  let header = document.getElementById("header_proto_mid");
+  if (header) {
+    header.classList.remove("hidden_header");
+  }
 }
 
 function buttonShowSideBar({ pathIcon, linksTag }) {

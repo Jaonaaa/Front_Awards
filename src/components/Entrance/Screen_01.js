@@ -1,5 +1,6 @@
 import { initProps, props, getStyle } from "../../utils/index.js";
 import { scrolledInMe } from "../../utils/animate.js";
+import { showHeader } from "../Header/Header.js";
 
 /**
  * @param {props} props
@@ -41,6 +42,7 @@ export function ButtonScreen_01({ pathPic }) {
     <img src="${pathPic}" alt="icon" />
     </img> `;
   button.addEventListener("click", () => {
+    showHeader();
     scrollToSection(document.getElementById("ancrage_Screen_01"));
   });
   return button;
