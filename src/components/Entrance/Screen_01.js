@@ -13,25 +13,65 @@ export function Screen_01(props) {
   getStyle(Screen_01);
 
   screen.setAttribute("id", "screen");
+  let container = ContainerScreen_01({ text: props.text });
+  screen.appendChild(container);
 
-  screen.innerHTML = `
-  <div class="screen-box">
-      <div class="container-text">
-        <span class="text-screen"> ${props.text} </span>
-      </div>
-  </div>
-  <div class="img_left">
-      <img src=".//assets/img/girl_left.jpg" alt="" />
-  </div>
-  <div class="img_right">
-      <img src="./assets/img/girl.jpg" alt="" />
-  </div>
-  `;
+  let img_left = document.createElement("div");
+  img_left.classList.add("img_left");
+  img_left.innerHTML = ` <img src=".//assets/img/girl_left.jpg" alt="" />"`;
+
+  let img_right = document.createElement("div");
+  img_right.classList.add("img_right");
+  img_right.innerHTML = ` <img src="./assets/img/girl.jpg" alt="" />`;
+
+  screen.appendChild(img_left);
+  screen.appendChild(img_right);
+
   screen.appendChild(
     ButtonScreen_01({ pathPic: "./assets/img/arrow_down.png" })
   );
 
   return screen;
+}
+
+function ContainerScreen_01({ text }) {
+  const screen = document.createElement("div");
+  screen.classList.add("screen-box");
+  screen.appendChild(TextScreen_01({ text: text }));
+  return screen;
+}
+
+function TextScreen_01({ text }) {
+  const container = document.createElement("div");
+  container.classList.add("container-text");
+  const textRow = document.createElement("span");
+  textRow.classList.add("text-screen");
+  textRow.innerHTML = text[0];
+
+  container.appendChild(textRow);
+  setUpSwapText(textRow, text);
+
+  return container;
+}
+
+function setUpSwapText(textRow, textArray) {
+  let count = 0;
+  if (textArray.length > 0)
+    setInterval(() => {
+      //
+      textRow.style.transform = "translateY(-100%)";
+      wait(() => {
+        textRow.style.transform = "translateY(100%)";
+        textRow.style.opacity = 0;
+        textRow.innerHTML = textArray[count];
+        textRow.style.transition = "all 0.01s ease-in-out";
+      }, 610);
+      wait(() => {
+        textRow.removeAttribute("style");
+      }, 700);
+      count += 1;
+      if (textArray.length == count) count = 0;
+    }, 4500);
 }
 
 export function ButtonScreen_01({ pathPic }) {
@@ -42,7 +82,7 @@ export function ButtonScreen_01({ pathPic }) {
     <img src="${pathPic}" alt="icon" />
     </img> `;
   button.addEventListener("click", () => {
-    wait(showHeader, 700);
+    wait(showHeader, 750);
     scrollToSection(document.getElementById("ancrage_Screen_01"));
   });
   return button;

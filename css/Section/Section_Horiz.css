@@ -1,7 +1,9 @@
 .section_part {
-  height: 100vh;
+  min-height: 100vh;
+  height: -moz-fit-content;
+  height: fit-content;
   --scroll: 0%;
   position: relative;
-  background: #e6e9ea;
-  transform: translateX(var(--scroll));
+  background: rgba(230, 233, 234, 0.5098039216);
+  padding: 0 8vw;
 }/*# sourceMappingURL=Section_Horiz.css.map */

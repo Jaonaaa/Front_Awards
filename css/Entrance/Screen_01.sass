@@ -50,7 +50,7 @@ $breakpoint-xl: 1500px
             position: relative
             margin-top: -2.4rem
             color: #2a2929
-            transition: all 0.1s ease-in-out
+            transition: transform 0.6s ease-in-out , font-size 0.2s ease-in-out
             @include media($breakpoint: $breakpoint-lg)
                 font-size: 5rem
             @include media($breakpoint: $breakpoint-md)
@@ -74,6 +74,7 @@ $breakpoint-xl: 1500px
         .text-screen-full
             &::before
                 background: $full-bar-color
+
     &::before
         content: ""
         left: 1%
