@@ -4,7 +4,7 @@ export const props = {
   attributs: [],
 };
 
-export const base_url = "/Front_Awards";
+export const base_url = "";
 /**
  * @param {props} props
  * @param {HTMLElement} target
@@ -17,6 +17,11 @@ export function initProps(target = undefined, props, addChildren = false) {
   }
 }
 
+export function wait(function_name, delay) {
+  return setTimeout(() => {
+    function_name();
+  }, delay);
+}
 /**
  *
  * @param {Function} fonction

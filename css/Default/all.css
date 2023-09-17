@@ -43,6 +43,10 @@ body {
   overflow-y: auto;
 }
 
+.unmoved {
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
   font-family: Poppins_L;

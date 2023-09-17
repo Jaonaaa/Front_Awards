@@ -1,5 +1,4 @@
 import { renderRoot } from "../index.js";
-import { base_url } from "./index.js";
 
 let routes = {};
 let setUpAll = () => {};
@@ -15,8 +14,6 @@ const handleLocation = async () => {
   // let pathArray = path.split(base_url);
   // path =
   //   pathArray.length == 2 ? path.split(base_url)[1] : path.split(base_url)[0];
-  console.log(path);
-  console.log(routes);
   const route = routes[path] || routes[404];
   renderRoot(route);
   setUpAll();
