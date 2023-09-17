@@ -60,15 +60,29 @@ export function Header(props) {
  * @param {HTMLElement} header
  */
 function visibleHeader(header) {
-  window.addEventListener("wheel", (event) => {
+  // window.addEventListener("wheel", (event) => {
+  //   if (document.body.classList.contains("unmoved")) return null;
+  //   if (event.deltaY > 0) {
+  //     // L'utilisateur fait défiler vers le bas
+  //     header.classList.add("hidden_header");
+  //   } else if (event.deltaY < 0) {
+  //     // L'utilisateur fait défiler vers le haut
+  //     header.classList.remove("hidden_header");
+  //   }
+  // });
+  let lastScrollTop = 0;
+  window.addEventListener("scroll", function () {
+    let st = window.pageYOffset || document.documentElement.scrollTop;
     if (document.body.classList.contains("unmoved")) return null;
-    if (event.deltaY > 0) {
+
+    if (st > lastScrollTop) {
       // L'utilisateur fait défiler vers le bas
       header.classList.add("hidden_header");
-    } else if (event.deltaY < 0) {
+    } else {
       // L'utilisateur fait défiler vers le haut
       header.classList.remove("hidden_header");
     }
+    lastScrollTop = st;
   });
 }
 export function showHeader() {
