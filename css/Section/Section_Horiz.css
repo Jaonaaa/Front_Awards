@@ -5,5 +5,15 @@
   --scroll: 0%;
   position: relative;
   background: rgba(230, 233, 234, 0.5098039216);
-  padding: 0 8vw;
+  padding: 2vw 8vw 0 8vw;
+}
+@media (max-width: 1500px) {
+  .section_part {
+    padding: 8vw 8vw 0 8vw;
+  }
+}
+@media (max-width: 1012px) {
+  .section_part {
+    padding: 10vw 8vw 0 8vw;
+  }
 }/*# sourceMappingURL=Section_Horiz.css.map */

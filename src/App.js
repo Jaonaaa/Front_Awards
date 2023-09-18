@@ -34,26 +34,36 @@ const header = Header({
   },
 });
 // Hero
-let hero_01 = Hero_01({});
+let hero_01 = Hero_01({
+  title: "Integrate your stack, automate your work",
+  description:
+    "Evolve at the speed and scale of your business with the leader in low-code automation",
+  picPath: "./assets/img/Hero_pic.png",
+  buttonText: "Start free trial",
+});
 
 //Entrance
 let entranceScreen = Screen_01({
-  text: ["Frontend <br> Awards", "Tempest !", "Alefa #FTT", "Tony-Tati-Peter"],
+  text: ["Holà guys!", "Playground", "Alefa #FTT", "Vary masaka"],
 });
 let enntranceSection = [
   entranceScreen,
   Section_Horiz(),
   Section_Horiz(),
-  Section_Horiz({ attributs: [["id", "ancrage_Screen_01"]] }),
-  Section_Horiz({ children: [hero_01] }),
+  Section_Horiz({
+    attributs: [["id", "ancrage_Screen_01"]],
+    children: [hero_01],
+  }),
+  Section_Horiz({}),
   Section_Horiz(),
 ];
 
 ///////////////
 
 const routes = {};
+//
 routes[base_url + "/"] = [...enntranceSection, header];
-routes[base_url + "/about"] = [...enntranceSection, header];
+routes[base_url + "/about"] = [header];
 routes[404] = [];
 
 function setUpAll() {

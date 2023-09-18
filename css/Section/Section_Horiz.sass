@@ -1,9 +1,21 @@
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
 
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
 .section_part
     min-height: 100vh
     height: fit-content
     --scroll: 0%
     position: relative
     background: #e6e9ea82
-    padding: 0 8vw
+    padding: 2vw 8vw 0 8vw
+    @include media($breakpoint:$breakpoint-xl )
+        padding: 8vw 8vw 0 8vw
+    @include media($breakpoint:$breakpoint-lg )
+        padding: 10vw 8vw 0 8vw
+
     // transform: translateX(var(--scroll))
