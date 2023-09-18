@@ -54,8 +54,20 @@ let enntranceSection = [
     attributs: [["id", "ancrage_Screen_01"]],
     children: [hero_01],
   }),
-  Section_Horiz({}),
-  Section_Horiz(),
+  Section_Horiz({
+    titleOn: {
+      title: "Upgrade your skill",
+      subtitle:
+        "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+    },
+  }),
+  Section_Horiz({
+    titleOn: {
+      title: "Stay focused",
+      subtitle:
+        "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio.",
+    },
+  }),
 ];
 
 ///////////////

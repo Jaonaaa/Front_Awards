@@ -56,7 +56,7 @@ function TextScreen_01({ text }) {
 
 function setUpSwapText(textRow, textArray) {
   let count = 0;
-  if (textArray.length > 0)
+  if (textArray.length > 1)
     setInterval(() => {
       //
       textRow.style.transform = "translateY(-100%)";
