@@ -275,7 +275,7 @@ function TagsMenu(label, linkTo) {
   Tag.appendChild(link);
   return Tag;
 }
-function setUpRouterLink(event) {
+export function setUpRouterLink(event) {
   route(event);
   checkActiveTag();
 }

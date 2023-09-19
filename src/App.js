@@ -1,7 +1,9 @@
 import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
+import { Footer_01 } from "./components/Footer/Footer.js";
 import { Header } from "./components/Header/Header.js";
 import { Hero_01 } from "./components/Hero/Hero_01.js";
 import { Section_Horiz } from "./components/Section/Section.js";
+import { sectionsFooter } from "./data/Footer.js";
 import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
 // Here you will structure your elements
@@ -69,13 +71,21 @@ let enntranceSection = [
     },
   }),
 ];
+// Footer
+const footer = Footer_01({
+  logoPath: "./assets/svg/Tempest_logo.svg",
+  textSubtitle:
+    "Embark on a Journey of a Lifetime: Explore Diverse Destinations, Create Lasting Memories, and Let Your Wanderlust Take Flight with Us!",
+  sections: sectionsFooter,
+  copyrigthText: "Corp 2023 Tempest, All rights reserved",
+});
 
 ///////////////
 
 const routes = {};
 //
-routes[base_url + "/"] = [...enntranceSection, header];
-routes[base_url + "/about"] = [header];
+routes[base_url + "/"] = [...enntranceSection, header, footer];
+routes[base_url + "/about"] = [header, footer];
 routes[404] = [];
 
 function setUpAll() {
