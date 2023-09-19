@@ -27,7 +27,7 @@
   text-align: center;
   font-size: 3.3rem;
   margin-bottom: 1.5rem;
-  transition: font-size 0.2s ease-in-out;
+  transition: font-size 0.2s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 @media (max-width: 1012px) {
   .section_part .section_head .title {
@@ -49,6 +49,7 @@
   margin: 0 auto;
   text-align: center;
   font-size: 1.4rem;
+  transition: font-size 0.2s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 @media (max-width: 1012px) {
   .section_part .section_head .subtitle {
@@ -66,4 +67,8 @@
     font-size: 0.9rem;
     width: 96%;
   }
+}
+.section_part .section_head .hide {
+  opacity: 0;
+  transform: translateY(20%);
 }/*# sourceMappingURL=Section_Horiz.css.map */
