@@ -9,7 +9,7 @@ export function Footer_01(props) {
 
   initProps(Footer, props);
   Footer.setAttribute("singleton", true);
-  Footer.rootStyleName = "Footer";
+  Footer_01.rootStyleName = "Footer";
   Footer.classList.add("footer_container");
   getStyle(Footer_01);
 
