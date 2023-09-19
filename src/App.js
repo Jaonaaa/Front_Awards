@@ -85,7 +85,7 @@ const footer = Footer_01({
 const routes = {};
 //
 routes[base_url + "/"] = [...enntranceSection, header, footer];
-routes[base_url + "/about"] = [header, footer];
+routes[base_url + "/about"] = [header, Section_Horiz({}), , footer];
 routes[404] = [];
 
 function setUpAll() {
