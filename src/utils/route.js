@@ -28,7 +28,10 @@ function addTransition(text) {
 }
 
 function resetBodyToTop() {
-  window.scrollTo(0, 0);
+  wait(() => {
+    window.scrollTo(0, 0);
+  }, 500);
+
   if (!document.body.classList.contains("unmoved")) {
     document.body.classList.add("unmoved");
     wait(() => {

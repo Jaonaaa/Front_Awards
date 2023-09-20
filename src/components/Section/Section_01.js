@@ -3,18 +3,29 @@ import { initProps, props, getStyle, wait } from "../../utils/index.js";
 /**
  * @param {props} props
  */
-export function Section_Horiz(props) {
+export function Section_Center(props) {
   const section = document.createElement("div");
 
   if (props) handleSectionProps(section, props);
   initProps(section, props, true);
-  Section_Horiz.rootStyleName = "Section";
+  Section_Center.rootStyleName = "Section";
   section.classList.add("section_part");
-  getStyle(Section_Horiz);
+  getStyle(Section_Center);
 
-  // section.addEventListener("click", () => {
-  //   section.style.setProperty("--po", "blue");
-  // });
+  return section;
+}
+
+export function Section_Left(props) {
+  const section = document.createElement("div");
+
+  if (props) handleSectionProps(section, props);
+  initProps(section, props, true);
+  Section_Left.rootStyleName = "Section";
+  section.classList.add("section_left");
+  getStyle(Section_Left);
+  if (props.headeSpacement) {
+    section.classList.add("space_head");
+  }
 
   return section;
 }
@@ -27,6 +38,9 @@ function handleSectionProps(section, props) {
     });
     section.appendChild(head);
   }
+  if (props.headeSpacement) {
+    section.classList.add("space_head");
+  }
 }
 function section_head({ title, subtitle }) {
   const head = document.createElement("div");
@@ -34,7 +48,6 @@ function section_head({ title, subtitle }) {
 
   head.innerHTML = `
   <div class="title hide"> ${title} </div>
-
   <div class="subtitle hide"> ${subtitle} </div>
   `;
   setUpSection_head(head);

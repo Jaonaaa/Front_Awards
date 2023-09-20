@@ -22,6 +22,7 @@ $breakpoint-xl: 1500px
     background: white
     top: 0
     z-index: 3
+    box-shadow: rgb(210 205 205) 0rem 0rem 0.1rem 0.1rem
     height: 100vh
     display: flex
     overflow: hidden
@@ -62,9 +63,9 @@ $breakpoint-xl: 1500px
             &::before
                 content: ""
                 left: 50%
-                border-radius: 0.22rem
+                border-radius: 0.1rem
                 position: absolute
-                bottom: 0
+                bottom: -0.2rem
                 height: $bar-width
                 transform: translateX(-50%)
                 width: calc( 1% * min(var(--scroll-bars-animation),90) - 2% )

@@ -2,7 +2,10 @@ import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
 import { Footer_01 } from "./components/Footer/Footer.js";
 import { Header } from "./components/Header/Header.js";
 import { Hero_01 } from "./components/Hero/Hero_01.js";
-import { Section_Horiz } from "./components/Section/Section.js";
+import {
+  Section_Center,
+  Section_Left,
+} from "./components/Section/Section_01.js";
 import { Transition_01 } from "./components/Transition/Transition.js";
 import { sectionsFooter } from "./data/Footer.js";
 import { base_url } from "./utils/index.js";
@@ -47,28 +50,34 @@ let hero_01 = Hero_01({
 
 //Entrance
 let entranceScreen = Screen_01({
-  text: ["Holà guys!", "Playground", "Alefa #FTT", "Vary masaka"],
+  text: ["Storm", "Playground", "Dream"],
 });
 let enntranceSection = [
   entranceScreen,
-  Section_Horiz(),
-  Section_Horiz(),
-  Section_Horiz({
+  Section_Center(),
+  Section_Center(),
+  Section_Center({
     attributs: [["id", "ancrage_Screen_01"]],
     children: [hero_01],
   }),
-  Section_Horiz({
+  Section_Center({
     titleOn: {
       title: "Upgrade your skill",
       subtitle:
         "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
     },
   }),
-  Section_Horiz({
+  Section_Center({
     titleOn: {
       title: "Stay focused",
       subtitle:
         "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio.",
+    },
+  }),
+  Section_Left({
+    titleOn: {
+      title: "Let's create your brand kit",
+      subtitle: "We will need your logo and brand colors.",
     },
   }),
 ];
@@ -82,7 +91,7 @@ const footer = Footer_01({
 });
 
 ///////////////
-// transition
+// transition // add un handle Route
 const transition = {
   component: Transition_01({
     text_: "Tempest",
@@ -94,7 +103,17 @@ const transition = {
 const routes = {};
 //
 routes[base_url + "/"] = [...enntranceSection, header, footer];
-routes[base_url + "/about"] = [header, Section_Horiz(), footer];
+routes[base_url + "/about"] = [
+  header,
+  Section_Left({
+    headeSpacement: true,
+    titleOn: {
+      title: "Let's create your brand kit",
+      subtitle: "We will need your logo and brand colors.",
+    },
+  }),
+  footer,
+];
 routes[404] = [];
 
 function setUpAll() {

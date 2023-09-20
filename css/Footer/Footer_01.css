@@ -34,7 +34,7 @@
   }
 }
 .footer_container .footer_upper .about_site {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
