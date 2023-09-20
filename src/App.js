@@ -88,13 +88,13 @@ const transition = {
     text_: "Tempest",
     backgroundPath: "./assets/svg/Circular.svg",
   }),
-  duration: 1500,
+  duration: 1490,
 };
 
 const routes = {};
 //
 routes[base_url + "/"] = [...enntranceSection, header, footer];
-routes[base_url + "/about"] = [header, Section_Horiz({}), , footer];
+routes[base_url + "/about"] = [header, Section_Horiz(), footer];
 routes[404] = [];
 
 function setUpAll() {

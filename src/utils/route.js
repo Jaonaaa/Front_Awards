@@ -17,12 +17,14 @@ function addTransition(text) {
   transitionComponent.component.textComponent.innerHTML = text;
 
   document.body.appendChild(transitionComponent.component);
-  resetBodyToTop();
+  document.body.style.pointerEvents = "none";
   wait(() => {
+    document.body.removeAttribute("style");
     transitionComponent.component.parentNode.removeChild(
       transitionComponent.component
     );
   }, transitionComponent.duration);
+  resetBodyToTop();
 }
 
 function resetBodyToTop() {
