@@ -21,7 +21,6 @@
   text-align: center;
   font-size: 2.4rem;
   transition: font-size 0.2s ease-in-out;
-  animation: slide_up_logo 1s;
 }
 @media (max-width: 1012px) {
   .transition_container .text_container {
