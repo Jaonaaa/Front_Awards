@@ -3,6 +3,7 @@ import { Footer_01 } from "./components/Footer/Footer.js";
 import { Header } from "./components/Header/Header.js";
 import { Hero_01 } from "./components/Hero/Hero_01.js";
 import { Section_Horiz } from "./components/Section/Section.js";
+import { Transition_01 } from "./components/Transition/Transition.js";
 import { sectionsFooter } from "./data/Footer.js";
 import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
@@ -81,6 +82,14 @@ const footer = Footer_01({
 });
 
 ///////////////
+// transition
+const transition = {
+  component: Transition_01({
+    text_: "Tempest",
+    backgroundPath: "./assets/svg/Circular.svg",
+  }),
+  duration: 1500,
+};
 
 const routes = {};
 //
@@ -93,6 +102,6 @@ function setUpAll() {
 }
 
 window.addEventListener("load", () => {
-  handleRoutes(routes, setUpAll);
+  handleRoutes(routes, setUpAll, transition);
   window.scrollTo(0, 0);
 });

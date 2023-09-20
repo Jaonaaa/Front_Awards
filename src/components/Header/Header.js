@@ -8,7 +8,7 @@ import {
 } from "../../utils/index.js";
 import { ParamsBox } from "./Params.js";
 
-const timerHide = 1000;
+export const timerHide = 1000;
 /**
  * @param {props} props
  */
@@ -163,12 +163,19 @@ function LayersActive() {
   else return false;
 }
 
-function removeLayers() {
+export function removeLayers() {
   let layers = document.querySelector(".layers-container");
   if (layers != undefined) {
     let layerIn = document.querySelector(".right-layer");
+    console.log(layerIn);
     if (!layerIn.classList.contains("active"))
       layers.parentNode.removeChild(layers);
+  }
+}
+export function removeLayersForced() {
+  let layers = document.querySelector(".layers-container");
+  if (layers != undefined) {
+    layers.parentNode.removeChild(layers);
   }
 }
 
@@ -181,6 +188,12 @@ function switchNavigationParams() {
         nav.classList.toggle("hide-navigation");
       }, timerHide);
     else nav.classList.toggle("hide-navigation");
+  }
+}
+function switchNavigationParamsForced() {
+  let nav = document.querySelector(".navigation");
+  if (nav != undefined) {
+    nav.classList.toggle("hide-navigation");
   }
 }
 /**
@@ -232,6 +245,8 @@ function handleBtnEvent(btn) {
     btn.classList.remove("hide-btn-show-sidebar");
   }, timerHide);
 }
+
+export function swapIcon() {}
 
 // Navigation
 /**
@@ -290,6 +305,7 @@ function checkActiveTag() {
     }
   });
 }
+
 /**
  *
  * @param {props} props
@@ -311,4 +327,21 @@ function Logo(props, picture = "", linkTo = undefined) {
 
   logo.appendChild(img);
   return logo;
+}
+
+// for all header
+
+export function removeHeaderForced() {
+  let btn = document.getElementById("btn-show-sidebar");
+  let header = document.getElementById("header_proto_mid");
+  if (header) header.classList.toggle("upperIndexHeader");
+  wait(removeLayersForced, timerHide / 2);
+  wait(() => {
+    let icon_swap = btn.getAttribute("icon_swap");
+    let current_icon = btn.querySelector("img").getAttribute("src");
+    btn.querySelector("img").src = icon_swap;
+    btn.setAttribute("icon_swap", current_icon);
+    btn.classList.remove("hide-btn-show-sidebar");
+    switchNavigationParamsForced();
+  }, timerHide / 2);
 }

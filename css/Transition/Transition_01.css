@@ -1,0 +1,103 @@
+.transition_container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: -100%;
+  z-index: 10;
+  box-shadow: -0.2rem 0px 0.5rem 0.1rem rgba(10, 10, 10, 0.0588235294);
+  background: #000000;
+  animation: slide_left_01 1.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transition_container .text_container {
+  width: -moz-fit-content;
+  width: fit-content;
+  opacity: 1;
+  font-family: Sora_R;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2.4rem;
+  transition: font-size 0.2s ease-in-out;
+  animation: slide_up_logo 1s;
+}
+@media (max-width: 1012px) {
+  .transition_container .text_container {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .transition_container .text_container {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 576px) {
+  .transition_container .text_container {
+    font-size: 2rem;
+  }
+}
+.transition_container .background_container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  max-width: 25rem;
+  animation: rotate_bg 2.5s infinite linear;
+  transition: width 0.2s ease-in-out;
+}
+@media (max-width: 768px) {
+  .transition_container .background_container {
+    width: 70vw;
+  }
+}
+@media (max-width: 576px) {
+  .transition_container .background_container {
+    width: 80vw;
+  }
+}
+.transition_container .background_container img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes slide_up_logo {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide_left_01 {
+  0% {
+    left: 100%;
+  }
+  35% {
+    left: 0;
+  }
+  60% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+@keyframes rotate_bg {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+}/*# sourceMappingURL=Transition_01.css.map */
