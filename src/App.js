@@ -30,7 +30,7 @@ let entranceScreen = Screen_01({
   text: ["Storm", "Playground", "Dream"],
 });
 
-let enntranceSection = [
+let entranceSection = [
   entranceScreen,
   Section_Center(),
   Section_Center(),
@@ -60,8 +60,8 @@ const transition = {
 };
 
 const routes = {};
-////...enntranceSection
-routes[base_url + "/"] = [Section_Center({}), stayFocus, header, footer_C_01];
+////...entranceSection
+routes[base_url + "/"] = [...entranceSection, header, footer_C_01];
 routes[base_url + "/about"] = [header, brandKitSection, footer_C_01];
 routes[404] = [];
 
