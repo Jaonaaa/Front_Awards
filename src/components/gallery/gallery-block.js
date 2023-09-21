@@ -23,7 +23,7 @@ export function GalleryBlock(props) {
   element.style.width = props.width * props.n + "px";
 
   element.innerHTML = `
-    <link rel="stylesheet" href="./css/gallery-block.css" />
+    <link rel="stylesheet" href="./css/gallery/gallery-block.css" />
     <div class="gallery-card-desc">
       <p class="gallery-card-title">${props.title}</p>
       <p class="gallery-card-text">${props.text}</p>
@@ -33,5 +33,10 @@ export function GalleryBlock(props) {
     element.appendChild(GalleryCard(props));
   }
 
-  return element;
+  let container = document.createElement("container");
+  container.classList.add("gallery-container");
+
+  container.appendChild(element);
+
+  return container;
 }

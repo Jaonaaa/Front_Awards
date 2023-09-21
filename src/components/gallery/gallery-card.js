@@ -23,7 +23,7 @@ export function GalleryCard(props) {
   element.style.borderRadius = props.borderRadius + "px";
 
   element.innerHTML = `
-    <link rel="stylesheet" href="./css/gallery-card.css" />
+    <link rel="stylesheet" href="./css/gallery/gallery-card.css" />
   `;
 
   const slider = document.createElement("div");

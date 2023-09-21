@@ -1,3 +1,9 @@
+.gallery-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
 .gallery-block {
   position: relative;
   display: flex;

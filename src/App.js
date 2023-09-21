@@ -7,6 +7,7 @@ import {
   Section_Left,
 } from "./components/Section/Section_01.js";
 import { Transition_01 } from "./components/Transition/Transition.js";
+import { GalleryBlock } from "./components/gallery/gallery-block.js";
 import { brandKitSection, stayFocus } from "./data/Content.js";
 import { footer_C_01, sectionsFooter } from "./data/Footer.js";
 import { header } from "./data/Header.js";
@@ -49,6 +50,21 @@ let enntranceSection = [
   brandKitSection,
 ];
 
+const gallery = GalleryBlock({
+  n: 4,
+  images: [
+    "./assets/img/img1.png",
+    "./assets/img/img2.png",
+    "./assets/img/img3.png",
+    "./assets/img/img4.png",
+  ],
+  title: "Hello world",
+  text: "This is the most common sentence for beginners. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis doloremque minima dolore provident atque optio ullam explicabo accusamus.",
+  width: window.innerWidth / 6,
+  height: 450,
+  borderRadius: 0,
+});
+
 ///////////////
 // transition // add un handle Route
 const transition = {
@@ -62,7 +78,7 @@ const transition = {
 const routes = {};
 ////...enntranceSection
 routes[base_url + "/"] = [Section_Center({}), stayFocus, header, footer_C_01];
-routes[base_url + "/about"] = [header, brandKitSection, footer_C_01];
+routes[base_url + "/about"] = [header, brandKitSection, gallery, footer_C_01];
 routes[404] = [];
 
 function setUpAll() {
