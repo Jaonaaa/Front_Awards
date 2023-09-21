@@ -4,7 +4,7 @@ export const props = {
   attributs: [],
 };
 /// /Front_Awards
-export const base_url = "/Front_Awards";
+export const base_url = "";
 /**
  * @param {props} props
  * @param {HTMLElement} target
