@@ -128,6 +128,11 @@
     margin-bottom: 0.85rem;
   }
 }
+@media (max-width: 576px) {
+  .footer_container .footer_upper .navigation .block_container a {
+    font-size: 0.89rem;
+  }
+}
 .footer_container .footer_upper .navigation .block_container a:hover {
   color: var(--active-link-color);
 }

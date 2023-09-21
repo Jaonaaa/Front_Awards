@@ -92,6 +92,7 @@ export function scrollToSection(section) {
 }
 
 export function setUpScreen_01() {
+  if (document.getElementById("screen") == undefined) return null;
   let sec2 = document.querySelectorAll(".section_part")[1];
   if (sec2 == undefined) return null;
   sec2.style.height = "45vh";

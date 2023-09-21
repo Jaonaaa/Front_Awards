@@ -4,7 +4,7 @@
   height: fit-content;
   --scroll: 0%;
   position: relative;
-  background: rgba(255, 255, 255, 0.5098039216);
+  background: #ffffff;
   padding: 2vw 8vw 3vw 8vw;
 }
 @media (max-width: 1500px) {

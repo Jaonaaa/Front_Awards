@@ -63,7 +63,6 @@ function setUpSection_head(container) {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log;
           animation_head(entry.target);
           observer.unobserve(entry.target);
         }
