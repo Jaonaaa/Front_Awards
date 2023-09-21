@@ -48,6 +48,7 @@
 @media (max-width: 576px) {
   .section_part .section_head .title {
     font-size: 2.2rem;
+    margin-bottom: 0.5rem;
   }
 }
 .section_part .section_head .subtitle {

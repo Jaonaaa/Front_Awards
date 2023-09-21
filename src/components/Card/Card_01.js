@@ -1,4 +1,4 @@
-import { initProps, props, getStyle, wait } from "../../utils/index.js";
+import { initProps, props, getStyle } from "../../utils/index.js";
 
 /**
  * @param {props} props
@@ -6,66 +6,41 @@ import { initProps, props, getStyle, wait } from "../../utils/index.js";
 export function Card_01(props) {
   const card = document.createElement("div");
 
-  initProps(card, props, true);
   Card_01.rootStyleName = "Card";
   card.classList.add("card_container");
   getStyle(Card_01);
 
+  card.appendChild(
+    Card_content({ title: props.title, content: props.content })
+  );
+  if (props.picAssociated)
+    card.appendChild(pictureCorner({ imgPath: props.picAssociated }));
+  initProps(card, props, true);
+
   return card;
 }
 
-function handleSectionProps(section, props) {
-  if (props.titleOn) {
-    let head = section_head({
-      title: props.titleOn.title,
-      subtitle: props.titleOn.subtitle,
-    });
-    section.appendChild(head);
-  }
-}
-function section_head({ title, subtitle }) {
-  const head = document.createElement("div");
-  head.classList.add("section_head");
+function Card_content({ title, content }) {
+  let container = document.createElement("div");
+  container.classList.add("card_content_container");
 
-  head.innerHTML = `
-  <div class="title "> ${title} </div>
-  <div class="subtitle "> ${subtitle} </div>
-  `;
-  setUpSection_head(head);
-  return head;
+  let titleContainer = document.createElement("div");
+  titleContainer.classList.add("title");
+  titleContainer.innerHTML = title;
+
+  let contentContainer = document.createElement("div");
+  contentContainer.classList.add("card_content");
+  contentContainer.innerHTML = content;
+
+  container.appendChild(titleContainer);
+  container.appendChild(contentContainer);
+
+  return container;
 }
 
-/**
- *
- * @param {HTMLElement} container
- */
-function setUpSection_head(container) {
-  let observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log;
-          animation_head(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.9,
-    }
-  );
-  observer.observe(container);
-}
-/**
- *
- * @param {HTMLElement} head
- */
-function animation_head(head) {
-  let timer = 100;
-  Array.from(head.children).forEach((child) => {
-    wait(() => {
-      child.classList.remove("hide");
-    }, timer);
-    timer += 350;
-  });
+function pictureCorner({ imgPath }) {
+  let img = document.createElement("img");
+  img.src = imgPath;
+  img.classList.add("img_corner");
+  return img;
 }

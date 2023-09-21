@@ -1,0 +1,8 @@
+.row_container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 2vw 0;
+  position: relative;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=Row_01.css.map */

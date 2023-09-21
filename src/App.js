@@ -1,12 +1,16 @@
+import { Button_01 } from "./components/Button/Button_01.js";
+import { Card_01 } from "./components/Card/Card_01.js";
 import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
 import { Footer_01 } from "./components/Footer/Footer.js";
 import { Header } from "./components/Header/Header.js";
 import { Hero_01 } from "./components/Hero/Hero_01.js";
+import { Row_01 } from "./components/Row/Row_01.js";
 import {
   Section_Center,
   Section_Left,
 } from "./components/Section/Section_01.js";
 import { Transition_01 } from "./components/Transition/Transition.js";
+import { cards_1 } from "./data/Cards.js";
 import { sectionsFooter } from "./data/Footer.js";
 import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
@@ -48,6 +52,16 @@ let hero_01 = Hero_01({
   buttonText: "Start free trial",
 });
 
+///
+let brandKitSection = Section_Left({
+  headeSpacement: true,
+  titleOn: {
+    title: "Let's create your brand kit",
+    subtitle: "We will need your logo and brand colors.",
+  },
+  children: [Row_01({ children: [...cards_1] })],
+});
+
 //Entrance
 let entranceScreen = Screen_01({
   text: ["Storm", "Playground", "Dream"],
@@ -74,12 +88,7 @@ let enntranceSection = [
         "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio.",
     },
   }),
-  Section_Left({
-    titleOn: {
-      title: "Let's create your brand kit",
-      subtitle: "We will need your logo and brand colors.",
-    },
-  }),
+  brandKitSection,
 ];
 // Footer
 const footer = Footer_01({
@@ -103,17 +112,7 @@ const transition = {
 const routes = {};
 //
 routes[base_url + "/"] = [...enntranceSection, header, footer];
-routes[base_url + "/about"] = [
-  header,
-  Section_Left({
-    headeSpacement: true,
-    titleOn: {
-      title: "Let's create your brand kit",
-      subtitle: "We will need your logo and brand colors.",
-    },
-  }),
-  footer,
-];
+routes[base_url + "/about"] = [header, brandKitSection, footer];
 routes[404] = [];
 
 function setUpAll() {

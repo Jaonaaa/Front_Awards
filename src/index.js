@@ -40,6 +40,5 @@ function isMyChild(child, parent) {
   for (let i = 0; i < parent.children.length; i++) {
     if (parent.children[i] == child) is = true;
   }
-
   return is;
 }

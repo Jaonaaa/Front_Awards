@@ -66,6 +66,7 @@
 @media (max-width: 768px) {
   .section_left .section_head .subtitle {
     font-size: 0.95rem;
+    width: 80%;
   }
 }
 @media (max-width: 576px) {

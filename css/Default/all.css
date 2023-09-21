@@ -16,8 +16,8 @@
 }
 :root {
   --text-basic-color: rgb(38, 38, 38);
-  --primary-color: #129CAD;
-  --primary-color-hovered: #098292;
+  --primary-color: #08867e;
+  --primary-color-hovered: #04635d;
   --secondary-color: rgb(148, 146, 146);
   --inactive-link-color: rgba(97, 97, 97, 0.803);
   --active-link-color: rgb(0, 213, 145);

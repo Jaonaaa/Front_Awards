@@ -1,0 +1,17 @@
+
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+
+.row_container
+    display: flex
+    width: 100%
+    align-items: center
+    padding: 2vw 0
+    position: relative
+    flex-wrap: wrap

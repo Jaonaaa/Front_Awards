@@ -73,8 +73,7 @@ function setUpSwapText(textRow, textArray) {
       if (textArray.length == count) count = 0;
     }, 4500);
 }
-
-export function ButtonScreen_01({ pathPic }) {
+function ButtonScreen_01({ pathPic }) {
   const button = document.createElement("div");
   button.classList.add("button_screen");
   button.innerHTML = `

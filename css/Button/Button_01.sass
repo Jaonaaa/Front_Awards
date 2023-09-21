@@ -1,0 +1,58 @@
+
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+@mixin flex_center_all()
+    display: flex
+    justify-content: center
+    align-items: center
+
+.button_container
+    background: red
+    width: fit-content
+    padding: 0.7rem 1rem
+    border-radius: 0.3rem
+    cursor: pointer
+    background: var(--primary-color)
+    color: #ffff
+    display: flex
+    align-items: center
+    transition: all .2s ease-in-out
+    @include media($breakpoint:$breakpoint-lg )
+        padding: 0.67rem 0.95rem
+    @include media($breakpoint:$breakpoint-md )
+        padding: 0.65rem 0.9rem
+    @include media($breakpoint:$breakpoint-sm )
+        padding: 0.62rem 0.87rem
+
+    &:hover
+        background: var(--primary-color-hovered)
+        img
+            transform: translateX(15%)
+    .content_container
+        display: flex
+        align-items: center
+        span
+            font-size: 1rem
+            margin-right: 0.5rem
+            transition: all .2s ease-in-out
+            @include media($breakpoint:$breakpoint-lg )
+                font-size: 0.93rem
+            @include media($breakpoint:$breakpoint-md )
+                font-size: 0.9rem
+            @include media($breakpoint:$breakpoint-sm )
+                font-size: 0.85rem
+        img
+            transition: all 0.2s ease-in-out
+            width: 1.3rem
+            @include media($breakpoint:$breakpoint-lg )
+                width: 1.22rem
+            @include media($breakpoint:$breakpoint-md )
+                width: 1.1rem
+            @include media($breakpoint:$breakpoint-sm )
+                width: 1rem
