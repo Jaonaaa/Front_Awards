@@ -11,15 +11,16 @@ export function Hero_01(props) {
   Hero_01.rootStyleName = "Hero";
   hero.classList.add("hero_container");
   getStyle(Hero_01);
-  window.addEventListener("scroll", () => {
-    // console.log(scrolledInMe(hero));
-  });
+  // window.addEventListener("scroll", () => {
+  //   // console.log(scrolledInMe(hero));
+  // });
 
   hero.appendChild(
     Hero_01_LeftSide({
       text: props.title,
       subtitle: props.description,
       buttonText: props.buttonText,
+      callback: props.onClick,
     })
   );
   hero.appendChild(Hero_01_RightSide({ PicPath: props.picPath }));
@@ -27,7 +28,7 @@ export function Hero_01(props) {
   return hero;
 }
 
-function Hero_01_LeftSide({ text, subtitle, buttonText }) {
+function Hero_01_LeftSide({ text, subtitle, buttonText, callback }) {
   const container = document.createElement("div");
   container.classList.add("hero_left_container");
 
@@ -43,7 +44,9 @@ function Hero_01_LeftSide({ text, subtitle, buttonText }) {
 
   container.appendChild(titleContainer);
   container.appendChild(subtitleContainer);
-  container.appendChild(Hero_01_Button({ text: buttonText }));
+  container.appendChild(
+    Hero_01_Button({ text: buttonText, callback: callback })
+  );
 
   return container;
 }
@@ -97,12 +100,13 @@ function Hero_01_RightSide({ PicPath }) {
   return imgContainer;
 }
 
-function Hero_01_Button({ text }) {
+function Hero_01_Button({ text, callback }) {
   const container = document.createElement("div");
   container.classList.add("container_button");
   const button = document.createElement("button");
   button.innerHTML = text;
 
+  button.addEventListener("click", callback);
   container.appendChild(button);
   hide(container);
   return container;

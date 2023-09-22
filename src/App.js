@@ -6,6 +6,7 @@ import { Transition_01 } from "./components/Transition/Transition.js";
 import { brandKitSection, stayFocus } from "./data/Content.js";
 import { footer_C_01 } from "./data/Footer.js";
 import { header } from "./data/Header.js";
+import { createHider } from "./utils/Hider.js";
 import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
 // Here you will structure your elements
@@ -17,6 +18,9 @@ let hero_01 = Hero_01({
     "Evolve at the speed and scale of your business with the leader in low-code automation",
   picPath: "./assets/svg/squares_falling.svg",
   buttonText: "Start free trial",
+  onClick: () => {
+    createHider({});
+  },
 });
 
 ///
