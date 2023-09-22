@@ -63,27 +63,27 @@ export const stayFocus = Section_Center({
       class: ["centered"],
       children: [
         Card_02({
-          title: "Fire Stone",
+          title: "Empower your work",
           content:
             "We trust each other to get the job done knowing that we are all working towards the same goal.",
           icon: "./assets/svg/fire_blue.svg",
         }),
         Card_02({
-          title: "Centralize your data lroem popo",
+          title: "Faster production",
           content:
             "We trust each other to get the job done knowing that we are all working re all working done knowing that we are all working done knowing that we are all working towards the same goal.",
-          icon: "./assets/svg/fire_blue.svg",
+          icon: "./assets/svg/faster_time.svg",
         }),
         Card_02({
-          title: "Peter Stone",
+          title: "Safe deployement",
           content:
             "We trust each other to get the job done knowing that we are all working towards the same goal.",
-          icon: "./assets/svg/fire_blue.svg",
+          icon: "./assets/svg/leaf.svg",
         }),
         Card_02({
-          title: "Eny lessy a",
+          title: "Save money",
           content: "We trust each other to get the job done knowing.",
-          icon: "./assets/svg/fire_blue.svg",
+          icon: "./assets/svg/save_money.svg",
         }),
       ],
     }),

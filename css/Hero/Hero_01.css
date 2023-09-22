@@ -119,6 +119,7 @@
 @media (max-width: 768px) {
   .hero_container .hero_right_container {
     width: 0%;
+    display: none;
   }
 }
 .hero_container .hero_right_container img {

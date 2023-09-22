@@ -1,14 +1,9 @@
 import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
-import { Footer_01 } from "./components/Footer/Footer.js";
 import { Hero_01 } from "./components/Hero/Hero_01.js";
-import { Row_01 } from "./components/Row/Row_01.js";
-import {
-  Section_Center,
-  Section_Left,
-} from "./components/Section/Section_01.js";
+import { Section_Center } from "./components/Section/Section_01.js";
 import { Transition_01 } from "./components/Transition/Transition.js";
 import { brandKitSection, stayFocus } from "./data/Content.js";
-import { footer_C_01, sectionsFooter } from "./data/Footer.js";
+import { footer_C_01 } from "./data/Footer.js";
 import { header } from "./data/Header.js";
 import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
@@ -19,7 +14,7 @@ let hero_01 = Hero_01({
   title: "Integrate your stack, automate your work",
   description:
     "Evolve at the speed and scale of your business with the leader in low-code automation",
-  picPath: "./assets/img/Hero_pic.png",
+  picPath: "./assets/svg/squares_falling.svg",
   buttonText: "Start free trial",
 });
 
