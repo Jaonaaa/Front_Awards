@@ -111,6 +111,7 @@
 @media (max-width: 576px) {
   .card_container_02 .card_content_container .card_content {
     font-size: 0.8rem;
+    -webkit-line-clamp: 3;
   }
 }
 

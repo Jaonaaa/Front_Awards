@@ -21,7 +21,6 @@ function setUpChildren(row) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           animateChild(entry.target);
-          console.log("Animaated");
           observer.unobserve(entry.target);
         }
       });
@@ -47,7 +46,4 @@ function animateChild(parent) {
     }, timer);
     timer += 150;
   });
-  wait(() => {
-    timer;
-  }, timer);
 }

@@ -11,6 +11,10 @@ export function Section_Center(props) {
   Section_Center.rootStyleName = "Section";
   section.classList.add("section_part");
   getStyle(Section_Center);
+  if (props)
+    if (props.headSpacement) {
+      section.classList.add("space_head");
+    }
 
   return section;
 }
@@ -23,9 +27,10 @@ export function Section_Left(props) {
   Section_Left.rootStyleName = "Section";
   section.classList.add("section_left");
   getStyle(Section_Left);
-  if (props.headeSpacement) {
-    section.classList.add("space_head");
-  }
+  if (props)
+    if (props.headSpacement) {
+      section.classList.add("space_head");
+    }
 
   return section;
 }

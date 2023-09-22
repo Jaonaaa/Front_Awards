@@ -1,5 +1,6 @@
 import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
 import { Hero_01 } from "./components/Hero/Hero_01.js";
+import { ContentAndPicture } from "./components/RowContent/ContentAndPicture.js";
 import { Section_Center } from "./components/Section/Section_01.js";
 import { Transition_01 } from "./components/Transition/Transition.js";
 import { brandKitSection, stayFocus } from "./data/Content.js";
@@ -25,6 +26,29 @@ let entranceScreen = Screen_01({
   text: ["Storm", "Playground", "Dream"],
 });
 
+let upgrade = Section_Center({
+  titleOn: {
+    title: "Upgrade your skill",
+    subtitle:
+      "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+  },
+  children: [
+    ContentAndPicture({
+      title: "Are you busy ?",
+      content:
+        "You should simply showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+      picPath: "./assets/svg/umbrella_walking.svg",
+    }),
+    ContentAndPicture({
+      title: "Fiability is our priority",
+      content:
+        "You should simply showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+      picPath: "./assets/svg/fiability.svg",
+      reverseOrder: true,
+    }),
+  ],
+});
+
 let entranceSection = [
   entranceScreen,
   Section_Center(),
@@ -33,13 +57,7 @@ let entranceSection = [
     attributs: [["id", "ancrage_Screen_01"]],
     children: [hero_01],
   }),
-  Section_Center({
-    titleOn: {
-      title: "Upgrade your skill",
-      subtitle:
-        "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
-    },
-  }),
+  upgrade,
   stayFocus,
   brandKitSection,
 ];
