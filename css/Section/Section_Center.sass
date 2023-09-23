@@ -86,14 +86,14 @@ $colored-section: #81a098
         position: relative
         display: block
         width: calc(100% + 1.3px)
-        height: calc(min(-10% - 1vw))//9rem
+        height: 9rem
         transform: rotateY(180deg)
         @include media($breakpoint: $breakpoint-lg)
-            height: 9rem
+            height: 7rem
         @include media($breakpoint: $breakpoint-md)
-            height: 7.5rem
+            height: 5.5rem
         @include media($breakpoint: $breakpoint-sm)
-            height: 5rem
+            height: 4rem
     .shape-fill
         fill: $colored-section
 
@@ -114,6 +114,7 @@ $colored-section: #81a098
             height: 120px
         @include media($breakpoint: $breakpoint-md)
             height: 100px
-
+        @include media($breakpoint: $breakpoint-sm)
+            height: 5rem
     .shape-fill
         fill: $colored-section

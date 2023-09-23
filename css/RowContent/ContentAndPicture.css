@@ -38,6 +38,7 @@
 @media (max-width: 768px) {
   .content_pic_container .content_text .title {
     font-size: 2rem;
+    text-align: center;
   }
 }
 @media (max-width: 576px) {
@@ -51,7 +52,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
   overflow: hidden;
-  opacity: 0.8;
+  opacity: 0.9;
   font-size: 1rem;
   text-overflow: ellipsis;
   transition: font-size 0.2s ease-in-out;
@@ -64,6 +65,7 @@
 @media (max-width: 768px) {
   .content_pic_container .content_text .content {
     width: 100%;
+    text-align: center;
   }
 }
 @media (max-width: 576px) {
@@ -113,4 +115,13 @@
 
 .hide {
   transform: scale(0) translateX(-50%);
+}
+
+.section_dark .content_pic_container .content_text .title {
+  color: #28656c;
+}
+@media (max-width: 768px) {
+  .section_dark .content_pic_container .content_text .title {
+    font-weight: bolder;
+  }
 }/*# sourceMappingURL=ContentAndPicture.css.map */
