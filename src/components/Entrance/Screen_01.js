@@ -26,6 +26,9 @@ export function Screen_01(props) {
 
   screen.appendChild(img_left);
   screen.appendChild(img_right);
+  if (props.background) {
+    screen.style.backgroundImage = `url(${props.background})`;
+  }
 
   screen.appendChild(
     ButtonScreen_01({ pathPic: "./assets/img/arrow_down.png" })

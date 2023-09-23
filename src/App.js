@@ -23,6 +23,7 @@ import { handleRoutes } from "./utils/route.js";
 
 //Entrance
 let entranceScreen = Screen_01({
+  background: base_url + "assets/img/butterfly.png",
   text: ["Frontend <br> Awards", "Playground", "Have Fun!"],
 });
 
