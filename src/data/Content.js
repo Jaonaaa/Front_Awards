@@ -19,7 +19,18 @@ export const hero = Hero_01({
   picPath: "./assets/svg/squares_falling.svg",
   buttonText: "Start free trial",
   onClick: () => {
-    createHider({});
+    createHider({
+      type: "full",
+      children: [
+        Section_Left({
+          titleOn: {
+            title: "Let's create your brand kit",
+            subtitle: "We will need your logo and brand colors.",
+          },
+          children: [Row_01({ children: [...cardsBrandKit] })],
+        }),
+      ],
+    });
   },
 });
 

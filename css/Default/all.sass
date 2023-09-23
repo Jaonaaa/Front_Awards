@@ -1,3 +1,12 @@
+
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
 @font-face
     font-family: Poppins_L
     src: url(../../assets/fonts/Poppins-Light.ttf)
@@ -71,6 +80,7 @@ button
     &:hover
         background: var(--primary-color-hovered)
 
+    // hider component
 #hider
     position: fixed
     background-color: rgba(0, 0, 0, 0.20)
@@ -81,3 +91,64 @@ button
     width: 100vw
     height: 100vh
     backdrop-filter: blur(1px)
+    .default_hider_container
+        position: absolute
+        left: 50%
+        z-index: 6
+        top: 45%
+        transform: translate(-50%,-50%)
+        background: transparent
+        max-height: 80vh
+        overflow: scroll
+        animation: show_default 0.4s cubic-bezier(.14,.49,.25,1)
+
+    .full_hider_container
+        position: absolute
+        left: 50%
+        transform: translate(-50%,0%)
+        border-radius: 4rem 0 0 0
+        bottom: 0%
+        background: #ffffff
+        z-index: 6
+        width: 95vw
+        height: 94vh
+        max-height: 94vh
+        overflow: scroll
+        padding: 3rem 2rem
+        animation: show_up_hider_full 0.5s cubic-bezier(.14,.49,.25,1.01)
+        @include media($breakpoint: $breakpoint-sm)
+            width: 100vw
+
+    .small_hider_container
+        position: absolute
+        left: 50%
+        top: 45%
+        z-index: 6
+        transform: translate(-50%,-50%)
+        border-radius: 2rem 2rem 0 0
+        background: #ffffff
+        border-radius: 0.5rem
+        max-height: 80vh
+        overflow: scroll
+        padding: 1rem
+        animation: show_up_pop_up 0.3s cubic-bezier(.14,.49,.25,1.21)
+
+@keyframes show_default
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+@keyframes show_up_hider_full
+    0%
+        transform: translate(-50%,100%)
+    100%
+        transform: translate(-50%,0%)
+
+@keyframes show_up_pop_up
+    0%
+        transform: translate(5%,50vh) scale(0)
+        opacity: 0
+    20%
+        opacity: 1
+    100%
+        transform: translate(-50%,-50%) scale(1)
