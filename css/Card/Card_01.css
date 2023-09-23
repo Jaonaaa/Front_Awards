@@ -14,7 +14,7 @@
   box-shadow: 0 0 0.1rem 0.1rem rgba(49, 49, 49, 0);
 }
 .card_container:hover {
-  transform: scale(1.02) translateY(-1rem);
+  transform: scale(1.02) translateY(-0.5rem);
   box-shadow: 0 0 0.5rem 0.1rem rgba(188, 191, 192, 0.6156862745);
 }
 @media (max-width: 1012px) {

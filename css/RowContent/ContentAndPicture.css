@@ -51,6 +51,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
   overflow: hidden;
+  opacity: 0.8;
   font-size: 1rem;
   text-overflow: ellipsis;
   transition: font-size 0.2s ease-in-out;

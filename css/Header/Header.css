@@ -234,7 +234,7 @@
   text-align: center;
   margin-bottom: 1.2rem;
   text-transform: uppercase;
-  transition: transform 0.5s cubic-bezier(0.04, 0.32, 0.61, 1.5), color 0.2s ease-in-out;
+  transition: transform 0.48s cubic-bezier(0.04, 0.32, 0.61, 1.5), color 0.2s ease-in-out;
 }
 @media (max-width: 1012px) {
   .list-navigation .row-list-nav {

@@ -3,7 +3,6 @@
   height: -moz-fit-content;
   height: fit-content;
   --scroll: 0%;
-  position: relative;
   background: #ffffff;
   padding: 2vw 8vw 5vw 8vw;
 }
@@ -87,4 +86,92 @@
 
 .space_head {
   margin-top: 7rem;
+}
+
+.section_dark {
+  background-color: #81a098;
+  position: relative;
+  color: #ffffff !important;
+  padding: 6vw 8vw 5vw 8vw;
+}
+@media (max-width: 1500px) {
+  .section_dark {
+    padding: 8vw 8vw 5vw 8vw;
+  }
+}
+@media (max-width: 1012px) {
+  .section_dark {
+    padding: 10vw 8vw 5vw 8vw;
+  }
+}
+@media (max-width: 576px) {
+  .section_dark {
+    padding: 18vw 6vw 20vw 6vw;
+  }
+}
+
+.wave_top {
+  position: relative;
+  width: 120%;
+  left: 0;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  margin-bottom: -0.2rem;
+}
+.wave_top svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: min(-10% - 1vw);
+  transform: rotateY(180deg);
+}
+@media (max-width: 1012px) {
+  .wave_top svg {
+    height: 9rem;
+  }
+}
+@media (max-width: 768px) {
+  .wave_top svg {
+    height: 7.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .wave_top svg {
+    height: 5rem;
+  }
+}
+.wave_top .shape-fill {
+  fill: #81a098;
+}
+
+.wave_bottom {
+  position: relative;
+  left: 0;
+  width: 100%;
+  margin-bottom: 2rem;
+  line-height: 0;
+  margin-top: -0.2rem;
+}
+.wave_bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: calc(7vw + 1.3px);
+  transform: rotateY(180deg);
+}
+@media (max-width: 1012px) {
+  .wave_bottom svg {
+    height: 120px;
+  }
+}
+@media (max-width: 768px) {
+  .wave_bottom svg {
+    height: 100px;
+  }
+}
+.wave_bottom .shape-fill {
+  fill: #81a098;
 }/*# sourceMappingURL=Section_Center.css.map */

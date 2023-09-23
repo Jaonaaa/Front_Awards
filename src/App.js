@@ -27,10 +27,12 @@ let hero_01 = Hero_01({
 
 //Entrance
 let entranceScreen = Screen_01({
-  text: ["Storm", "Playground", "Dream"],
+  text: ["Frontend <br> Awards", "Playground", "Have Fun!"],
 });
 
 let upgrade = Section_Center({
+  class: ["section_dark"],
+  waveOn: true,
   titleOn: {
     title: "Upgrade your skill",
     subtitle:

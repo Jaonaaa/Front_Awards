@@ -3,6 +3,8 @@ $breakpoint-md: 768px
 $breakpoint-lg: 1012px
 $breakpoint-xl: 1500px
 
+$colored-section: #81a098
+
 @mixin media($breakpoint)
     @media (max-width: $breakpoint)
         @content
@@ -10,7 +12,7 @@ $breakpoint-xl: 1500px
     min-height: 100vh
     height: fit-content
     --scroll: 0%
-    position: relative
+    // position: relative
     background: #ffffff
     padding: 2vw 8vw 5vw 8vw
     @include media($breakpoint:$breakpoint-xl )
@@ -59,3 +61,59 @@ $breakpoint-xl: 1500px
             transform: translateY(20%)
 .space_head
     margin-top: 7rem
+.section_dark
+    background-color: $colored-section
+    position: relative
+    color: #ffffff !important
+    padding: 6vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-xl )
+        padding: 8vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-lg )
+        padding: 10vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-sm )
+        padding: 18vw 6vw 20vw 6vw
+    ////
+.wave_top
+    position: relative
+    width: 120%
+    left: 0
+    height: fit-content
+    overflow: hidden
+    line-height: 0
+    transform: rotate(180deg)
+    margin-bottom: -0.2rem
+    svg
+        position: relative
+        display: block
+        width: calc(100% + 1.3px)
+        height: calc(min(-10% - 1vw))//9rem
+        transform: rotateY(180deg)
+        @include media($breakpoint: $breakpoint-lg)
+            height: 9rem
+        @include media($breakpoint: $breakpoint-md)
+            height: 7.5rem
+        @include media($breakpoint: $breakpoint-sm)
+            height: 5rem
+    .shape-fill
+        fill: $colored-section
+
+.wave_bottom
+    position: relative
+    left: 0
+    width: 100%
+    margin-bottom: 2rem
+    line-height: 0
+    margin-top: -0.2rem
+    svg
+        position: relative
+        display: block
+        width: calc(100% + 1.3px)
+        height: calc(7vw + 1.3px)
+        transform: rotateY(180deg)
+        @include media($breakpoint: $breakpoint-lg)
+            height: 120px
+        @include media($breakpoint: $breakpoint-md)
+            height: 100px
+
+    .shape-fill
+        fill: $colored-section
