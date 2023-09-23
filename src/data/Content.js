@@ -1,11 +1,27 @@
 import { Button_01 } from "../components/Button/Button_01.js";
 import { Card_01 } from "../components/Card/Card_01.js";
 import { Card_02 } from "../components/Card/Card_02.js";
+import { Hero_01 } from "../components/Hero/Hero_01.js";
 import { Row_01 } from "../components/Row/Row_01.js";
+import { ContentAndPicture } from "../components/RowContent/ContentAndPicture.js";
 import {
   Section_Center,
   Section_Left,
 } from "../components/Section/Section_01.js";
+import { createHider } from "../utils/Hider.js";
+
+// Hero
+
+export const hero = Hero_01({
+  title: "Integrate your stack, automate your work",
+  description:
+    "Evolve at the speed and scale of your business with the leader in low-code automation",
+  picPath: "./assets/svg/squares_falling.svg",
+  buttonText: "Start free trial",
+  onClick: () => {
+    createHider({});
+  },
+});
 
 // Brand Kit
 export const cardsBrandKit = [
@@ -88,4 +104,42 @@ export const stayFocus = Section_Center({
       ],
     }),
   ],
+});
+
+// Upgrade
+export const upgrade = Section_Center({
+  englobed: {
+    type: "wave",
+  },
+  titleOn: {
+    title: "Upgrade your skill",
+    subtitle:
+      "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+  },
+  children: [
+    ContentAndPicture({
+      title: "Are you busy ?",
+      content:
+        "You should simply showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+      picPath: "./assets/svg/umbrella_walking.svg",
+    }),
+    ContentAndPicture({
+      title: "Fiability is our priority",
+      content:
+        "You should simply showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+      picPath: "./assets/svg/fiability.svg",
+      reverseOrder: true,
+    }),
+  ],
+});
+
+// Blog
+export const blogSection = Section_Center({
+  headeSpacement: true,
+  titleOn: {
+    title: "Our Blogs",
+    subtitle:
+      "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+  },
+  children: [],
 });

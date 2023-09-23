@@ -19,6 +19,10 @@ export const header = Header({
       linkTo: base_url + "/about",
       label: "Our works",
     },
+    {
+      linkTo: base_url + "/blog",
+      label: "Blog",
+    },
   ],
   paramsContent: paramsContent,
   btnSideBarOn: {

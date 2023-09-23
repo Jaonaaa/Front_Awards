@@ -20,11 +20,11 @@ export const sectionsFooter = [
     ],
   },
   {
-    title: "Help",
+    title: "Community",
     data: [
       {
-        label: "Our email",
-        linkTo: base_url + "/email",
+        label: "Blog",
+        linkTo: base_url + "/blog",
       },
       {
         label: "Service Client",

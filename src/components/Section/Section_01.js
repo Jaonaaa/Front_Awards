@@ -1,4 +1,10 @@
-import { initProps, props, getStyle, wait } from "../../utils/index.js";
+import {
+  initProps,
+  props,
+  getStyle,
+  wait,
+  base_url,
+} from "../../utils/index.js";
 
 /**
  * @param {props} props
@@ -15,19 +21,28 @@ export function Section_Center(props) {
     if (props.headSpacement) {
       section.classList.add("space_head");
     }
-    if (props.waveOn) {
-      let bigSection = document.createElement("div");
-      bigSection.classList.add("section_container");
-
-      let [wave_top, wave_bottom] = addWave();
-      bigSection.appendChild(wave_top);
-      bigSection.appendChild(section);
-      bigSection.appendChild(wave_bottom);
-      return bigSection;
+    if (props.englobed) {
+      return handleEnglobed(section, props);
     }
   }
 
   return section;
+}
+function handleEnglobed(section, props) {
+  let bigSection = document.createElement("div");
+  bigSection.classList.add("section_container");
+
+  let blank = document.createElement("div");
+  let [top, bottom] = [blank, blank];
+  if (props.englobed.type === "wave") [top, bottom] = addWave();
+  if (props.englobed.type === "tri") [top, bottom] = addTri();
+  if (props.englobed.type === "tilt") [top, bottom] = addTilt();
+  if (props.englobed.type === "book") [top, bottom] = addBook();
+  bigSection.appendChild(top);
+  bigSection.appendChild(section);
+  bigSection.appendChild(bottom);
+  section.classList.add("section_dark");
+  return bigSection;
 }
 
 export function Section_Left(props) {
@@ -69,7 +84,64 @@ function addWave() {
 `;
   return [top, bottom];
 }
+/**
+ *
+ * @param {HTMLElement} section
+ */
+function addTri() {
+  let top = document.createElement("div");
+  top.classList.add("tri_top");
+  top.innerHTML = ` <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
+</svg>
+`;
+  let bottom = document.createElement("div");
+  bottom.classList.add("tri_bottom");
+  bottom.innerHTML = ` <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
+</svg>
+`;
+  return [top, bottom];
+}
 
+/**
+ *
+ * @param {HTMLElement} section
+ */
+function addTilt() {
+  let top = document.createElement("div");
+  top.classList.add("tilt_top");
+  top.innerHTML = `  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+</svg>
+`;
+  let bottom = document.createElement("div");
+  bottom.classList.add("tilt_bottom");
+  bottom.innerHTML = ` <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+</svg>
+`;
+  return [top, bottom];
+}
+/**
+ *
+ * @param {HTMLElement} section
+ */
+function addBook() {
+  let top = document.createElement("div");
+  top.classList.add("book_top");
+  top.innerHTML = `  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path>
+</svg>
+`;
+  let bottom = document.createElement("div");
+  bottom.classList.add("book_bottom");
+  bottom.innerHTML = `  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path>
+</svg>
+`;
+  return [top, bottom];
+}
 function handleSectionProps(section, props) {
   if (props.titleOn) {
     let head = section_head({
