@@ -1,3 +1,5 @@
+import { wait } from "./index.js";
+
 export function createHider({ children = [], type = "default" }) {
   let hider = document.createElement("div");
   hider.setAttribute("id", "hider");
@@ -13,7 +15,10 @@ export function createHider({ children = [], type = "default" }) {
  */
 function removeHider(hider, child) {
   hider.addEventListener("click", () => {
-    hider.parentNode.removeChild(hider);
+    slideOut(child, hider);
+    wait(() => {
+      hider.parentNode.removeChild(hider);
+    }, 300);
   });
 }
 
@@ -56,9 +61,21 @@ function fullContainer() {
 function hanldeCloseBtn(btn) {
   btn.addEventListener("click", () => {
     let hider = btn.parentNode.parentNode;
-    if (hider) hider.parentNode.removeChild(hider);
+    if (hider) {
+      slideOut(hider.firstElementChild, hider);
+      wait(() => {
+        hider.parentNode.removeChild(hider);
+      }, 300);
+    }
   });
 }
+
+function slideOut(modal, hider) {
+  modal.classList.add("slide-out");
+  hider.classList.add("slide-out");
+  //
+}
+
 function autoSizeContainer() {
   let container = document.createElement("div");
   container.classList.add("default_hider_container");

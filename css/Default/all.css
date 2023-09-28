@@ -99,7 +99,7 @@ button:hover {
   z-index: 5;
   top: 0;
   left: 0;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.28s ease-in-out;
   width: 100vw;
   height: 100vh;
   -webkit-backdrop-filter: blur(1px);
@@ -109,12 +109,18 @@ button:hover {
   position: absolute;
   left: 50%;
   z-index: 6;
-  top: 45%;
+  top: 48%;
   transform: translate(-50%, -50%);
   background: transparent;
-  max-height: 80vh;
-  overflow: scroll;
+  max-height: 95vh;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
   animation: show_default 0.4s cubic-bezier(0.14, 0.49, 0.25, 1);
+}
+@media (max-width: 768px) {
+  #hider .default_hider_container {
+    width: 95%;
+  }
 }
 #hider .full_hider_container {
   position: absolute;
@@ -129,6 +135,7 @@ button:hover {
   max-height: 94vh;
   overflow: scroll;
   padding: 3rem 2rem;
+  transition: all 0.2s ease-in-out;
   animation: show_up_hider_full 0.5s cubic-bezier(0.14, 0.49, 0.25, 1.01);
 }
 @media (max-width: 576px) {
@@ -145,10 +152,16 @@ button:hover {
   border-radius: 2rem 2rem 0 0;
   background: #ffffff;
   border-radius: 0.5rem;
-  max-height: 80vh;
+  max-height: 95vh;
+  transition: all 0.2s ease-in-out;
   overflow: scroll;
   padding: 1rem;
   animation: show_up_pop_up 0.3s cubic-bezier(0.14, 0.49, 0.25, 1.21);
+}
+@media (max-width: 768px) {
+  #hider .small_hider_container {
+    width: 85%;
+  }
 }
 #hider .closer_btn_hider {
   width: 1.8rem;
@@ -171,6 +184,13 @@ button:hover {
 #hider .closer_btn_hider img {
   width: 100%;
   height: 100%;
+}
+#hider .slide-out {
+  transform: translate(-50%, 100%);
+}
+
+.slide-out {
+  opacity: 0 !important;
 }
 
 @keyframes scale-up-btn {

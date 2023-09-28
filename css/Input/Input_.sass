@@ -1,3 +1,13 @@
+
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+
 .input_
     display: flex
     align-items: center
@@ -9,26 +19,43 @@
         justify-content: flex-start
         width: 100%
         .label_
-            font-family: Sora_R
-            font-size: 0.85rem
+            // font-family: Sora_R
             margin-left: 0.3rem
             color: #565555
             transition: all 0.2s ease-in-out
             width: fit-content
+            font-weight: bolder
             white-space: nowrap
             overflow: hidden
             text-overflow: ellipsis
-            margin-bottom: 0.35rem
+            font-size: 0.91rem
+            margin-bottom: 0.45rem
+            @include media($breakpoint:$breakpoint-lg )
+                font-size: 0.9rem
+            @include media($breakpoint:$breakpoint-md )
+                font-size: 0.85rem
+            @include media($breakpoint:$breakpoint-sm )
+                font-size: 0.81rem
         .input_in
-            padding: 0.7rem 0.52rem 0.7rem 0.8rem
+            padding: 0.72rem 0.52rem 0.72rem 0.8rem
             border-radius: 0.2rem
             width: 100%
-            transition: all 0.2s ease-in-out
+            transition: box-shadow 0.12s ease-in-out,font-size 0.2s ease-in-out
             border: 1px solid #a9a9a97a
+            font-size: 0.96rem
             outline: none
-            box-shadow: 0 0 0.1rem 0.1rem #3f3f3f3b
+            box-shadow: 0 0 0.1rem 0rem #3f3f3f3b
+            @include media($breakpoint:$breakpoint-lg )
+                font-size: 0.94rem
+                padding: 0.7rem 0.52rem 0.7rem 0.8rem
+            @include media($breakpoint:$breakpoint-md )
+                font-size: 0.9rem
+            @include media($breakpoint:$breakpoint-md )
+                font-size: 0.85rem
             &:focus
                 border: 1px solid var(--primary-color)
                 box-shadow: 0 0 0.1rem 0.1rem #16bab783
+            &::placeholder
+                color: #c6c3c3
         .label_on
             color: var(--primary-color)

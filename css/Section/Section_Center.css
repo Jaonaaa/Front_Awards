@@ -89,7 +89,7 @@
 }
 
 .section_dark {
-  background-color: #81a098;
+  background-color: #90ada6;
   position: relative;
   color: #ffffff !important;
   padding: 6vw 8vw 5vw 8vw;
@@ -144,7 +144,7 @@
   }
 }
 .wave_top .shape-fill, .tri_top .shape-fill, .tilt_top .shape-fill, .book_top .shape-fill {
-  fill: #81a098;
+  fill: #90ada6;
 }
 
 .wave_bottom, .tri_bottom, .tilt_bottom, .book_bottom {
@@ -178,7 +178,7 @@
   }
 }
 .wave_bottom .shape-fill, .tri_bottom .shape-fill, .tilt_bottom .shape-fill, .book_bottom .shape-fill {
-  fill: #81a098;
+  fill: #90ada6;
 }
 
 .whitey {

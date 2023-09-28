@@ -1,10 +1,31 @@
 
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+
 .content_form
     display: flex
     flex-direction: column
     margin: auto
     width: 50%
     padding-right: 15%
+    margin-top: 2rem
+    @include media($breakpoint:$breakpoint-lg )
+        padding-right: 10%
+        margin-top: -2rem
+    @include media($breakpoint:$breakpoint-md )
+        padding-right: 10%
+        width: 100%
+        margin-top: -3rem
+    @include media($breakpoint:$breakpoint-sm )
+        width: 100%
+        margin-top: -3.5rem
+        padding-right: 5%
     .input_
         margin: 1rem 0
     .button_container

@@ -1,0 +1,81 @@
+
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+$breakpoint-mdlg: 912px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+
+.log_container_01
+    width: fit-content
+    background: #ffff
+    display: flex
+    margin: auto
+    align-self: center
+    justify-content: space-between
+    align-items: stretch
+    width: 68vw
+    @include media($breakpoint:$breakpoint-lg )
+        width: 80vw
+    @include media($breakpoint:$breakpoint-mdlg )
+        width: 60vw
+    @include media($breakpoint:$breakpoint-md )
+        width: 68vw
+    @include media($breakpoint:$breakpoint-sm )
+        width: 90vw
+    .left_container
+        height: 77vh
+        min-height: 40rem
+        display: flex
+        transition: all 0.2s ease-in-out
+        width: 48%
+        flex-direction: column
+        transition: all 0.2s ease-in-out
+        padding: 2rem 3rem
+        justify-content: flex-start
+        align-items: center
+
+        @include media($breakpoint:$breakpoint-mdlg )
+            width: 100%
+        .logo_container
+            margin-top: 2.4rem
+            margin-bottom: 1rem
+            width: 10rem
+            transition: all 0.2s ease-in-out
+            img
+                width: 100%
+                height: 100%
+        .title_container
+            font-family: Sora_R
+            font-size: 1.7rem
+            margin-bottom: 0.3rem
+            transition: all 0.2s ease-in-out
+            font-weight: bolder
+        .subtitle_container
+            font-size: 0.9rem
+            margin-bottom: 2rem
+            transition: all 0.2s ease-in-out
+            @include media($breakpoint:$breakpoint-lg )
+                font-size: 0.87rem
+        .input_
+            margin-bottom: 1.5rem
+            max-width: 20rem
+    .right_container
+        width: 52%
+        min-height: 40rem
+        height: 77vh
+        transition: all 0.2s ease-in-out
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
+        @include media($breakpoint:$breakpoint-mdlg )
+            width: 100%
+            width: 0%
+        img
+            width: 100%
+            height: 100%

@@ -1,0 +1,99 @@
+.log_container_01 {
+  width: -moz-fit-content;
+  width: fit-content;
+  background: white;
+  display: flex;
+  margin: auto;
+  align-self: center;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 68vw;
+}
+@media (max-width: 1012px) {
+  .log_container_01 {
+    width: 80vw;
+  }
+}
+@media (max-width: 912px) {
+  .log_container_01 {
+    width: 60vw;
+  }
+}
+@media (max-width: 768px) {
+  .log_container_01 {
+    width: 68vw;
+  }
+}
+@media (max-width: 576px) {
+  .log_container_01 {
+    width: 90vw;
+  }
+}
+.log_container_01 .left_container {
+  height: 77vh;
+  min-height: 40rem;
+  display: flex;
+  transition: all 0.2s ease-in-out;
+  width: 48%;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+  padding: 2rem 3rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (max-width: 912px) {
+  .log_container_01 .left_container {
+    width: 100%;
+  }
+}
+.log_container_01 .left_container .logo_container {
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+  width: 10rem;
+  transition: all 0.2s ease-in-out;
+}
+.log_container_01 .left_container .logo_container img {
+  width: 100%;
+  height: 100%;
+}
+.log_container_01 .left_container .title_container {
+  font-family: Sora_R;
+  font-size: 1.7rem;
+  margin-bottom: 0.3rem;
+  transition: all 0.2s ease-in-out;
+  font-weight: bolder;
+}
+.log_container_01 .left_container .subtitle_container {
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+@media (max-width: 1012px) {
+  .log_container_01 .left_container .subtitle_container {
+    font-size: 0.87rem;
+  }
+}
+.log_container_01 .left_container .input_ {
+  margin-bottom: 1.5rem;
+  max-width: 20rem;
+}
+.log_container_01 .right_container {
+  width: 52%;
+  min-height: 40rem;
+  height: 77vh;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+@media (max-width: 912px) {
+  .log_container_01 .right_container {
+    width: 100%;
+    width: 0%;
+  }
+}
+.log_container_01 .right_container img {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=Login_01.css.map */

@@ -3,6 +3,7 @@ import { Card_01 } from "../components/Card/Card_01.js";
 import { Card_02 } from "../components/Card/Card_02.js";
 import { Formulaire_01 } from "../components/Fomulaire/Formulaire.js";
 import { Hero_01 } from "../components/Hero/Hero_01.js";
+import { Login_01 } from "../components/Login/Login_01.js";
 import { Row_01 } from "../components/Row/Row_01.js";
 import { ContentAndPicture } from "../components/RowContent/ContentAndPicture.js";
 import {
@@ -11,6 +12,19 @@ import {
 } from "../components/Section/Section_01.js";
 import { createHider } from "../utils/Hider.js";
 
+let log = () => {
+  createHider({
+    type: "default",
+    children: [
+      Login_01({
+        logoPath: "./assets/svg/Tempest_logo.svg",
+        picPath: "./assets/img/login_right.jpg",
+        title: "Welcome Home",
+        subtitle: "Please enter your details",
+      }),
+    ],
+  });
+};
 // Hero
 
 export const hero = Hero_01({
@@ -46,6 +60,7 @@ export const cardsBrandKit = [
     children: [
       Button_01({
         title: "Upload Logo",
+        onClick: log,
       }),
     ],
     picAssociated: "./assets/svg/mount.svg",

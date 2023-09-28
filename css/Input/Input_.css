@@ -11,30 +11,68 @@
   width: 100%;
 }
 .input_ .container_ .label_ {
-  font-family: Sora_R;
-  font-size: 0.85rem;
   margin-left: 0.3rem;
   color: #565555;
   transition: all 0.2s ease-in-out;
   width: -moz-fit-content;
   width: fit-content;
+  font-weight: bolder;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 0.35rem;
+  font-size: 0.91rem;
+  margin-bottom: 0.45rem;
+}
+@media (max-width: 1012px) {
+  .input_ .container_ .label_ {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .input_ .container_ .label_ {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 576px) {
+  .input_ .container_ .label_ {
+    font-size: 0.81rem;
+  }
 }
 .input_ .container_ .input_in {
-  padding: 0.7rem 0.52rem 0.7rem 0.8rem;
+  padding: 0.72rem 0.52rem 0.72rem 0.8rem;
   border-radius: 0.2rem;
   width: 100%;
-  transition: all 0.2s ease-in-out;
+  transition: box-shadow 0.12s ease-in-out, font-size 0.2s ease-in-out;
   border: 1px solid rgba(169, 169, 169, 0.4784313725);
+  font-size: 0.96rem;
   outline: none;
-  box-shadow: 0 0 0.1rem 0.1rem rgba(63, 63, 63, 0.231372549);
+  box-shadow: 0 0 0.1rem 0rem rgba(63, 63, 63, 0.231372549);
+}
+@media (max-width: 1012px) {
+  .input_ .container_ .input_in {
+    font-size: 0.94rem;
+    padding: 0.7rem 0.52rem 0.7rem 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .input_ .container_ .input_in {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .input_ .container_ .input_in {
+    font-size: 0.85rem;
+  }
 }
 .input_ .container_ .input_in:focus {
   border: 1px solid var(--primary-color);
   box-shadow: 0 0 0.1rem 0.1rem rgba(22, 186, 183, 0.5137254902);
+}
+.input_ .container_ .input_in::-moz-placeholder {
+  color: #c6c3c3;
+}
+.input_ .container_ .input_in::placeholder {
+  color: #c6c3c3;
 }
 .input_ .container_ .label_on {
   color: var(--primary-color);

@@ -12,7 +12,7 @@ export function Button_01(props) {
   getStyle(Button_01);
 
   button.appendChild(button_content({ text: props.title, icon: props.iconOn }));
-  if (props.functionToCall) toCall(button, props.functionToCall);
+  if (props.onClick) toCall(button, props.onClick);
   return button;
 }
 
