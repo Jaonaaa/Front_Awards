@@ -179,4 +179,10 @@
 }
 .wave_bottom .shape-fill, .tri_bottom .shape-fill, .tilt_bottom .shape-fill, .book_bottom .shape-fill {
   fill: #81a098;
+}
+
+.whitey {
+  background: #011d2a;
+  fill: #011d2a !important;
+  color: white !important;
 }/*# sourceMappingURL=Section_Center.css.map */

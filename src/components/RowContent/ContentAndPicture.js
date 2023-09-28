@@ -12,12 +12,15 @@ export function ContentAndPicture(props) {
   getStyle(ContentAndPicture);
 
   let leftContent = addContent({ title: props.title, content: props.content });
+  if (props.newContent) leftContent = props.newContent;
+
   let rightContent = addPicture({ picPath: props.picPath });
 
   leftContent.classList.add("hide");
   rightContent.classList.add("hide");
 
   if (props.reverseOrder) RowContent.classList.add("reverse_content");
+  if (props.hidePicMD) rightContent.classList.add("hide_md");
 
   RowContent.appendChild(leftContent);
   RowContent.appendChild(rightContent);

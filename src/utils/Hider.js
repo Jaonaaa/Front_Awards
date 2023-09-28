@@ -40,7 +40,24 @@ function smallContainer() {
 function fullContainer() {
   let container = document.createElement("div");
   container.classList.add("full_hider_container");
+
+  let closerBtn = document.createElement("div");
+  closerBtn.classList.add("closer_btn_hider");
+  let icon_closer = document.createElement("img");
+  icon_closer.src = "./assets/img/cross_icon.png";
+  closerBtn.appendChild(icon_closer);
+
+  container.appendChild(closerBtn);
+  hanldeCloseBtn(closerBtn);
+
   return container;
+}
+
+function hanldeCloseBtn(btn) {
+  btn.addEventListener("click", () => {
+    let hider = btn.parentNode.parentNode;
+    if (hider) hider.parentNode.removeChild(hider);
+  });
 }
 function autoSizeContainer() {
   let container = document.createElement("div");

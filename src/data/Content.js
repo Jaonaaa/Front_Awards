@@ -1,6 +1,7 @@
 import { Button_01 } from "../components/Button/Button_01.js";
 import { Card_01 } from "../components/Card/Card_01.js";
 import { Card_02 } from "../components/Card/Card_02.js";
+import { Formulaire_01 } from "../components/Fomulaire/Formulaire.js";
 import { Hero_01 } from "../components/Hero/Hero_01.js";
 import { Row_01 } from "../components/Row/Row_01.js";
 import { ContentAndPicture } from "../components/RowContent/ContentAndPicture.js";
@@ -153,4 +154,21 @@ export const blogSection = Section_Center({
       "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
   },
   children: [],
+});
+
+export const formulaire = Section_Left({
+  titleOn: {
+    title: "Contact us",
+    subtitle: "If you want to contact us , write us here.",
+  },
+  children: [
+    ContentAndPicture({
+      hidePicMD: true,
+      newContent: Formulaire_01({}),
+      title: "Are you busy ?",
+      content:
+        "You should simply showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+      picPath: "./assets/svg/contact.svg",
+    }),
+  ],
 });

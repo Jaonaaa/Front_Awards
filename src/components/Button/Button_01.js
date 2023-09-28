@@ -16,7 +16,10 @@ export function Button_01(props) {
   return button;
 }
 
-function button_content({ text, icon = "./assets/svg/arrow_right_icon.svg" }) {
+function button_content({
+  text = "Click me",
+  icon = "./assets/svg/arrow_right_icon.svg",
+}) {
   let container = document.createElement("div");
   container.classList.add("content_container");
   container.innerHTML = `<span > ${text} </span> <img src="${icon}"  />`;

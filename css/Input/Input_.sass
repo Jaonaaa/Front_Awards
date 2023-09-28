@@ -1,0 +1,34 @@
+.input_
+    display: flex
+    align-items: center
+    width: 100%
+    .container_
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-start
+        width: 100%
+        .label_
+            font-family: Sora_R
+            font-size: 0.85rem
+            margin-left: 0.3rem
+            color: #565555
+            transition: all 0.2s ease-in-out
+            width: fit-content
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+            margin-bottom: 0.35rem
+        .input_in
+            padding: 0.7rem 0.52rem 0.7rem 0.8rem
+            border-radius: 0.2rem
+            width: 100%
+            transition: all 0.2s ease-in-out
+            border: 1px solid #a9a9a97a
+            outline: none
+            box-shadow: 0 0 0.1rem 0.1rem #3f3f3f3b
+            &:focus
+                border: 1px solid var(--primary-color)
+                box-shadow: 0 0 0.1rem 0.1rem #16bab783
+        .label_on
+            color: var(--primary-color)

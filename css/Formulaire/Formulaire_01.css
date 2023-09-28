@@ -1,0 +1,13 @@
+.content_form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  padding-right: 15%;
+}
+.content_form .input_ {
+  margin: 1rem 0;
+}
+.content_form .button_container {
+  margin: 1.5rem auto 1rem auto;
+}/*# sourceMappingURL=Formulaire_01.css.map */

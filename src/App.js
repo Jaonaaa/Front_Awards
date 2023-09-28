@@ -1,11 +1,14 @@
+import { Card_Pic } from "./components/Card/Card_Pic.js";
 import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
 import { Hero_01 } from "./components/Hero/Hero_01.js";
+import { Row_01 } from "./components/Row/Row_01.js";
 import { ContentAndPicture } from "./components/RowContent/ContentAndPicture.js";
 import { Section_Center } from "./components/Section/Section_01.js";
 import { Transition_01 } from "./components/Transition/Transition.js";
 import {
   blogSection,
   brandKitSection,
+  formulaire,
   hero,
   stayFocus,
   upgrade,
@@ -24,7 +27,7 @@ import { handleRoutes } from "./utils/route.js";
 //Entrance
 let entranceScreen = Screen_01({
   background: base_url + "/assets/img/butterfly.png",
-  text: ["Frontend <br> Awards", "Playground", "Have Fun!"],
+  text: ["Hello <br> ", "Playground", "Have Fun!"],
 });
 
 let entranceSection = [
@@ -41,11 +44,25 @@ let entranceSection = [
     englobed: {
       type: "tilt",
     },
+    classColor: "whitey",
     titleOn: {
-      title: "Test it",
+      title: "Our Partners",
       subtitle:
         "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
     },
+    children: [
+      Row_01({
+        class: ["centered"],
+        children: [
+          Card_Pic({ imgPath: "./assets/logo_svg/Pulse.svg" }),
+          Card_Pic({ imgPath: "./assets/logo_svg/bocasay.svg" }),
+          Card_Pic({ imgPath: "./assets/logo_svg/p4h.svg" }),
+          Card_Pic({ imgPath: "./assets/logo_svg/ingenosya.svg" }),
+          Card_Pic({ imgPath: "./assets/logo_svg/telma.svg" }),
+          Card_Pic({ imgPath: "./assets/logo_svg/Hairun.svg" }),
+        ],
+      }),
+    ],
   }),
   brandKitSection,
 ];
@@ -63,7 +80,12 @@ const transition = {
 const routes = {};
 ////...entranceSection
 routes[base_url + "/"] = [...entranceSection, header, footer_C_01];
-routes[base_url + "/about"] = [header, brandKitSection, footer_C_01];
+routes[base_url + "/about"] = [
+  header,
+  brandKitSection,
+  formulaire,
+  footer_C_01,
+];
 routes[base_url + "/blog"] = [header, blogSection, footer_C_01];
 
 routes[404] = [];

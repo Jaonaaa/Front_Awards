@@ -92,6 +92,11 @@
   width: 100%;
   height: 100%;
 }
+@media (max-width: 768px) {
+  .content_pic_container .hide_md {
+    display: none;
+  }
+}
 
 .reverse_content {
   flex-direction: row-reverse;
