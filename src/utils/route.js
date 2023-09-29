@@ -30,7 +30,7 @@ function addTransition(text) {
 function resetBodyToTop() {
   wait(() => {
     window.scrollTo(0, 0);
-  }, 500);
+  }, 300);
 
   if (!document.body.classList.contains("unmoved")) {
     document.body.classList.add("unmoved");

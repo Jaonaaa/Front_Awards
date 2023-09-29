@@ -1,6 +1,7 @@
 import { Button_01 } from "../components/Button/Button_01.js";
 import { Card_01 } from "../components/Card/Card_01.js";
 import { Card_02 } from "../components/Card/Card_02.js";
+import { ArticlesSection } from "../components/CardArticle/articles-secion.js";
 import { Formulaire_01 } from "../components/Fomulaire/Formulaire.js";
 import { Hero_01 } from "../components/Hero/Hero_01.js";
 import { Login_01 } from "../components/Login/Login_01.js";
@@ -162,6 +163,7 @@ export const upgrade = Section_Center({
 // Blog
 export const blogSection = Section_Center({
   headeSpacement: true,
+  class: ["section_blank_content"],
   titleOn: {
     title: "Our Blogs",
     subtitle:

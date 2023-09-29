@@ -87,4 +87,8 @@
 
 .space_head {
   margin-top: 7rem;
+}
+
+.section_blank_content {
+  min-height: 0;
 }/*# sourceMappingURL=Section_Left.css.map */

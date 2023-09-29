@@ -143,6 +143,7 @@ function addBook(classColor) {
 `;
   return [top, bottom];
 }
+
 function handleSectionProps(section, props) {
   if (props.titleOn) {
     let head = section_head({
@@ -155,6 +156,7 @@ function handleSectionProps(section, props) {
     section.classList.add("space_head");
   }
 }
+
 function section_head({ title, subtitle }) {
   const head = document.createElement("div");
   head.classList.add("section_head");
@@ -187,6 +189,7 @@ function setUpSection_head(container) {
   );
   observer.observe(container);
 }
+
 /**
  *
  * @param {HTMLElement} head

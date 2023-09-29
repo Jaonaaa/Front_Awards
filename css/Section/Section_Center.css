@@ -185,4 +185,8 @@
   background: #011d2a;
   fill: #011d2a !important;
   color: white !important;
+}
+
+.section_blank_content {
+  min-height: 0;
 }/*# sourceMappingURL=Section_Center.css.map */

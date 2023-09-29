@@ -16,6 +16,7 @@ import { footer_C_01 } from "./data/Footer.js";
 import { header } from "./data/Header.js";
 import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
+import { ArticlesSection } from "./components/CardArticle/articles-secion.js";
 // Here you will structure your elements
 
 // Hero
@@ -83,14 +84,42 @@ routes[base_url + "/about"] = [
   formulaire,
   footer_C_01,
 ];
-routes[base_url + "/blog"] = [header, blogSection, footer_C_01];
+
+let articles = ArticlesSection({
+  images: [
+    "./assets/svg/hash_tag.svg",
+    "./assets/svg/hash_tag.svg",
+    "./assets/svg/hash_tag.svg",
+    "./assets/svg/hash_tag.svg",
+  ],
+  titles: [
+    "Mitsuri Kanroji",
+    "Zen'itsu Agatsuma",
+    "Freres et soeur Kamado",
+    "Nezuko Kamado",
+  ],
+  categories: [
+    "Pilier de l'amour",
+    "Pourfoundeur type foudre",
+    "Fraternite",
+    "Mi-homme mi-demon",
+  ],
+  authors: ["Osamu Dazai", "Osamu Dazai", "Osamu Dazai", "Osamu Dazai"],
+  dates: [
+    "September 10, 2023",
+    "September 10, 2023",
+    "September 10, 2023",
+    "September 10, 2023",
+  ],
+});
+
+routes[base_url + "/blog"] = [header, blogSection, articles, footer_C_01];
 
 routes[404] = [];
 
 function setUpAll() {
   setUpScreen_01();
 }
-//
 //
 
 let loaderScreen = createLoader();
@@ -100,5 +129,5 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     window.scrollTo(0, 0);
     handleRoutes(routes, setUpAll, transition);
-  }, 10);
+  }, 5);
 });
