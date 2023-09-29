@@ -29,7 +29,7 @@
 }
 @media (max-width: 576px) {
   .log_container_01 {
-    width: 95vw;
+    width: 92vw;
   }
 }
 .log_container_01 .left_container {
@@ -51,8 +51,9 @@
 }
 @media (max-width: 576px) {
   .log_container_01 .left_container {
-    height: 68vh;
+    height: auto;
     min-height: 35rem;
+    padding: 1.7rem 2rem;
   }
 }
 .log_container_01 .left_container .logo_container {
@@ -216,7 +217,7 @@
 }
 @media (max-width: 576px) {
   .log_container_01 .right_container {
-    height: 68vh;
+    height: auto;
     min-height: 35rem;
   }
 }
