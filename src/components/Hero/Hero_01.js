@@ -12,7 +12,6 @@ export function Hero_01(props) {
   hero.classList.add("hero_container");
   getStyle(Hero_01);
   // window.addEventListener("scroll", () => {
-  //   // console.log(scrolledInMe(hero));
   // });
 
   hero.appendChild(

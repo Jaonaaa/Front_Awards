@@ -66,9 +66,9 @@ let articles = ArticlesSection({
     "./assets/svg/hash_tag.svg",
   ],
   titles: [
-    "Descente à Mahamasina ",
+    "Actu Mahamasina ",
     "Zen'itsu Agatsuma",
-    "Freres et soeur Kamado",
+    "Tempesy News",
     "Nezuko Kamado",
   ],
   categories: [

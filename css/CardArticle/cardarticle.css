@@ -96,7 +96,7 @@
 }
 
 .article-card-category span.space {
-  width: 1.4px;
+  min-width: 0.2rem;
 }
 
 .article-card-title {
@@ -106,13 +106,14 @@
   display: flex;
   flex-wrap: nowrap;
   font-size: 28px;
+  overflow: hidden;
   font-weight: bold;
   margin-top: 0.3rem;
   min-height: 3rem;
 }
 
 .article-card-title span.space {
-  width: 5.6px;
+  min-width: 0.4rem;
 }
 
 .article-card-author {
