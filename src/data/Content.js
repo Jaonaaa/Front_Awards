@@ -14,7 +14,7 @@ import { createHider } from "../utils/Hider.js";
 
 let login = Login_01({
   logoPath: "./assets/svg/Tempest_logo.svg",
-  picPath: "./assets/img/login_right.jpg",
+  picPath: "./assets/img/login_right.webp",
   title: "Welcome Home",
   subtitle: "Please enter your details",
 });
