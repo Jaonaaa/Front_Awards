@@ -46,9 +46,15 @@
     width: 100%;
   }
 }
+@media (max-width: 576px) {
+  .log_container_01 .left_container {
+    height: 68vh;
+    min-height: 35rem;
+  }
+}
 .log_container_01 .left_container .logo_container {
   margin-top: 2.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   width: 10rem;
   transition: all 0.2s ease-in-out;
 }
@@ -91,6 +97,12 @@
   .log_container_01 .right_container {
     width: 100%;
     width: 0%;
+  }
+}
+@media (max-width: 576px) {
+  .log_container_01 .right_container {
+    height: 68vh;
+    min-height: 35rem;
   }
 }
 .log_container_01 .right_container img {

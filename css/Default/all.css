@@ -119,7 +119,7 @@ button:hover {
 }
 @media (max-width: 768px) {
   #hider .default_hider_container {
-    width: 95%;
+    width: 90%;
   }
 }
 #hider .full_hider_container {

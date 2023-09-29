@@ -15,7 +15,6 @@ import {
 } from "./data/Content.js";
 import { footer_C_01 } from "./data/Footer.js";
 import { header } from "./data/Header.js";
-import { createHider } from "./utils/Hider.js";
 import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
 // Here you will structure your elements

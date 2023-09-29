@@ -12,17 +12,16 @@ import {
 } from "../components/Section/Section_01.js";
 import { createHider } from "../utils/Hider.js";
 
+let login = Login_01({
+  logoPath: "./assets/svg/Tempest_logo.svg",
+  picPath: "./assets/img/login_right.jpg",
+  title: "Welcome Home",
+  subtitle: "Please enter your details",
+});
 let log = () => {
   createHider({
     type: "default",
-    children: [
-      Login_01({
-        logoPath: "./assets/svg/Tempest_logo.svg",
-        picPath: "./assets/img/login_right.jpg",
-        title: "Welcome Home",
-        subtitle: "Please enter your details",
-      }),
-    ],
+    children: [login],
   });
 };
 // Hero

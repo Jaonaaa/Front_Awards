@@ -41,9 +41,12 @@ $breakpoint-mdlg: 912px
 
         @include media($breakpoint:$breakpoint-mdlg )
             width: 100%
+        @include media($breakpoint:$breakpoint-sm )
+            height: 68vh
+            min-height: 35rem
         .logo_container
             margin-top: 2.4rem
-            margin-bottom: 1rem
+            margin-bottom: 1.5rem
             width: 10rem
             transition: all 0.2s ease-in-out
             img
@@ -76,6 +79,9 @@ $breakpoint-mdlg: 912px
         @include media($breakpoint:$breakpoint-mdlg )
             width: 100%
             width: 0%
+        @include media($breakpoint:$breakpoint-sm )
+            height: 68vh
+            min-height: 35rem
         img
             width: 100%
             height: 100%
