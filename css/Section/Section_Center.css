@@ -1,0 +1,192 @@
+.section_part {
+  min-height: 100vh;
+  height: -moz-fit-content;
+  height: fit-content;
+  --scroll: 0%;
+  background: #ffffff;
+  padding: 2vw 8vw 5vw 8vw;
+}
+@media (max-width: 1500px) {
+  .section_part {
+    padding: 8vw 8vw 5vw 8vw;
+  }
+}
+@media (max-width: 1012px) {
+  .section_part {
+    padding: 10vw 8vw 5vw 8vw;
+  }
+}
+@media (max-width: 576px) {
+  .section_part {
+    padding: 10vw 6vw 20vw 6vw;
+  }
+}
+.section_part .section_head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+@media (max-width: 576px) {
+  .section_part .section_head {
+    margin-bottom: 2rem;
+  }
+}
+.section_part .section_head .title {
+  width: 100%;
+  text-align: center;
+  font-size: 3.3rem;
+  margin-bottom: 1.5rem;
+  transition: font-size 0.2s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+@media (max-width: 1012px) {
+  .section_part .section_head .title {
+    font-size: 3.1rem;
+  }
+}
+@media (max-width: 768px) {
+  .section_part .section_head .title {
+    font-size: 2.8rem;
+  }
+}
+@media (max-width: 576px) {
+  .section_part .section_head .title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.section_part .section_head .subtitle {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.4rem;
+  transition: font-size 0.2s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+@media (max-width: 1012px) {
+  .section_part .section_head .subtitle {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .section_part .section_head .subtitle {
+    font-size: 1rem;
+    width: 90%;
+  }
+}
+@media (max-width: 576px) {
+  .section_part .section_head .subtitle {
+    font-size: 0.84rem;
+    width: 96%;
+  }
+}
+.section_part .section_head .hide {
+  opacity: 0;
+  transform: translateY(20%);
+}
+
+.space_head {
+  margin-top: 7rem;
+}
+
+.section_dark {
+  background-color: #90ada6;
+  position: relative;
+  color: #ffffff !important;
+  padding: 6vw 8vw 5vw 8vw;
+}
+@media (max-width: 1500px) {
+  .section_dark {
+    padding: 8vw 8vw 5vw 8vw;
+  }
+}
+@media (max-width: 1012px) {
+  .section_dark {
+    padding: 10vw 8vw 5vw 8vw;
+  }
+}
+@media (max-width: 576px) {
+  .section_dark {
+    padding: 18vw 6vw 20vw 6vw;
+  }
+}
+
+.wave_top, .tri_top, .tilt_top, .book_top {
+  position: relative;
+  width: 120%;
+  left: 0;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  margin-bottom: -0.2rem;
+}
+.wave_top svg, .tri_top svg, .tilt_top svg, .book_top svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 9rem;
+  transform: rotateY(180deg);
+}
+@media (max-width: 1012px) {
+  .wave_top svg, .tri_top svg, .tilt_top svg, .book_top svg {
+    height: 7rem;
+  }
+}
+@media (max-width: 768px) {
+  .wave_top svg, .tri_top svg, .tilt_top svg, .book_top svg {
+    height: 5.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .wave_top svg, .tri_top svg, .tilt_top svg, .book_top svg {
+    height: 4rem;
+  }
+}
+.wave_top .shape-fill, .tri_top .shape-fill, .tilt_top .shape-fill, .book_top .shape-fill {
+  fill: #90ada6;
+}
+
+.wave_bottom, .tri_bottom, .tilt_bottom, .book_bottom {
+  position: relative;
+  left: 0;
+  width: 100%;
+  margin-bottom: 2rem;
+  line-height: 0;
+  margin-top: -0.2rem;
+}
+.wave_bottom svg, .tri_bottom svg, .tilt_bottom svg, .book_bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: calc(7vw + 1.3px);
+  transform: rotateY(180deg);
+}
+@media (max-width: 1012px) {
+  .wave_bottom svg, .tri_bottom svg, .tilt_bottom svg, .book_bottom svg {
+    height: 120px;
+  }
+}
+@media (max-width: 768px) {
+  .wave_bottom svg, .tri_bottom svg, .tilt_bottom svg, .book_bottom svg {
+    height: 100px;
+  }
+}
+@media (max-width: 576px) {
+  .wave_bottom svg, .tri_bottom svg, .tilt_bottom svg, .book_bottom svg {
+    height: 5rem;
+  }
+}
+.wave_bottom .shape-fill, .tri_bottom .shape-fill, .tilt_bottom .shape-fill, .book_bottom .shape-fill {
+  fill: #90ada6;
+}
+
+.whitey {
+  background: #011d2a;
+  fill: #011d2a !important;
+  color: white !important;
+}
+
+.section_blank_content {
+  min-height: 0;
+}/*# sourceMappingURL=Section_Center.css.map */

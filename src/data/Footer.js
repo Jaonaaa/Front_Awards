@@ -1,3 +1,4 @@
+import { Footer_01 } from "../components/Footer/Footer.js";
 import { base_url } from "../utils/index.js";
 
 export const sectionsFooter = [
@@ -19,11 +20,11 @@ export const sectionsFooter = [
     ],
   },
   {
-    title: "Help",
+    title: "Community",
     data: [
       {
-        label: "Our email",
-        linkTo: base_url + "/email",
+        label: "Blog",
+        linkTo: base_url + "/blog",
       },
       {
         label: "Service Client",
@@ -40,3 +41,12 @@ export const sectionsFooter = [
     ],
   },
 ];
+
+// Footer
+export const footer_C_01 = Footer_01({
+  logoPath: "./assets/svg/Tempest_logo.svg",
+  textSubtitle:
+    "Embark on a Journey of a Lifetime: Explore Diverse Destinations, Create Lasting Memories, and Let Your Wanderlust Take Flight with Us!",
+  sections: sectionsFooter,
+  copyrigthText: "Corp 2023 Tempest, All rights reserved",
+});

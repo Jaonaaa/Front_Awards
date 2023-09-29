@@ -1,0 +1,172 @@
+$breakpoint-xsm: 476px
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+$breakpoint-mdlg: 978px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+
+.log_container_01
+    width: fit-content
+    background: #ffff
+    display: flex
+    margin: auto
+    align-self: center
+    justify-content: space-between
+    align-items: stretch
+    width: 67vw
+    min-width: 60rem
+    @include media($breakpoint:$breakpoint-lg )
+        width: 80vw
+    @include media($breakpoint:$breakpoint-mdlg )
+        width: 60vw
+        min-width: 28rem
+    @include media($breakpoint:$breakpoint-md )
+        width: 68vw
+        min-width: 0
+    @include media($breakpoint:$breakpoint-sm )
+        width: 92vw
+    .left_container
+        height: 77vh
+        min-height: 40rem
+        display: flex
+        transition: all 0.2s ease-in-out
+        width: 53%
+
+        flex-direction: column
+        transition: all 0.2s ease-in-out
+        padding: 2rem 3rem
+        justify-content: flex-start
+        align-items: center
+
+        @include media($breakpoint:$breakpoint-mdlg )
+            width: 100%
+        @include media($breakpoint:$breakpoint-sm )
+            height: auto
+            min-height: 35rem
+            padding: 1.7rem 2rem
+        .logo_container
+            margin-top: 2rem
+            margin-bottom: 1.5rem
+            width: 10rem
+            transition: all 0.2s ease-in-out
+            @include media($breakpoint:$breakpoint-md )
+                margin-top: 2rem
+                width: 9rem
+            @include media($breakpoint:$breakpoint-sm )
+                margin-top: 1rem
+                width: 8rem
+            img
+                width: 100%
+                height: 100%
+        .title_container
+            font-family: Sora_R
+            font-size: 1.7rem
+            margin-bottom: 0.3rem
+            transition: all 0.2s ease-in-out
+            font-weight: bolder
+            @include media($breakpoint:$breakpoint-md )
+                font-size: 1.6rem
+            @include media($breakpoint:$breakpoint-sm )
+                font-size: 1.5rem
+            @include media($breakpoint:$breakpoint-xsm )
+                font-size: 1.35rem
+
+        .subtitle_container
+            font-size: 0.9rem
+            margin-bottom: 2rem
+            transition: all 0.2s ease-in-out
+            @include media($breakpoint:$breakpoint-lg )
+                font-size: 0.87rem
+            @include media($breakpoint:$breakpoint-md )
+                font-size: 0.85rem
+            @include media($breakpoint:$breakpoint-sm )
+                font-size: 0.8rem
+                margin-bottom: 1.5rem
+            @include media($breakpoint:$breakpoint-sm )
+                font-size: 0.75rem
+        .input_
+            margin-bottom: 1.5rem
+            max-width: 20rem
+            @include media($breakpoint:$breakpoint-md )
+                margin-bottom: 1.35rem
+            @include media($breakpoint:$breakpoint-sm )
+                margin-bottom: 1.35rem
+        .options_row
+            display: flex
+            width: 80%
+            align-items: center
+            max-width: 20rem
+            justify-content: space-between
+            font-size: 0.82rem
+            margin-bottom: 1.8rem
+            transition: all 0.2s ease-in-out
+            @include media($breakpoint:$breakpoint-md )
+                width: 100%
+                font-size: 0.8rem
+            @include media($breakpoint:$breakpoint-sm )
+                font-size: 0.75rem
+                margin-bottom: 1.4rem
+            @include media($breakpoint:$breakpoint-xsm )
+                font-size: 0.68rem
+            .remember_container
+                font-size: 0.82rem
+                display: flex
+                align-items: center
+                @include media($breakpoint:$breakpoint-md )
+                    font-size: 0.8rem
+                @include media($breakpoint:$breakpoint-sm )
+                    font-size: 0.75rem
+                @include media($breakpoint:$breakpoint-xsm )
+                    font-size: 0.68rem
+        .btn-log
+            width: 78%
+            max-width: 20rem
+            margin-bottom: 0.8rem
+            @include media($breakpoint:$breakpoint-md )
+                width: 100%
+
+        .subtitle_account
+            font-size: 0.85rem
+            @include media($breakpoint:$breakpoint-md )
+                font-size: 0.8rem
+            @include media($breakpoint:$breakpoint-sm )
+                font-size: 0.75rem
+            @include media($breakpoint:$breakpoint-xsm )
+                font-size: 0.68rem
+            .sign_up
+                color: var(--primary-color)
+                font-weight: bolder
+                cursor: pointer
+                transition: all 0.2s ease-in-out
+                font-family: Poppins_B
+                &:hover
+                    color: var(--primary-color-hovered)
+
+    .right_container
+        width: 47%
+        min-height: 40rem
+        height: 77vh
+        transition: all 0.11s ease-in-out
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
+        @include media($breakpoint:$breakpoint-mdlg )
+            width: 0%
+
+        @include media($breakpoint:$breakpoint-sm )
+            height: auto
+            min-height: 35rem
+        img
+            width: 100%
+            height: 100%
+input[type="checkbox"]
+    accent-color: var(--primary-color)
+    width: 0.9rem
+    cursor: pointer
+    height: 0.9rem

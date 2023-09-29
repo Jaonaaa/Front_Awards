@@ -167,7 +167,6 @@ export function removeLayers() {
   let layers = document.querySelector(".layers-container");
   if (layers != undefined) {
     let layerIn = document.querySelector(".right-layer");
-    console.log(layerIn);
     if (!layerIn.classList.contains("active"))
       layers.parentNode.removeChild(layers);
   }

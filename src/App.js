@@ -1,107 +1,106 @@
+import { createLoader } from "./utils/Loader.js";
 import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
-import { Footer_01 } from "./components/Footer/Footer.js";
-import { Header } from "./components/Header/Header.js";
-import { Hero_01 } from "./components/Hero/Hero_01.js";
-import { Section_Horiz } from "./components/Section/Section.js";
+import { Section_Center } from "./components/Section/Section_01.js";
 import { Transition_01 } from "./components/Transition/Transition.js";
-import { sectionsFooter } from "./data/Footer.js";
+import {
+  blogSection,
+  brandKitSection,
+  formulaire,
+  hero,
+  partenaires,
+  stayFocus,
+  upgrade,
+} from "./data/Content.js";
+import { footer_C_01 } from "./data/Footer.js";
+import { header } from "./data/Header.js";
 import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
+import { ArticlesSection } from "./components/CardArticle/articles-secion.js";
 // Here you will structure your elements
-//
-let button = document.createElement("button");
-button.innerHTML = "Se Connecter";
-const paramsContent = [];
-
-const header = Header({
-  attributs: [
-    ["id", "header_proto_mid"],
-    ["observation", "navbar"],
-  ],
-  logoPath: "./assets/svg/Tempest_logo.svg",
-  linksTag: [
-    {
-      linkTo: base_url + "/",
-      label: "Home",
-    },
-
-    {
-      linkTo: base_url + "/about",
-      label: "Our works",
-    },
-  ],
-  paramsContent: paramsContent,
-  btnSideBarOn: {
-    icon: "./assets/img/hamburger_icon.png",
-    icon_cross: "./assets/img/cross_icon.png",
-  },
-});
-// Hero
-let hero_01 = Hero_01({
-  title: "Integrate your stack, automate your work",
-  description:
-    "Evolve at the speed and scale of your business with the leader in low-code automation",
-  picPath: "./assets/img/Hero_pic.png",
-  buttonText: "Start free trial",
-});
 
 //Entrance
 let entranceScreen = Screen_01({
-  text: ["Holà guys!", "Playground", "Alefa #FTT", "Vary masaka"],
-});
-let enntranceSection = [
-  entranceScreen,
-  Section_Horiz(),
-  Section_Horiz(),
-  Section_Horiz({
-    attributs: [["id", "ancrage_Screen_01"]],
-    children: [hero_01],
-  }),
-  Section_Horiz({
-    titleOn: {
-      title: "Upgrade your skill",
-      subtitle:
-        "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
-    },
-  }),
-  Section_Horiz({
-    titleOn: {
-      title: "Stay focused",
-      subtitle:
-        "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio.",
-    },
-  }),
-];
-// Footer
-const footer = Footer_01({
-  logoPath: "./assets/svg/Tempest_logo.svg",
-  textSubtitle:
-    "Embark on a Journey of a Lifetime: Explore Diverse Destinations, Create Lasting Memories, and Let Your Wanderlust Take Flight with Us!",
-  sections: sectionsFooter,
-  copyrigthText: "Corp 2023 Tempest, All rights reserved",
+  background: base_url + "/assets/img/butterfly.png",
+  text: ["TempesT", "Frontend <br> Awards", "Here we are!", "(～￣▽￣)～"],
 });
 
+let entranceSection = [
+  entranceScreen,
+  Section_Center(),
+  Section_Center(),
+  Section_Center({
+    attributs: [["id", "ancrage_Screen_01"]],
+    children: [hero],
+  }),
+  upgrade,
+  stayFocus,
+  partenaires,
+  brandKitSection,
+];
+
 ///////////////
-// transition
+// transition // add un handle Route
 const transition = {
   component: Transition_01({
     text_: "Tempest",
     backgroundPath: "./assets/svg/Circular.svg",
   }),
-  duration: 1500,
+  duration: 1490,
 };
 
 const routes = {};
-//
-routes[base_url + "/"] = [...enntranceSection, header, footer];
-routes[base_url + "/about"] = [header, Section_Horiz({}), , footer];
+////...entranceSection
+routes[base_url + "/"] = [...entranceSection, header, footer_C_01];
+routes[base_url + "/about"] = [
+  header,
+  brandKitSection,
+  formulaire,
+  footer_C_01,
+];
+
+let articles = ArticlesSection({
+  images: [
+    "./assets/img/mahamasina.jpg",
+    "./assets/svg/hash_tag.svg",
+    "./assets/svg/hash_tag.svg",
+    "./assets/svg/hash_tag.svg",
+  ],
+  titles: [
+    "Descente à Mahamasina ",
+    "Zen'itsu Agatsuma",
+    "Freres et soeur Kamado",
+    "Nezuko Kamado",
+  ],
+  categories: [
+    "Actualité à Mada",
+    "Pourfoundeur type foudre",
+    "Fraternité",
+    "Mi-homme mi-demon",
+  ],
+  authors: ["Midi Madagascar", "Osamu Dazai", "Osamu Dazai", "Osamu Dazai"],
+  dates: [
+    "September 29, 2023",
+    "September 10, 2023",
+    "September 10, 2023",
+    "September 10, 2023",
+  ],
+});
+
+routes[base_url + "/blog"] = [header, blogSection, articles, footer_C_01];
+
 routes[404] = [];
 
 function setUpAll() {
   setUpScreen_01();
 }
+//
+
+let loaderScreen = createLoader();
 
 window.addEventListener("load", () => {
-  handleRoutes(routes, setUpAll, transition);
-  window.scrollTo(0, 0);
+  loaderScreen.clean();
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+    handleRoutes(routes, setUpAll, transition);
+  }, 5);
 });

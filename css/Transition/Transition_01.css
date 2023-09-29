@@ -6,7 +6,7 @@
   left: -100%;
   z-index: 10;
   box-shadow: -0.2rem 0px 0.5rem 0.1rem rgba(10, 10, 10, 0.0588235294);
-  background: #000000;
+  background: #000e1b;
   animation: slide_left_01 1.5s;
   display: flex;
   justify-content: center;
@@ -17,11 +17,10 @@
   width: fit-content;
   opacity: 1;
   font-family: Sora_R;
-  color: var(--primary-color);
+  color: #316b71;
   text-align: center;
   font-size: 2.4rem;
   transition: font-size 0.2s ease-in-out;
-  animation: slide_up_logo 1s;
 }
 @media (max-width: 1012px) {
   .transition_container .text_container {

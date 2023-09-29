@@ -2,6 +2,8 @@
   height: 4.9rem;
   width: 100vw;
   z-index: 2;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   display: flex;
   position: fixed;
   transition: transform 0.2s ease-in-out;
@@ -62,7 +64,7 @@
   color: var(--inactive-link-color);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.1rem;
   width: -moz-fit-content;
   width: fit-content;
   outline: none;
@@ -207,12 +209,16 @@
 .right-layer--2 {
   background: #fbc4ab;
   background: #88eda8;
-  transition-delay: 0.19s;
+  transition-delay: 0.1s;
 }
 
 .right-layer--3 {
   background: #ffdab9;
   background: #ffffff;
+  background-image: url(../../assets/img/bg_white.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   transition-delay: 0.2s;
 }
 
@@ -228,7 +234,7 @@
   text-align: center;
   margin-bottom: 1.2rem;
   text-transform: uppercase;
-  transition: transform 0.5s cubic-bezier(0.04, 0.32, 0.61, 1.5), color 0.2s ease-in-out;
+  transition: transform 0.48s cubic-bezier(0.04, 0.32, 0.61, 1.5), color 0.2s ease-in-out;
 }
 @media (max-width: 1012px) {
   .list-navigation .row-list-nav {

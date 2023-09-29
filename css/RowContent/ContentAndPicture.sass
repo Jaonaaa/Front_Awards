@@ -1,0 +1,98 @@
+
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+
+.content_pic_container
+    display: flex
+    width: 100%
+    margin: 5rem 0 10vw 0
+    flex-wrap: wrap
+    align-items: center
+    @include media($breakpoint: $breakpoint-md)
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    .content_text
+        display: flex
+        width: 50%
+        flex-direction: column
+        flex-wrap: nowrap
+        transition: opacity 0.2s ease-in-out, transform 0.8s cubic-bezier(.1,.79,.37,1.03)
+        padding: 1rem 0
+        @include media($breakpoint: $breakpoint-md)
+            width: 100%
+        .title
+            font-size: 2.5rem
+            margin-bottom: 1rem
+            transition: font-size 0.2s ease-in-out
+            @include media($breakpoint: $breakpoint-lg)
+                font-size: 2.3rem
+            @include media($breakpoint: $breakpoint-md)
+                font-size: 2rem
+                text-align: center
+            @include media($breakpoint: $breakpoint-sm)
+                font-size: 1.8rem
+        .content
+            width: 75%
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 5
+            overflow: hidden
+            opacity: 0.9
+            font-size: 1rem
+            text-overflow: ellipsis
+            transition: font-size 0.2s ease-in-out
+            @include media($breakpoint: $breakpoint-lg)
+                font-size: 0.95rem
+            @include media($breakpoint: $breakpoint-md)
+                width: 100%
+                text-align: center
+            @include media($breakpoint: $breakpoint-sm)
+                font-size: 0.91rem
+
+    .pictureContainer
+        position: relative
+        display: flex
+        width: 50%
+        transition: opacity 0.2s ease-in-out, transform .8s cubic-bezier(.1,.79,.37,1.03)
+        border-radius: 0.3rem
+        justify-content: center
+        align-items: center
+        @include media($breakpoint: $breakpoint-md)
+            width: 100%
+            margin-top: 1rem
+        img
+            width: 100%
+            height: 100%
+    .hide_md
+        @include media($breakpoint: $breakpoint-md)
+            display: none
+
+.reverse_content
+    flex-direction: row-reverse
+
+    .content_text
+        padding-left: 6vw
+        @include media($breakpoint: $breakpoint-md)
+            padding-left: 0
+        .content
+            width: 85%
+            @include media($breakpoint: $breakpoint-md)
+                width: 100%
+
+.hide
+    transform: scale(0) translateX(-50%)
+
+.section_dark
+    .content_pic_container
+        .content_text
+            .title
+                color: #28656c
+                @include media($breakpoint: $breakpoint-md)
+                    font-weight: bolder

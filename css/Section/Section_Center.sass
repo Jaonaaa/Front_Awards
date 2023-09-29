@@ -1,0 +1,128 @@
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+$colored-section: #90ada6
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+.section_part
+    min-height: 100vh
+    height: fit-content
+    --scroll: 0%
+    // position: relative
+    background: #ffffff
+    padding: 2vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-xl )
+        padding: 8vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-lg )
+        padding: 10vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-sm )
+        padding: 10vw 6vw 20vw 6vw
+
+    .section_head
+        width: 100%
+        display: flex
+        flex-direction: column
+        margin-bottom: 3rem
+        @include media($breakpoint:$breakpoint-sm )
+            margin-bottom: 2rem
+        .title
+            width: 100%
+            text-align: center
+            font-size: 3.3rem
+            margin-bottom: 1.5rem
+            transition: font-size 0.2s ease-in-out , opacity 0.5s ease-in-out , transform 0.5s ease-in-out
+            @include media($breakpoint: $breakpoint-lg)
+                font-size: 3.1rem
+            @include media($breakpoint: $breakpoint-md)
+                font-size: 2.8rem
+            @include media($breakpoint: $breakpoint-sm)
+                font-size: 2.2rem
+                margin-bottom: 0.5rem
+        .subtitle
+            width: 80%
+            margin: 0 auto
+            text-align: center
+            font-size: 1.4rem
+            transition: font-size 0.2s ease-in-out , opacity 0.5s ease-in-out , transform 0.5s ease-in-out
+            @include media($breakpoint: $breakpoint-lg)
+                font-size: 1.3rem
+            @include media($breakpoint: $breakpoint-md)
+                font-size: 1rem
+                width: 90%
+            @include media($breakpoint: $breakpoint-sm)
+                font-size: 0.84rem
+                width: 96%
+        .hide
+            opacity: 0
+            transform: translateY(20%)
+.space_head
+    margin-top: 7rem
+.section_dark
+    background-color: $colored-section
+    position: relative
+    color: #ffffff !important
+    padding: 6vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-xl )
+        padding: 8vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-lg )
+        padding: 10vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-sm )
+        padding: 18vw 6vw 20vw 6vw
+    ////
+
+.wave_top,.tri_top,.tilt_top,.book_top
+    position: relative
+    width: 120%
+    left: 0
+    height: fit-content
+    overflow: hidden
+    line-height: 0
+    transform: rotate(180deg)
+    margin-bottom: -0.2rem
+    svg
+        position: relative
+        display: block
+        width: calc(100% + 1.3px)
+        height: 9rem
+        transform: rotateY(180deg)
+        @include media($breakpoint: $breakpoint-lg)
+            height: 7rem
+        @include media($breakpoint: $breakpoint-md)
+            height: 5.5rem
+        @include media($breakpoint: $breakpoint-sm)
+            height: 4rem
+    .shape-fill
+        fill: $colored-section
+
+.wave_bottom,.tri_bottom,.tilt_bottom,.book_bottom
+    position: relative
+    left: 0
+    width: 100%
+    margin-bottom: 2rem
+    line-height: 0
+    margin-top: -0.2rem
+    svg
+        position: relative
+        display: block
+        width: calc(100% + 1.3px)
+        height: calc(7vw + 1.3px)
+        transform: rotateY(180deg)
+        @include media($breakpoint: $breakpoint-lg)
+            height: 120px
+        @include media($breakpoint: $breakpoint-md)
+            height: 100px
+        @include media($breakpoint: $breakpoint-sm)
+            height: 5rem
+    .shape-fill
+        fill: $colored-section
+
+.whitey
+    background: #011d2a
+    fill: #011d2a !important
+    color: #ffff !important
+.section_blank_content
+    min-height: 0

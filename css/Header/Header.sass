@@ -16,6 +16,7 @@ $breakpoint-xl: 1500px
     height: 4.9rem
     width: 100vw
     z-index: 2
+    backdrop-filter: blur(2px)
     display: flex
     position: fixed
     transition: transform 0.2s ease-in-out
@@ -61,7 +62,7 @@ $breakpoint-xl: 1500px
                 color: var(--inactive-link-color)
                 text-decoration: none
                 font-weight: 500
-                font-size: 1rem
+                font-size: 1.1rem
                 width: fit-content
                 outline: none
 
@@ -168,12 +169,17 @@ $breakpoint-xl: 1500px
 .right-layer--2
     background: #fbc4ab
     background: #88eda8
-    transition-delay: 0.19s
+    transition-delay: 0.1s
 
 .right-layer--3
     background: #ffdab9
     background: #ffffff
+    background-image: url(../../assets/img/bg_white.jpg)
+    background-size: cover
+    background-position: 50% 50%
+    background-repeat: no-repeat
     transition-delay: 0.2s
+
 /// LIST NAVIGATION
 .list-navigation
     z-index: 3
@@ -186,7 +192,7 @@ $breakpoint-xl: 1500px
         text-align: center
         margin-bottom: 1.2rem
         text-transform: uppercase
-        transition: transform 0.5s cubic-bezier(.04,.32,.61,1.5) , color 0.2s ease-in-out
+        transition: transform 0.48s cubic-bezier(.04,.32,.61,1.5) , color 0.2s ease-in-out
         @include media($breakpoint: $breakpoint-lg)
             font-size: 2.25rem
         @include media($breakpoint: $breakpoint-md)

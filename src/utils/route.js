@@ -17,16 +17,21 @@ function addTransition(text) {
   transitionComponent.component.textComponent.innerHTML = text;
 
   document.body.appendChild(transitionComponent.component);
-  resetBodyToTop();
+  document.body.style.pointerEvents = "none";
   wait(() => {
+    document.body.removeAttribute("style");
     transitionComponent.component.parentNode.removeChild(
       transitionComponent.component
     );
   }, transitionComponent.duration);
+  resetBodyToTop();
 }
 
 function resetBodyToTop() {
-  window.scrollTo(0, 0);
+  wait(() => {
+    window.scrollTo(0, 0);
+  }, 300);
+
   if (!document.body.classList.contains("unmoved")) {
     document.body.classList.add("unmoved");
     wait(() => {

@@ -1,5 +1,5 @@
 .footer_container {
-  margin-top: 4rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -14,6 +14,7 @@
 @media (max-width: 768px) {
   .footer_container {
     padding: 0.5rem 2.2vw 2rem 2.2vw;
+    margin-top: 4rem;
   }
 }
 @media (max-width: 576px) {
@@ -34,7 +35,7 @@
   }
 }
 .footer_container .footer_upper .about_site {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -125,6 +126,11 @@
   .footer_container .footer_upper .navigation .block_container a {
     font-size: 1rem;
     margin-bottom: 0.85rem;
+  }
+}
+@media (max-width: 576px) {
+  .footer_container .footer_upper .navigation .block_container a {
+    font-size: 0.89rem;
   }
 }
 .footer_container .footer_upper .navigation .block_container a:hover {

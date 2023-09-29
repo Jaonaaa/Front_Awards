@@ -18,14 +18,17 @@ export function Screen_01(props) {
 
   let img_left = document.createElement("div");
   img_left.classList.add("img_left");
-  img_left.innerHTML = ` <img src=".//assets/img/girl_left.jpg" alt="" />"`;
+  img_left.innerHTML = ` <img src=".//assets/img/entrance_left.jpg" alt="" />"`;
 
   let img_right = document.createElement("div");
   img_right.classList.add("img_right");
-  img_right.innerHTML = ` <img src="./assets/img/girl.jpg" alt="" />`;
+  img_right.innerHTML = ` <img src="./assets/img/entrance_right.jpg" alt="" />`;
 
   screen.appendChild(img_left);
   screen.appendChild(img_right);
+  if (props.background) {
+    screen.style.backgroundImage = `url(${props.background})`;
+  }
 
   screen.appendChild(
     ButtonScreen_01({ pathPic: "./assets/img/arrow_down.png" })
@@ -73,8 +76,7 @@ function setUpSwapText(textRow, textArray) {
       if (textArray.length == count) count = 0;
     }, 4500);
 }
-
-export function ButtonScreen_01({ pathPic }) {
+function ButtonScreen_01({ pathPic }) {
   const button = document.createElement("div");
   button.classList.add("button_screen");
   button.innerHTML = `
@@ -93,6 +95,7 @@ export function scrollToSection(section) {
 }
 
 export function setUpScreen_01() {
+  if (document.getElementById("screen") == undefined) return null;
   let sec2 = document.querySelectorAll(".section_part")[1];
   if (sec2 == undefined) return null;
   sec2.style.height = "45vh";

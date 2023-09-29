@@ -1,3 +1,12 @@
+
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
 @font-face
     font-family: Poppins_L
     src: url(../../assets/fonts/Poppins-Light.ttf)
@@ -15,8 +24,8 @@
 
 :root
     --text-basic-color: rgb(38, 38, 38)
-    --primary-color: #129CAD
-    --primary-color-hovered: #098292
+    --primary-color: #08867e
+    --primary-color-hovered: #04635d
     --secondary-color: rgb(148, 146, 146)
     --inactive-link-color: rgba(97, 97, 97, 0.803)
     --active-link-color: rgb(0, 213, 145)
@@ -70,3 +79,182 @@ button
     // font-weight: bolder
     &:hover
         background: var(--primary-color-hovered)
+
+    // hider component
+#hider
+    position: fixed
+    background-color: rgba(0, 0, 0, 0.20)
+    z-index: 5
+    top: 0
+    left: 0
+    transition: all 0.28s ease-in-out
+    width: 100vw
+    height: 100vh
+    backdrop-filter: blur(1px)
+    .default_hider_container
+        position: absolute
+        left: 50%
+        z-index: 6
+        top: 50%
+        transform: translate(-50%,-50%)
+        background: transparent
+        max-height: 95vh
+        transition: all 0.2s ease-in-out
+        overflow: hidden
+        animation: show_default 0.4s cubic-bezier(.14,.49,.25,1)
+        @include media($breakpoint: $breakpoint-md)
+            width: auto
+
+    .full_hider_container
+        position: absolute
+        left: 50%
+        transform: translate(-50%,0%)
+        border-radius: 4rem 0 0 0
+        bottom: 0%
+        background: #ffffff
+        z-index: 6
+        width: 99vw
+        height: 94vh
+        max-height: 94vh
+        overflow: scroll
+        padding: 3rem 2rem
+        transition: all 0.2s ease-in-out
+        animation: show_up_hider_full 0.5s cubic-bezier(.14,.49,.25,1.01)
+        @include media($breakpoint: $breakpoint-md)
+            padding: 2.5rem 1.4rem
+        @include media($breakpoint: $breakpoint-sm)
+            width: 100vw
+            padding: 2rem 0.8rem
+
+    .small_hider_container
+        position: absolute
+        left: 50%
+        top: 47%
+        z-index: 6
+        transform: translate(-50%,-50%)
+        border-radius: 2rem 2rem 0 0
+        background: #ffffff
+        border-radius: 0.5rem
+        max-height: 95vh
+        transition: all 0.2s ease-in-out
+        overflow: scroll
+        padding: 1rem
+        animation: show_up_pop_up 0.3s cubic-bezier(.14,.49,.25,1.21)
+        @include media($breakpoint: $breakpoint-md)
+            width: 85%
+    .closer_btn_hider
+        width: 1.8rem
+        height: 1.8rem
+        cursor: pointer
+        user-select: none
+        position: absolute
+        right: 1rem
+        top: 1rem
+        display: flex
+        z-index: 2
+        align-items: center
+        transition: all 0.2s ease-in-out
+        justify-content: center
+        &:hover
+            animation: scale-up-btn 0.4s ease-in-out
+        img
+            width: 100%
+            height: 100%
+    .slide-out
+        transform: translate(-50%,100%)
+
+.slide-out
+    opacity: 0 !important
+
+@keyframes scale-up-btn
+    0%
+        transform: scale(1)
+    60%
+        transform: scale(1.04)
+    100%
+        transform: scale(1)
+
+@keyframes show_default
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+@keyframes show_up_hider_full
+    0%
+        transform: translate(-50%,100%)
+    100%
+        transform: translate(-50%,0%)
+
+@keyframes show_up_pop_up
+    0%
+        transform: translate(5%,50vh) scale(0)
+        opacity: 0
+    20%
+        opacity: 1
+    100%
+        transform: translate(-50%,-50%) scale(1)
+
+    //loader Screeen
+$loader_color: #0d3b40
+#loaderScreen
+    width: 100vw
+    height: 100vh
+    position: fixed
+    background: #ffffffc5
+    z-index: 15
+    display: flex
+    justify-content: center
+    align-items: center
+    top: 0
+    left: 0
+    transition: all 0.4s ease-in-out
+    .squareRotate
+        width: 5rem
+        height: 5rem
+        overflow: hidden
+        margin-top: -4rem
+        border: 0.25rem solid $loader_color
+        position: relative
+        opacity: 0
+        transform: all 0.2s ease-in-out
+        animation: rotate_square 4s ease-in-out infinite
+        @include media($breakpoint: $breakpoint-md)
+            width: 4rem
+            height: 4rem
+        @include media($breakpoint: $breakpoint-sm)
+            width: 3rem
+            height: 3rem
+        &::before
+            content: ""
+            position: absolute
+            width: 110%
+            left: 50%
+            transform: translateX(-50%)
+            height: 0%
+            background: $loader_color
+            box-shadow: 0 0 0.2rem 0.1rem $loader_color
+            animation: fill_up_down 4s ease-in-out infinite
+    .visible
+        opacity: 1
+@keyframes rotate_square
+    0%
+        transform: rotate(0)
+    25%
+        transform: rotate(360deg)
+    50%
+        transform: rotate(360deg)
+    75%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(0deg)
+
+@keyframes fill_up_down
+    0%,25%,100%
+        height: 0%
+        transform: translateX(-50%)
+    50%,75%
+        height: 100%
+
+.cleanScreen
+    opacity: 0.2
+    transform: translateY(-100%)
