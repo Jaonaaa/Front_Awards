@@ -87,4 +87,9 @@
 }
 .input_ .container_ .label_on {
   color: var(--primary-color);
+}
+
+textarea {
+  height: 8rem;
+  resize: none;
 }/*# sourceMappingURL=Input_.css.map */

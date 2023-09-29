@@ -28,8 +28,9 @@ function createFormStruct({
   labelC.innerHTML = label;
 
   let input = document.createElement("input");
+  if (type == "textarea") input = document.createElement("textarea");
   input.classList.add("input_in");
-  input.type = type;
+  if (type != "textarea") input.type = type;
   input.name = name;
   input.placeholder = placeholder;
   input.value = value;

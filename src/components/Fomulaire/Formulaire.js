@@ -24,6 +24,14 @@ export function Formulaire_01(props) {
       type: "email",
     })
   );
+  Formulaire.appendChild(
+    Input_({
+      name: "message",
+      label: "Your message",
+      placeholder: "Write here ",
+      type: "textarea",
+    })
+  );
   // Formulaire.appendChild(
   //   Input_({ name: "code_ident", label: "CDI", placeholder: "----" })
   // );

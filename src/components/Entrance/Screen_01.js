@@ -18,11 +18,11 @@ export function Screen_01(props) {
 
   let img_left = document.createElement("div");
   img_left.classList.add("img_left");
-  img_left.innerHTML = ` <img src=".//assets/img/girl_left.webp" alt="" />"`;
+  img_left.innerHTML = ` <img src=".//assets/img/entrance_left.jpg" alt="" />"`;
 
   let img_right = document.createElement("div");
   img_right.classList.add("img_right");
-  img_right.innerHTML = ` <img src="./assets/img/girl.webp" alt="" />`;
+  img_right.innerHTML = ` <img src="./assets/img/entrance_right.jpg" alt="" />`;
 
   screen.appendChild(img_left);
   screen.appendChild(img_right);
