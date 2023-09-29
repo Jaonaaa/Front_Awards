@@ -56,11 +56,10 @@
   padding: 0 0 15px 0;
   perspective: 5000px;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0rem 0rem 0rem 0rem #ffff;
 }
 .article-card:hover {
   transform: translateY(-1rem);
-  box-shadow: 0rem 0rem 1rem 0.1rem rgba(199, 199, 199, 0.7921568627);
+  box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(199, 199, 199, 0.619);
 }
 @media screen and (max-width: 768px) {
   .article-card {
@@ -104,6 +103,8 @@
   width: 100%;
   padding: 5px 15px 0 15px;
   font-family: arial, Playfair display;
+  display: flex;
+  flex-wrap: nowrap;
   font-size: 28px;
   font-weight: bold;
   margin-top: 0.3rem;

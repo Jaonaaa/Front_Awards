@@ -1,7 +1,5 @@
 import { createLoader } from "./utils/Loader.js";
-import { Card_Pic } from "./components/Card/Card_Pic.js";
 import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
-import { Row_01 } from "./components/Row/Row_01.js";
 import { Section_Center } from "./components/Section/Section_01.js";
 import { Transition_01 } from "./components/Transition/Transition.js";
 import {
@@ -9,6 +7,7 @@ import {
   brandKitSection,
   formulaire,
   hero,
+  partenaires,
   stayFocus,
   upgrade,
 } from "./data/Content.js";
@@ -19,14 +18,10 @@ import { handleRoutes } from "./utils/route.js";
 import { ArticlesSection } from "./components/CardArticle/articles-secion.js";
 // Here you will structure your elements
 
-// Hero
-
-///
-
 //Entrance
 let entranceScreen = Screen_01({
   background: base_url + "/assets/img/butterfly.png",
-  text: ["Hello <br> ", "Playground", "Have Fun!"],
+  text: ["TempesT", "Frontend <br> Awards", "Here we are!", "(～￣▽￣)～"],
 });
 
 let entranceSection = [
@@ -39,29 +34,7 @@ let entranceSection = [
   }),
   upgrade,
   stayFocus,
-  Section_Center({
-    englobed: {
-      type: "tilt",
-    },
-    classColor: "whitey",
-    titleOn: {
-      title: "Our Partners",
-      subtitle:
-        "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
-    },
-    children: [
-      Row_01({
-        class: ["centered"],
-        children: [
-          Card_Pic({ imgPath: "./assets/logo_svg/Pulse.svg" }),
-          Card_Pic({ imgPath: "./assets/logo_svg/bocasay.svg" }),
-          Card_Pic({ imgPath: "./assets/logo_svg/etech.svg" }),
-          Card_Pic({ imgPath: "./assets/logo_svg/airtel.svg" }),
-          Card_Pic({ imgPath: "./assets/logo_svg/myAgency.svg" }),
-        ],
-      }),
-    ],
-  }),
+  partenaires,
   brandKitSection,
 ];
 
@@ -87,26 +60,26 @@ routes[base_url + "/about"] = [
 
 let articles = ArticlesSection({
   images: [
-    "./assets/svg/hash_tag.svg",
+    "./assets/img/mahamasina.jpg",
     "./assets/svg/hash_tag.svg",
     "./assets/svg/hash_tag.svg",
     "./assets/svg/hash_tag.svg",
   ],
   titles: [
-    "Mitsuri Kanroji",
+    "Descente à Mahamasina ",
     "Zen'itsu Agatsuma",
     "Freres et soeur Kamado",
     "Nezuko Kamado",
   ],
   categories: [
-    "Pilier de l'amour",
+    "Actualité à Mada",
     "Pourfoundeur type foudre",
-    "Fraternite",
+    "Fraternité",
     "Mi-homme mi-demon",
   ],
-  authors: ["Osamu Dazai", "Osamu Dazai", "Osamu Dazai", "Osamu Dazai"],
+  authors: ["Midi Madagascar", "Osamu Dazai", "Osamu Dazai", "Osamu Dazai"],
   dates: [
-    "September 10, 2023",
+    "September 29, 2023",
     "September 10, 2023",
     "September 10, 2023",
     "September 10, 2023",

@@ -1,6 +1,7 @@
 import { Button_01 } from "../components/Button/Button_01.js";
 import { Card_01 } from "../components/Card/Card_01.js";
 import { Card_02 } from "../components/Card/Card_02.js";
+import { Card_Pic } from "../components/Card/Card_Pic.js";
 import { ArticlesSection } from "../components/CardArticle/articles-secion.js";
 import { Formulaire_01 } from "../components/Fomulaire/Formulaire.js";
 import { Hero_01 } from "../components/Hero/Hero_01.js";
@@ -156,6 +157,31 @@ export const upgrade = Section_Center({
         "You should simply showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
       picPath: "./assets/svg/fiability.svg",
       reverseOrder: true,
+    }),
+  ],
+});
+
+// Partenaires
+export const partenaires = Section_Center({
+  englobed: {
+    type: "tilt",
+  },
+  classColor: "whitey",
+  titleOn: {
+    title: "Our Partners",
+    subtitle:
+      "Seamlessly showcase the breadth of your creative skills with an enhanced creative portfolio that always stays up-to-date.",
+  },
+  children: [
+    Row_01({
+      class: ["centered"],
+      children: [
+        Card_Pic({ imgPath: "./assets/logo_svg/Pulse.svg" }),
+        Card_Pic({ imgPath: "./assets/logo_svg/bocasay.svg" }),
+        Card_Pic({ imgPath: "./assets/logo_svg/etech.svg" }),
+        Card_Pic({ imgPath: "./assets/logo_svg/airtel.svg" }),
+        Card_Pic({ imgPath: "./assets/logo_svg/myAgency.svg" }),
+      ],
     }),
   ],
 });
