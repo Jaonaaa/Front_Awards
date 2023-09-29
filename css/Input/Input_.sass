@@ -1,4 +1,5 @@
 
+$breakpoint-xsm: 476px
 $breakpoint-sm: 576px
 $breakpoint-md: 768px
 $breakpoint-lg: 1012px
@@ -36,6 +37,8 @@ $breakpoint-xl: 1500px
                 font-size: 0.85rem
             @include media($breakpoint:$breakpoint-sm )
                 font-size: 0.81rem
+            @include media($breakpoint:$breakpoint-xsm )
+                font-size: 0.77rem
         .input_in
             padding: 0.72rem 0.52rem 0.72rem 0.8rem
             border-radius: 0.2rem
@@ -50,8 +53,11 @@ $breakpoint-xl: 1500px
                 padding: 0.7rem 0.52rem 0.7rem 0.8rem
             @include media($breakpoint:$breakpoint-md )
                 font-size: 0.9rem
-            @include media($breakpoint:$breakpoint-md )
+            @include media($breakpoint:$breakpoint-sm )
                 font-size: 0.85rem
+            @include media($breakpoint:$breakpoint-xsm )
+                font-size: 0.8rem
+                padding: 0.65rem 0.52rem 0.65rem 0.8rem
             &:focus
                 border: 1px solid var(--primary-color)
                 box-shadow: 0 0 0.1rem 0.1rem #16bab783

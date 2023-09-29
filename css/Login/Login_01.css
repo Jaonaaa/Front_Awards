@@ -95,6 +95,11 @@
     font-size: 1.5rem;
   }
 }
+@media (max-width: 476px) {
+  .log_container_01 .left_container .title_container {
+    font-size: 1.35rem;
+  }
+}
 .log_container_01 .left_container .subtitle_container {
   font-size: 0.9rem;
   margin-bottom: 2rem;
@@ -114,6 +119,11 @@
   .log_container_01 .left_container .subtitle_container {
     font-size: 0.8rem;
     margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .log_container_01 .left_container .subtitle_container {
+    font-size: 0.75rem;
   }
 }
 .log_container_01 .left_container .input_ {
@@ -152,6 +162,11 @@
     margin-bottom: 1.4rem;
   }
 }
+@media (max-width: 476px) {
+  .log_container_01 .left_container .options_row {
+    font-size: 0.68rem;
+  }
+}
 .log_container_01 .left_container .options_row .remember_container {
   font-size: 0.82rem;
   display: flex;
@@ -165,6 +180,11 @@
 @media (max-width: 576px) {
   .log_container_01 .left_container .options_row .remember_container {
     font-size: 0.75rem;
+  }
+}
+@media (max-width: 476px) {
+  .log_container_01 .left_container .options_row .remember_container {
+    font-size: 0.68rem;
   }
 }
 .log_container_01 .left_container .btn-log {
@@ -188,6 +208,11 @@
 @media (max-width: 576px) {
   .log_container_01 .left_container .subtitle_account {
     font-size: 0.75rem;
+  }
+}
+@media (max-width: 476px) {
+  .log_container_01 .left_container .subtitle_account {
+    font-size: 0.68rem;
   }
 }
 .log_container_01 .left_container .subtitle_account .sign_up {

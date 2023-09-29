@@ -38,6 +38,11 @@
     font-size: 0.81rem;
   }
 }
+@media (max-width: 476px) {
+  .input_ .container_ .label_ {
+    font-size: 0.77rem;
+  }
+}
 .input_ .container_ .input_in {
   padding: 0.72rem 0.52rem 0.72rem 0.8rem;
   border-radius: 0.2rem;
@@ -59,9 +64,15 @@
     font-size: 0.9rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .input_ .container_ .input_in {
     font-size: 0.85rem;
+  }
+}
+@media (max-width: 476px) {
+  .input_ .container_ .input_in {
+    font-size: 0.8rem;
+    padding: 0.65rem 0.52rem 0.65rem 0.8rem;
   }
 }
 .input_ .container_ .input_in:focus {
