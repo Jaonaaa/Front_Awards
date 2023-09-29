@@ -21,7 +21,7 @@ export function Login_01(props) {
   return login;
 }
 
-function leftSide({ title, subtitle, logoPath }) {
+function leftSide({ title, subtitle, logoPath, buttonText = "Sign in" }) {
   let left = document.createElement("div");
   left.classList.add("left_container");
   //
@@ -39,6 +39,24 @@ function leftSide({ title, subtitle, logoPath }) {
   subtitleC.innerHTML = subtitle;
   //
 
+  let options = document.createElement("div");
+  options.classList.add("options_row");
+  options.innerHTML = `
+  <div class="remember_container">
+    <input type="checkbox" name="remember" /> 
+    Remember for 30 days
+    </div>
+    <div class="forgot_pass" > Forgot password ? </div>
+  `;
+  //button
+  let buttonLog = document.createElement("button");
+  buttonLog.classList.add("btn-log");
+  buttonLog.innerHTML = buttonText;
+  //create accoutn
+  let subtitleAccount = document.createElement("div");
+  subtitleAccount.classList.add("subtitle_account");
+  subtitleAccount.innerHTML = `Don't have a account ? <span class="sign_up"> Sign up </span>`;
+
   left.appendChild(logo);
   left.appendChild(titleC);
   left.appendChild(subtitleC);
@@ -46,6 +64,10 @@ function leftSide({ title, subtitle, logoPath }) {
   left.appendChild(
     Input_({ label: "Password", name: "pwd", type: "password" })
   );
+  //
+  left.appendChild(options);
+  left.appendChild(buttonLog);
+  left.appendChild(subtitleAccount);
 
   return left;
 }

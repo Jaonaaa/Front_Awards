@@ -119,7 +119,7 @@ button:hover {
 }
 @media (max-width: 768px) {
   #hider .default_hider_container {
-    width: 90%;
+    width: auto;
   }
 }
 #hider .full_hider_container {
@@ -231,4 +231,85 @@ button:hover {
   100% {
     transform: translate(-50%, -50%) scale(1);
   }
+}
+#loaderScreen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.7725490196);
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  transition: all 0.4s ease-in-out;
+}
+#loaderScreen .squareRotate {
+  width: 5rem;
+  height: 5rem;
+  overflow: hidden;
+  margin-top: -4rem;
+  border: 0.25rem solid #0d3b40;
+  position: relative;
+  opacity: 0;
+  transform: all 0.2s ease-in-out;
+  animation: rotate_square 4s ease-in-out infinite;
+}
+@media (max-width: 768px) {
+  #loaderScreen .squareRotate {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+@media (max-width: 576px) {
+  #loaderScreen .squareRotate {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+#loaderScreen .squareRotate::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0%;
+  background: #0d3b40;
+  box-shadow: 0 0 0.2rem 0.1rem #0d3b40;
+  animation: fill_up_down 4s ease-in-out infinite;
+}
+#loaderScreen .visible {
+  opacity: 1;
+}
+
+@keyframes rotate_square {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fill_up_down {
+  0%, 25%, 100% {
+    height: 0%;
+    transform: translateX(-50%);
+  }
+  50%, 75% {
+    height: 100%;
+  }
+}
+.cleanScreen {
+  opacity: 0.2;
+  transform: translateY(-100%);
 }/*# sourceMappingURL=all.css.map */

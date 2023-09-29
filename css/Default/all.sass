@@ -103,7 +103,7 @@ button
         overflow: hidden
         animation: show_default 0.4s cubic-bezier(.14,.49,.25,1)
         @include media($breakpoint: $breakpoint-md)
-            width: 90%
+            width: auto
 
     .full_hider_container
         position: absolute
@@ -188,3 +188,68 @@ button
         opacity: 1
     100%
         transform: translate(-50%,-50%) scale(1)
+
+    //loader Screeen
+$loader_color: #0d3b40
+#loaderScreen
+    width: 100vw
+    height: 100vh
+    position: fixed
+    background: #ffffffc5
+    z-index: 15
+    display: flex
+    justify-content: center
+    align-items: center
+    top: 0
+    left: 0
+    transition: all 0.4s ease-in-out
+    .squareRotate
+        width: 5rem
+        height: 5rem
+        overflow: hidden
+        margin-top: -4rem
+        border: 0.25rem solid $loader_color
+        position: relative
+        opacity: 0
+        transform: all 0.2s ease-in-out
+        animation: rotate_square 4s ease-in-out infinite
+        @include media($breakpoint: $breakpoint-md)
+            width: 4rem
+            height: 4rem
+        @include media($breakpoint: $breakpoint-sm)
+            width: 3rem
+            height: 3rem
+        &::before
+            content: ""
+            position: absolute
+            width: 110%
+            left: 50%
+            transform: translateX(-50%)
+            height: 0%
+            background: $loader_color
+            box-shadow: 0 0 0.2rem 0.1rem $loader_color
+            animation: fill_up_down 4s ease-in-out infinite
+    .visible
+        opacity: 1
+@keyframes rotate_square
+    0%
+        transform: rotate(0)
+    25%
+        transform: rotate(360deg)
+    50%
+        transform: rotate(360deg)
+    75%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(0deg)
+
+@keyframes fill_up_down
+    0%,25%,100%
+        height: 0%
+        transform: translateX(-50%)
+    50%,75%
+        height: 100%
+
+.cleanScreen
+    opacity: 0.2
+    transform: translateY(-100%)

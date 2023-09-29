@@ -1,8 +1,7 @@
+import { createLoader } from "./utils/Loader.js";
 import { Card_Pic } from "./components/Card/Card_Pic.js";
 import { Screen_01, setUpScreen_01 } from "./components/Entrance/Screen_01.js";
-import { Hero_01 } from "./components/Hero/Hero_01.js";
 import { Row_01 } from "./components/Row/Row_01.js";
-import { ContentAndPicture } from "./components/RowContent/ContentAndPicture.js";
 import { Section_Center } from "./components/Section/Section_01.js";
 import { Transition_01 } from "./components/Transition/Transition.js";
 import {
@@ -55,10 +54,9 @@ let entranceSection = [
         children: [
           Card_Pic({ imgPath: "./assets/logo_svg/Pulse.svg" }),
           Card_Pic({ imgPath: "./assets/logo_svg/bocasay.svg" }),
-          Card_Pic({ imgPath: "./assets/logo_svg/p4h.svg" }),
-          Card_Pic({ imgPath: "./assets/logo_svg/ingenosya.svg" }),
-          Card_Pic({ imgPath: "./assets/logo_svg/telma.svg" }),
-          Card_Pic({ imgPath: "./assets/logo_svg/Hairun.svg" }),
+          Card_Pic({ imgPath: "./assets/logo_svg/etech.svg" }),
+          Card_Pic({ imgPath: "./assets/logo_svg/airtel.svg" }),
+          Card_Pic({ imgPath: "./assets/logo_svg/myAgency.svg" }),
         ],
       }),
     ],
@@ -92,8 +90,15 @@ routes[404] = [];
 function setUpAll() {
   setUpScreen_01();
 }
+//
+//
+
+let loaderScreen = createLoader();
 
 window.addEventListener("load", () => {
-  handleRoutes(routes, setUpAll, transition);
-  window.scrollTo(0, 0);
+  loaderScreen.clean();
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+    handleRoutes(routes, setUpAll, transition);
+  }, 10);
 });
