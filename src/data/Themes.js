@@ -1,0 +1,31 @@
+export const lightMode = {
+  color_text_basic: "#2c2929",
+  color_text_bold: "rgb(15, 15, 15)",
+  primaryColor: " #08867e",
+  primaryColorHovered: " #04635d",
+  secondaryColor: "rgb(148, 146, 146)",
+  buttonEntranceBg: "#1e1f1f",
+  buttonEntranceBgHovered: "#000000",
+  inactiveLinkColor: "#434141cd",
+  activeLinkColor: " rgb(0, 213, 145)",
+  inputBg: "#ffffff",
+  bgColor: "#ffffff",
+  boxShadowColor: "#d8d8d8",
+  boxShadowColorHovered: "#c6c6c6",
+};
+
+export const darkMode = {
+  color_text_basic: "rgb(247, 247, 247)",
+  color_text_bold: "rgb(255, 255, 255)",
+  primaryColor: "#08867e",
+  primaryColorHovered: "#04635d",
+  secondaryColor: "rgb(148, 146, 146)",
+  buttonEntranceBg: " #065950",
+  buttonEntranceBgHovered: "#02332d",
+  inactiveLinkColor: "rgba(187, 183, 183, 0.803)",
+  activeLinkColor: " rgb(0, 213, 145)",
+  inputBg: " #272727",
+  bgColor: "#1b1b1b",
+  boxShadowColor: "#545050",
+  boxShadowColorHovered: "#666666",
+};

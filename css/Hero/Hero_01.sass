@@ -39,6 +39,7 @@ $breakpoint-xl: 1500px
             font-size: 4rem
             font-family: Sora_R
             margin-bottom: 1rem
+            color: var(--text-bold-color)
             transition: font-size 0.2s ease-in-out , opacity 0.5s ease-in-out, transform 0.5s ease-in-out
 
             @include media($breakpoint: $breakpoint-lg)
@@ -56,6 +57,7 @@ $breakpoint-xl: 1500px
             font-family: Sora_R
             line-height: 1.7rem
             width: 65%
+            color: var(--text-bold-color)
             margin-bottom: 1.4rem
             transition: font-size 0.2s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out
             @include media($breakpoint: $breakpoint-lg)
@@ -71,16 +73,16 @@ $breakpoint-xl: 1500px
             @include flex_center_all()
             button
                 font-size: 0.9rem
-                background: #181818
+                background: var(--button-entrance-bg)
                 padding: 0.8rem 1.9rem
+                color: #ffff !important
                 border-radius: 0.3rem
-                transition: font-size 0.2s ease-in-out
-
+                transition: all 0.2s ease-in-out
                 @include media($breakpoint: $breakpoint-sm)
                     font-size: 0.8rem
                     padding: 0.78rem 1.8rem
                 &:hover
-                    background: #0c0c0c
+                    background: var(--button-entrance-bg-hovered)
         .hide
             opacity: 0
             transform: translateX(-10%)

@@ -17,6 +17,7 @@ $breakpoint-xl: 1500px
     display: flex
     flex-direction: column
     width: 100%
+    color: var(--text-bold-color)
     padding: 0.5rem 3.5vw 2rem 3.5vw
     transition: all 0.2s ease-in-out
     @include media($breakpoint: $breakpoint-lg)
@@ -52,9 +53,8 @@ $breakpoint-xl: 1500px
                 margin-bottom: 1.4rem
                 @include media($breakpoint: $breakpoint-md)
                     height: 2.2rem
-                img
-                    width: 100%
-                    height: 100%
+                .logo_icon
+                    fill: var(--text-basic-color)
             .subtitle
                 font-size: 0.9rem
                 @include media($breakpoint: $breakpoint-md)

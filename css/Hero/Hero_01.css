@@ -36,6 +36,7 @@
   font-size: 4rem;
   font-family: Sora_R;
   margin-bottom: 1rem;
+  color: var(--text-bold-color);
   transition: font-size 0.2s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 @media (max-width: 1012px) {
@@ -61,6 +62,7 @@
   font-family: Sora_R;
   line-height: 1.7rem;
   width: 65%;
+  color: var(--text-bold-color);
   margin-bottom: 1.4rem;
   transition: font-size 0.2s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
@@ -89,10 +91,11 @@
 }
 .hero_container .hero_left_container .container_button button {
   font-size: 0.9rem;
-  background: #181818;
+  background: var(--button-entrance-bg);
   padding: 0.8rem 1.9rem;
+  color: white !important;
   border-radius: 0.3rem;
-  transition: font-size 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 @media (max-width: 576px) {
   .hero_container .hero_left_container .container_button button {
@@ -101,7 +104,7 @@
   }
 }
 .hero_container .hero_left_container .container_button button:hover {
-  background: #0c0c0c;
+  background: var(--button-entrance-bg-hovered);
 }
 .hero_container .hero_left_container .hide {
   opacity: 0;

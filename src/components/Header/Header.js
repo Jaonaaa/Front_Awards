@@ -96,7 +96,7 @@ export function showHeader() {
 function buttonShowSideBar({ pathIcon, linksTag, pathIconCross }) {
   const btn = document.createElement("div");
   btn.setAttribute("icon_swap", pathIconCross);
-  btn.innerHTML = `<img src="${pathIcon}" alt="icon" />`;
+  btn.innerHTML = `${pathIcon}`;
   btn.setAttribute("id", "btn-show-sidebar");
   setUpButtonShowSideBar(btn, linksTag);
   return btn;
@@ -201,7 +201,6 @@ function switchNavigationParamsForced() {
 function setUpButtonShowSideBar(btn, linksTag) {
   btn.addEventListener("click", (e) => {
     handleBtnEvent(btn);
-
     if (LayersActive()) {
       wait(removeLayers, timerHide);
     } else createLayers(linksTag);
@@ -238,8 +237,9 @@ function handleBtnEvent(btn) {
   if (header) header.classList.toggle("upperIndexHeader");
   wait(() => {
     let icon_swap = btn.getAttribute("icon_swap");
-    let current_icon = btn.querySelector("img").getAttribute("src");
-    btn.querySelector("img").src = icon_swap;
+    let current_icon = btn.innerHTML;
+    btn.innerHTML = icon_swap;
+
     btn.setAttribute("icon_swap", current_icon);
     btn.classList.remove("hide-btn-show-sidebar");
   }, timerHide);
@@ -316,8 +316,10 @@ function Logo(props, picture = "", linkTo = undefined) {
   const logo = document.createElement("div");
   initProps(logo, props);
 
-  let img = document.createElement("img");
-  img.setAttribute("src", picture);
+  let img = document.createElement("div");
+  img.classList.add("logo_container_in");
+  // img.setAttribute("src", picture);
+  img.innerHTML = picture;
   if (linkTo != undefined)
     img.addEventListener("click", (event) => {
       img.href = base_url + linkTo;
@@ -337,10 +339,11 @@ export function removeHeaderForced() {
   wait(removeLayersForced, timerHide / 2);
   wait(() => {
     let icon_swap = btn.getAttribute("icon_swap");
-    let current_icon = btn.querySelector("img").getAttribute("src");
-    btn.querySelector("img").src = icon_swap;
+    let current_icon = btn.innerHTML;
+    btn.innerHTML = icon_swap;
     btn.setAttribute("icon_swap", current_icon);
     btn.classList.remove("hide-btn-show-sidebar");
+
     switchNavigationParamsForced();
   }, timerHide / 2);
 }

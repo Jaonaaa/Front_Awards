@@ -19,7 +19,7 @@ $breakpoint-xl: 1500px
     margin: 2rem
     width: 35%
     border-radius: 0.3rem
-    box-shadow: 0rem 0rem 0.1rem 0.1rem #c7c7c777
+    box-shadow: 0rem 0rem 0.1rem 0.1rem var(--box-shadow)
     padding: 0.9rem 1rem 1.5rem 1rem
     height: 15rem
     transition: all 0.55s ease-in-out
@@ -32,7 +32,7 @@ $breakpoint-xl: 1500px
         width: 90%
         height: 12rem
     &:hover
-        box-shadow: 0rem 0rem 1rem 0.1rem #c7c7c7ca
+        box-shadow: 0rem 0rem 1rem 0.1rem var(--box-shadow-hovered)
         .icon_container
             animation: jump_up 1s infinite
     .card_content_container
@@ -71,6 +71,7 @@ $breakpoint-xl: 1500px
             -webkit-box-orient: vertical
             -webkit-line-clamp: 1
             overflow: hidden
+            color: var(--text-bold-color)
             text-overflow: ellipsis
             @include media($breakpoint:$breakpoint-md )
                 font-size: 1.36rem
@@ -87,6 +88,7 @@ $breakpoint-xl: 1500px
             -webkit-line-clamp: 4
             max-height: 4rem
             overflow: hidden
+            color: var(--text-basic-color)
             text-overflow: ellipsis
             @include media($breakpoint:$breakpoint-md )
                 font-size: 0.85rem

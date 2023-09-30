@@ -1,3 +1,4 @@
+import { CloseIcon } from "../data/svg.js";
 import { wait } from "./index.js";
 
 export function createHider({ children = [], type = "default" }) {
@@ -48,8 +49,8 @@ function fullContainer() {
 
   let closerBtn = document.createElement("div");
   closerBtn.classList.add("closer_btn_hider");
-  let icon_closer = document.createElement("img");
-  icon_closer.src = "./assets/img/cross_icon.png";
+  let icon_closer = document.createElement("div");
+  icon_closer.innerHTML = CloseIcon;
   closerBtn.appendChild(icon_closer);
 
   container.appendChild(closerBtn);

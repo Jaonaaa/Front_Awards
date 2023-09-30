@@ -16,6 +16,8 @@ import { header } from "./data/Header.js";
 import { base_url } from "./utils/index.js";
 import { handleRoutes } from "./utils/route.js";
 import { ArticlesSection } from "./components/CardArticle/articles-secion.js";
+import { Outils } from "./components/Outils/Outils.js";
+import { darkMode, lightMode } from "./data/Themes.js";
 // Here you will structure your elements
 
 //Entrance
@@ -48,16 +50,6 @@ const transition = {
   duration: 1490,
 };
 
-const routes = {};
-////...entranceSection
-routes[base_url + "/"] = [...entranceSection, header, footer_C_01];
-routes[base_url + "/about"] = [
-  header,
-  brandKitSection,
-  formulaire,
-  footer_C_01,
-];
-
 let articles = ArticlesSection({
   images: [
     "./assets/img/mahamasina.jpg",
@@ -86,8 +78,26 @@ let articles = ArticlesSection({
   ],
 });
 
-routes[base_url + "/blog"] = [header, blogSection, articles, footer_C_01];
+// outils
+const outils = Outils({ themes: [lightMode, darkMode] });
 
+const routes = {};
+////...entranceSection
+routes[base_url + "/"] = [...entranceSection, header, footer_C_01, outils];
+routes[base_url + "/about"] = [
+  header,
+  brandKitSection,
+  formulaire,
+  footer_C_01,
+  outils,
+];
+routes[base_url + "/blog"] = [
+  header,
+  blogSection,
+  articles,
+  footer_C_01,
+  outils,
+];
 routes[404] = [];
 
 function setUpAll() {

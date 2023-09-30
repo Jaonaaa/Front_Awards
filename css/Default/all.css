@@ -15,12 +15,19 @@
   src: url(../../assets/fonts/Sora-Regular.ttf);
 }
 :root {
-  --text-basic-color: rgb(38, 38, 38);
+  --text-basic-color: rgb(247, 247, 247);
+  --text-bold-color: rgb(255, 255, 255);
   --primary-color: #08867e;
   --primary-color-hovered: #04635d;
   --secondary-color: rgb(148, 146, 146);
-  --inactive-link-color: rgba(97, 97, 97, 0.803);
+  --button-entrance-bg: #155380;
+  --button-entrance-bg-hovered: #0b4065;
+  --inactive-link-color: rgba(187, 183, 183, 0.803);
   --active-link-color: rgb(0, 213, 145);
+  --input-bg: #272727;
+  --bg_color: #1b1b1b;
+  --box-shadow: #545050;
+  --box-shadow-hovered: #666666;
   --scroll-bars-animation: 2%;
 }
 
@@ -41,6 +48,8 @@ body {
   padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  background: var(--bg_color);
+  transition: background-color 0.2s ease-in-out;
 }
 
 .unmoved {
@@ -86,7 +95,7 @@ button {
   cursor: pointer;
   background: var(--primary-color);
   font-size: 0.92rem;
-  color: white;
+  color: var(--text-basic-color);
   transition: all 0.2s ease-in-out;
 }
 button:hover {
@@ -128,7 +137,7 @@ button:hover {
   transform: translate(-50%, 0%);
   border-radius: 4rem 0 0 0;
   bottom: 0%;
-  background: #ffffff;
+  background: var(--bg_color);
   z-index: 6;
   width: 99vw;
   height: 94vh;
@@ -148,6 +157,9 @@ button:hover {
     width: 100vw;
     padding: 2rem 0.8rem;
   }
+}
+#hider .full_hider_container .logo_icon {
+  stroke: var(--text-basic-color);
 }
 #hider .small_hider_container {
   position: absolute;

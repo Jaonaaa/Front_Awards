@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: var(--text-bold-color);
   padding: 0.5rem 3.5vw 2rem 3.5vw;
   transition: all 0.2s ease-in-out;
 }
@@ -61,9 +62,8 @@
     height: 2.2rem;
   }
 }
-.footer_container .footer_upper .about_site .logo_container img {
-  width: 100%;
-  height: 100%;
+.footer_container .footer_upper .about_site .logo_container .logo_icon {
+  fill: var(--text-basic-color);
 }
 .footer_container .footer_upper .about_site .subtitle {
   font-size: 0.9rem;

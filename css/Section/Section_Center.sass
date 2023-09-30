@@ -13,7 +13,8 @@ $colored-section: #90ada6
     height: fit-content
     --scroll: 0%
     // position: relative
-    background: #ffffff
+    transition: background-color 0.2s ease-in-out
+    background: var(--bg_color)
     padding: 2vw 8vw 5vw 8vw
     @include media($breakpoint:$breakpoint-xl )
         padding: 8vw 8vw 5vw 8vw
@@ -34,6 +35,7 @@ $colored-section: #90ada6
             text-align: center
             font-size: 3.3rem
             margin-bottom: 1.5rem
+            color: var(--text-bold-color)
             transition: font-size 0.2s ease-in-out , opacity 0.5s ease-in-out , transform 0.5s ease-in-out
             @include media($breakpoint: $breakpoint-lg)
                 font-size: 3.1rem
@@ -47,6 +49,7 @@ $colored-section: #90ada6
             margin: 0 auto
             text-align: center
             font-size: 1.4rem
+            color: var(--text-basic-color)
             transition: font-size 0.2s ease-in-out , opacity 0.5s ease-in-out , transform 0.5s ease-in-out
             @include media($breakpoint: $breakpoint-lg)
                 font-size: 1.3rem
@@ -61,18 +64,6 @@ $colored-section: #90ada6
             transform: translateY(20%)
 .space_head
     margin-top: 7rem
-.section_dark
-    background-color: $colored-section
-    position: relative
-    color: #ffffff !important
-    padding: 6vw 8vw 5vw 8vw
-    @include media($breakpoint:$breakpoint-xl )
-        padding: 8vw 8vw 5vw 8vw
-    @include media($breakpoint:$breakpoint-lg )
-        padding: 10vw 8vw 5vw 8vw
-    @include media($breakpoint:$breakpoint-sm )
-        padding: 18vw 6vw 20vw 6vw
-    ////
 
 .wave_top,.tri_top,.tilt_top,.book_top
     position: relative
@@ -120,9 +111,31 @@ $colored-section: #90ada6
     .shape-fill
         fill: $colored-section
 
+.section_dark
+    background-color: $colored-section
+    position: relative
+    color: #ffffff !important
+    padding: 6vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-xl )
+        padding: 8vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-lg )
+        padding: 10vw 8vw 5vw 8vw
+    @include media($breakpoint:$breakpoint-sm )
+        padding: 18vw 6vw 20vw 6vw
+    ////
+    .section_head
+        .title
+            color: #ffff !important
+        .subtitle
+            color: #ffff !important
+
 .whitey
     background: #011d2a
     fill: #011d2a !important
-    color: #ffff !important
+    .section_head
+        .title
+            color: #ffff !important
+        .subtitle
+            color: #ffff !important
 .section_blank_content
     min-height: 0

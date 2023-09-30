@@ -1,0 +1,74 @@
+$breakpoint-xsm: 476px
+$breakpoint-sm: 576px
+$breakpoint-md: 768px
+$breakpoint-lg: 1012px
+$breakpoint-xl: 1500px
+
+$breakpoint-mdlg: 978px
+
+@mixin media($breakpoint)
+    @media (max-width: $breakpoint)
+        @content
+
+#outils_box
+    position: fixed
+    bottom: 3rem
+    right: 4rem
+    width: fit-content
+    display: flex
+    justify-content: center
+    align-items: center
+
+    @include media($breakpoint:$breakpoint-lg )
+        bottom: 3rem
+        right: 3.4rem
+    @include media($breakpoint:$breakpoint-md )
+        bottom: 2.5rem
+        right: 2.2rem
+    @include media($breakpoint:$breakpoint-sm )
+        bottom: 2rem
+        right: 1.8rem
+
+    .outils_btn
+        z-index: 2
+        display: flex
+        justify-content: center
+        transition: all 0.2s ease-in-out
+        background: var(--primary-color)
+        align-items: center
+        min-width: 3.5rem
+        min-height: 3.5rem
+        border-radius: 50%
+        @include media($breakpoint:$breakpoint-sm )
+            min-width: 3.2rem
+            min-height: 3.2rem
+        &:hover
+            background: var(--primary-color-hovered)
+            cursor: pointer
+        svg
+            @include media($breakpoint:$breakpoint-md )
+                width: 16px
+            @include media($breakpoint:$breakpoint-sm )
+                width: 14px
+    .theme_container
+        position: absolute
+        min-width: 2.7rem
+        min-height: 2.7rem
+        left: 50%
+        border-radius: 50%
+        cursor: pointer
+        background: #083956
+        display: flex
+        justify-content: center
+        align-items: center
+        font-family: Sora_R
+        font-size: 1rem
+        color: #ffff
+        transition: all 0.2s ease-in-out
+        transform: translate(-50%,-0%)
+        @include media($breakpoint:$breakpoint-sm )
+            min-width: 2.5rem
+            min-height: 2.5rem
+            font-size: 0.9rem
+        &:hover
+            background: #04283d

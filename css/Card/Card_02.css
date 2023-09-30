@@ -6,7 +6,7 @@
   margin: 2rem;
   width: 35%;
   border-radius: 0.3rem;
-  box-shadow: 0rem 0rem 0.1rem 0.1rem rgba(199, 199, 199, 0.4666666667);
+  box-shadow: 0rem 0rem 0.1rem 0.1rem var(--box-shadow);
   padding: 0.9rem 1rem 1.5rem 1rem;
   height: 15rem;
   transition: all 0.55s ease-in-out;
@@ -29,7 +29,7 @@
   }
 }
 .card_container_02:hover {
-  box-shadow: 0rem 0rem 1rem 0.1rem rgba(199, 199, 199, 0.7921568627);
+  box-shadow: 0rem 0rem 1rem 0.1rem var(--box-shadow-hovered);
 }
 .card_container_02:hover .icon_container {
   animation: jump_up 1s infinite;
@@ -79,6 +79,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
+  color: var(--text-bold-color);
   text-overflow: ellipsis;
 }
 @media (max-width: 768px) {
@@ -101,6 +102,7 @@
   -webkit-line-clamp: 4;
   max-height: 4rem;
   overflow: hidden;
+  color: var(--text-basic-color);
   text-overflow: ellipsis;
 }
 @media (max-width: 768px) {

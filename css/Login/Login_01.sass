@@ -12,7 +12,7 @@ $breakpoint-mdlg: 978px
 
 .log_container_01
     width: fit-content
-    background: #ffff
+    background: var(--bg_color)
     display: flex
     margin: auto
     align-self: center
@@ -36,7 +36,7 @@ $breakpoint-mdlg: 978px
         display: flex
         transition: all 0.2s ease-in-out
         width: 53%
-
+        color: var(--text-basic-color)
         flex-direction: column
         transition: all 0.2s ease-in-out
         padding: 2rem 3rem
@@ -60,9 +60,12 @@ $breakpoint-mdlg: 978px
             @include media($breakpoint:$breakpoint-sm )
                 margin-top: 1rem
                 width: 8rem
-            img
-                width: 100%
-                height: 100%
+            .logo_container_in
+                display: flex
+                justify-content: center
+                align-items: center
+                .logo_icon
+                    fill: var(--text-bold-color)
         .title_container
             font-family: Sora_R
             font-size: 1.7rem

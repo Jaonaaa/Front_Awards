@@ -1,5 +1,6 @@
 import { Header } from "../components/Header/Header.js";
 import { base_url } from "../utils/index.js";
+import { CloseIcon, HamburgerIcon, LogoIcon } from "./svg.js";
 
 const paramsContent = [];
 
@@ -8,7 +9,7 @@ export const header = Header({
     ["id", "header_proto_mid"],
     ["observation", "navbar"],
   ],
-  logoPath: "./assets/svg/Tempest_logo.svg",
+  logoPath: LogoIcon,
   linksTag: [
     {
       linkTo: base_url + "/",
@@ -26,7 +27,7 @@ export const header = Header({
   ],
   paramsContent: paramsContent,
   btnSideBarOn: {
-    icon: "./assets/img/hamburger_icon.png",
-    icon_cross: "./assets/img/cross_icon.png",
+    icon: HamburgerIcon,
+    icon_cross: CloseIcon,
   },
 });

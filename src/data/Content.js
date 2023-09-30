@@ -13,9 +13,10 @@ import {
   Section_Left,
 } from "../components/Section/Section_01.js";
 import { createHider } from "../utils/Hider.js";
+import { LogoIcon, LogoIconFooter } from "./svg.js";
 
 let login = Login_01({
-  logoPath: "./assets/svg/Tempest_logo.svg",
+  logoPath: LogoIconFooter,
   picPath: "./assets/img/login_right.jpg",
   title: "Welcome Home",
   subtitle: "Please enter your details",

@@ -27,8 +27,9 @@ function leftSide({ title, subtitle, logoPath, buttonText = "Sign in" }) {
   //
   let logo = document.createElement("div");
   logo.classList.add("logo_container");
-  let img = document.createElement("img");
-  img.src = logoPath;
+  let img = document.createElement("div");
+  img.classList.add("logo_container_in");
+  img.innerHTML = logoPath;
   logo.appendChild(img);
   //
   let titleC = document.createElement("div");

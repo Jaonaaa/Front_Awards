@@ -35,8 +35,8 @@ function leftSide({ logoPath, textSubtitle }) {
   container.classList.add("about_site");
   let logo = document.createElement("div");
   logo.classList.add("logo_container");
-  let img = document.createElement("img");
-  img.src = logoPath;
+  let img = document.createElement("div");
+  img.innerHTML = logoPath;
   logo.appendChild(img);
 
   let subtitle = document.createElement("div");

@@ -33,6 +33,7 @@
   max-height: 19rem;
   height: 19rem;
   overflow: hidden;
+  color: var(--text-basic-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,6 +87,7 @@
 .article-card-author {
   display: flex;
   flex-wrap: wrap;
+  color: var(--text-basic-color);
 }
 
 .article-card-category {
