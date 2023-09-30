@@ -100,12 +100,17 @@ export const cardsBrandKit = [
     picAssociated: "./assets/svg/mount.svg",
   }),
   Card_01({
-    title: "The Latest News",
+    title: "IA Subtitle Pro",
     content: `
-    Tempest IA Evolving for You
-    Stay informed about the latest news and updates regarding Tempest IA. Discover how this intelligent robot continues to evolve to meet your needs and enhance your daily life.    
+    Our AI can enhance your video experience by providing accurate subtitles, making content accessible to everyone, regardless of language or situation.
         `,
-    children: [Button_01({ title: "Watch news" })],
+    children: [
+      Button_01({
+        title: "Go Unlock",
+        onClick: log,
+      }),
+    ],
+    picAssociated: "./assets/svg/circle.svg",
   }),
   Card_01({
     title: "Chat with Tempest IA",
@@ -161,27 +166,35 @@ export const cardsBrandKit2 = [
   }),
 
   Card_01({
-    title: "The Latest News",
+    title: "IA Subtitle Pro",
     content: `
-    Tempest IA Evolving for You
-    Stay informed about the latest news and updates regarding Tempest IA. Discover how this intelligent robot continues to evolve to meet your needs and enhance your daily life.    
+    Our AI can enhance your video experience by providing accurate subtitles, making content accessible to everyone, regardless of language or situation.
         `,
-    children: [Button_01({ title: "Watch news" })],
-  }),
-  Card_01({
-    title: "Chat with Tempest IA",
-    content: `
-    Ready to chat? Start a conversation with Tempest IA now and discover a whole new dimension of artificial intelligence.
-        `,
-    children: [Button_01({ title: "Go Chat" })],
+    children: [
+      Button_01({
+        title: "Go Unlock",
+        onClick: log,
+      }),
+    ],
     picAssociated: "./assets/svg/circle.svg",
   }),
+
   Card_01({
     title: "About Tempest IA",
     content: `
     Allow me to introduce you to Tempest IA, a revolutionary breakthrough in the fields of artificial intelligence and robotics.
         `,
-    children: [Button_01({ title: "See more" })],
+    children: [
+      Button_01({
+        title: "See more",
+        onClick: () => {
+          createHider({
+            type: "full",
+            children: [about],
+          });
+        },
+      }),
+    ],
     picAssociated: "./assets/svg/circle.svg",
   }),
 ];
@@ -306,9 +319,9 @@ export const blogSection = Section_Center({
   headeSpacement: true,
   class: ["section_blank_content"],
   titleOn: {
-    title: "Our Blogs",
+    title: "News",
     subtitle:
-      "Welcome to our blog, your destination for inspiration, knowledge, and the latest trends in Tempest AI.",
+      "Welcome , your destination for inspiration, knowledge, and the latest trends in Tempest AI.",
   },
   children: [],
 });

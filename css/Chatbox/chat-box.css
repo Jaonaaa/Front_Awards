@@ -9,10 +9,14 @@
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 895px) {
+  .chat-box-container {
+  }
+}
 
 .chat-box {
   background: white;
-  width: 400px;
+  width: 100%;
   height: 500px;
   border-radius: 20px;
   position: relative;
@@ -119,4 +123,17 @@
 
 .chat-box-send-btn svg {
   cursor: pointer;
+}
+.chat-box-header-left-avatar,
+.chat-box-header-left-name,
+.chat-box-title,
+.message-box .message-image,
+.message-box span,
+.chat-box-input-container {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.new-message-box {
+  padding: 10px 20px;
 }

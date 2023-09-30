@@ -42,17 +42,13 @@ export const COMMENTSECTION = CommentSection({
   comments: [
     {
       author: {
-        name: "Dazai Osamu",
+        name: "Alice",
         photo: "./assets/img/robot.png",
         pseudo: "DazaiKun",
       },
       content: `
-        Bonjour, je m'appelle Dazai, appelez-moi Hello.
-        <br />
-        <br />
-        Depuis que j'ai utilisé ce robot, tout devient facile dans ma vie.
-        <br />
-        Je peux plus facilement monter les escalier, aller aux toilettes, faire les besoins quotidiens sans avoir a m'inquieter des accidents qui pourraient m'arriver.
+      This robot has changed my life. It helps me with so many things in my daily life that I thought were out of reach. I can't imagine my life without it. Thank you, Tempest AI!
+
       `,
     },
     {

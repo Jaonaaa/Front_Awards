@@ -10,8 +10,8 @@ function ChatBoxContainer() {
   element.appendChild(
     ChatBox({
       user: {
-        name: "Dazai Osamu",
-        photo: "./assets/img/dazai.png",
+        name: "Tempest Bot",
+        photo: "./assets/img/robot.png",
       },
     })
   );
