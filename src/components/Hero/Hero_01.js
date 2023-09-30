@@ -22,7 +22,8 @@ export function Hero_01(props) {
       callback: props.onClick,
     })
   );
-  hero.appendChild(Hero_01_RightSide({ PicPath: props.picPath }));
+  if (props.picPath)
+    hero.appendChild(Hero_01_RightSide({ PicPath: props.picPath }));
   observeHero_01(hero);
   return hero;
 }
@@ -43,9 +44,10 @@ function Hero_01_LeftSide({ text, subtitle, buttonText, callback }) {
 
   container.appendChild(titleContainer);
   container.appendChild(subtitleContainer);
-  container.appendChild(
-    Hero_01_Button({ text: buttonText, callback: callback })
-  );
+  if (buttonText)
+    container.appendChild(
+      Hero_01_Button({ text: buttonText, callback: callback })
+    );
 
   return container;
 }

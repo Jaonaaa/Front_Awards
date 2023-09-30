@@ -5,6 +5,7 @@ import { Transition_01 } from "./components/Transition/Transition.js";
 import {
   blogSection,
   brandKitSection,
+  comments,
   formulaire,
   hero,
   partenaires,
@@ -23,7 +24,7 @@ import { darkMode, lightMode } from "./data/Themes.js";
 //Entrance
 let entranceScreen = Screen_01({
   background: base_url + "/assets/img/butterfly.png",
-  text: ["TempesT", "Frontend <br> Awards", "Here we are!", "(～￣▽￣)～"],
+  text: ["Tempest AI", "For you", "Here we are!"],
 });
 
 let entranceSection = [
@@ -37,6 +38,7 @@ let entranceSection = [
   upgrade,
   stayFocus,
   partenaires,
+  comments,
   brandKitSection,
 ];
 
@@ -52,30 +54,14 @@ const transition = {
 
 let articles = ArticlesSection({
   images: [
-    "./assets/img/mahamasina.jpg",
-    "./assets/svg/hash_tag.svg",
-    "./assets/svg/hash_tag.svg",
-    "./assets/svg/hash_tag.svg",
+    "./assets/img/robot1.jpg",
+    "./assets/img/robot2.jpg",
+    "./assets/img/robot3.jpg",
   ],
-  titles: [
-    "Actu Mahamasina ",
-    "Zen'itsu Agatsuma",
-    "Tempesy News",
-    "Nezuko Kamado",
-  ],
-  categories: [
-    "Actualité à Mada",
-    "Pourfoundeur type foudre",
-    "Fraternité",
-    "Mi-homme mi-demon",
-  ],
-  authors: ["Midi Madagascar", "Osamu Dazai", "Osamu Dazai", "Osamu Dazai"],
-  dates: [
-    "September 29, 2023",
-    "September 10, 2023",
-    "September 10, 2023",
-    "September 10, 2023",
-  ],
+  titles: ["🚀 Latest update ", "📣 New updates", "🚀 Tempest News"],
+  categories: ["Tempest AI", "Tempest AI", "Tempest AI"],
+  authors: ["Midi Madagascar", "Jejoo", "Basy vava"],
+  dates: ["September 29, 2023", "September 15, 2023", "September 14, 2023"],
 });
 
 // outils
@@ -84,14 +70,14 @@ const outils = Outils({ themes: [lightMode, darkMode] });
 const routes = {};
 ////...entranceSection
 routes[base_url + "/"] = [...entranceSection, header, footer_C_01, outils];
-routes[base_url + "/about"] = [
+routes[base_url + "/features"] = [
   header,
   brandKitSection,
   formulaire,
   footer_C_01,
   outils,
 ];
-routes[base_url + "/blog"] = [
+routes[base_url + "/actu"] = [
   header,
   blogSection,
   articles,

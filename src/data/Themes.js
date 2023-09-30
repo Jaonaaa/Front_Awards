@@ -24,8 +24,8 @@ export const darkMode = {
   buttonEntranceBgHovered: "#02332d",
   inactiveLinkColor: "rgba(187, 183, 183, 0.803)",
   activeLinkColor: " rgb(0, 213, 145)",
-  inputBg: " #272727",
-  bgColor: "#1b1b1b",
+  inputBg: "#0e101e",
+  bgColor: "#13111c",
   boxShadowColor: "#545050",
   boxShadowColorHovered: "#666666",
 };

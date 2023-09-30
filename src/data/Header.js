@@ -17,12 +17,12 @@ export const header = Header({
     },
 
     {
-      linkTo: base_url + "/about",
-      label: "Our works",
+      linkTo: base_url + "/features",
+      label: "Features",
     },
     {
-      linkTo: base_url + "/blog",
-      label: "Blog",
+      linkTo: base_url + "/actu",
+      label: "Actualities",
     },
   ],
   paramsContent: paramsContent,

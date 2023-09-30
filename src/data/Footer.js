@@ -11,12 +11,8 @@ export const sectionsFooter = [
         linkTo: base_url + "/",
       },
       {
-        label: "Our works",
-        linkTo: base_url + "/about",
-      },
-      {
-        label: "Testing Projects",
-        linkTo: base_url + "/testing",
+        linkTo: base_url + "/features",
+        label: "Features",
       },
     ],
   },
@@ -24,20 +20,8 @@ export const sectionsFooter = [
     title: "Community",
     data: [
       {
-        label: "Blog",
-        linkTo: base_url + "/blog",
-      },
-      {
-        label: "Service Client",
-        linkTo: base_url + "/serviceClient",
-      },
-      {
-        label: "Asking for a project",
-        linkTo: base_url + "/project",
-      },
-      {
-        label: "Hiring",
-        linkTo: base_url + "/project",
+        label: "Actualities",
+        linkTo: base_url + "/actu",
       },
     ],
   },
