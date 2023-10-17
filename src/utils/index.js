@@ -4,6 +4,7 @@ export const props = {
   attributs: [],
 };
 /// /Front_Awards
+//
 export const base_url = "https://tempestfrontend.netlify.app";
 /**
  * @param {props} props

@@ -47,7 +47,7 @@ function resetBodyToTop() {
 
 const handleLocation = async () => {
   let path = window.location.pathname;
-
+  console.log(path);
   const route = routes[path] || routes[404];
   renderRoot(route);
   setUpAll();
