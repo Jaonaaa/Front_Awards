@@ -5,7 +5,7 @@ export const props = {
 };
 /// /Front_Awards
 //
-export const base_url = "https://tempestfrontend.netlify.app";
+export const base_url = "";
 /**
  * @param {props} props
  * @param {HTMLElement} target
